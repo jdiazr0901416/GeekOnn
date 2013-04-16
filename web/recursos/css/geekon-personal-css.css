@@ -43,4 +43,56 @@ body {
 	color: white;
 	zoom:110%;
 }
+#principal{
+    margin-left: 90px;
+} 
+/*mensajes--------------------------------------------*/
+#imagen-mensaje-usuario{
+	width:130px;
+        min-height: 80px;
+}
+#mensaje{
+	margin-top: 10px;
+	border: 1px;
+	border-color: rgb(0,142,243);
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+#mensaje:hover{
+	margin-top: 10px;
+	border: 1px solid;
+	border-color: rgb(0,142,243);
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}#mensaje-favorito{
+	margin-top: 10px;
+	border: 1px;
+	border-color: rgb(0,142,243);
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+#mensaje:hover{
+	margin-top: 10px;
+	border: 1px solid;
+	border-color: rgb(0,142,243);
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+#contenedor-enviar-mensajes{
+	border-left: 2px solid;
+	border-color: white;
+	min-height: 700px;
+}
+#contenedor-ultimos-mensajes-conversacion{
+	border-radius: 15px;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	background-color: white;
+	margin-bottom: 10px;
+}
+/*mensajes--------------------------------------------*/
 /* / mini-news-feed*/

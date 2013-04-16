@@ -16,7 +16,7 @@
 
     <!-- Le styles -->
     <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="recursos/bootstrap/docs/assets/bootstrap-responsive.css" rel="stylesheet">
+    <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/geekon-personal-css.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
 
@@ -68,7 +68,7 @@
     <!-- Termina navbar  -->
 
       <div class="row-fluid" id="contenedor-principal">
-        <div class="span1" id="casa">
+        <div class="span1" id="menu">
           <div class="row-fluid" id="contenedor-iconos">
             <div class="span12" id="M-home">
               <p><i class="icon-home icon-white pull-right icon-4x" id="icon-white-menu-mn"></i></p>
@@ -96,6 +96,11 @@
           </div>
         </div>
         <div class="span9" id="principal">
+            <div class="container-fluid" id="">
+                <div class="row-fluid">
+                    <h1>Bienvenido</h1>
+                </div>
+            </div>
         </div>
         <div class="span2" id="mini-news-feed">
         </div>
