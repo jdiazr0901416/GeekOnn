@@ -37,57 +37,27 @@
   </head>
   <body>
 <!-- amigos!------------------------------------------------------------------------------------------------------------------------------------ -->
-    <div class="container-fluid" id="contenedor-mensajes">
+    <div class="container-fluid" >
         <div class="row-fluid">
-            <div class="span4">
-                <center><h2>Todos tus amigos</h2></center><br>
-                <div class="row-fluid" id="mensaje">
-                    <div class="span4" >
-                        <img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario">
+            <div class="span9" id="contenedor-amigos">
+                <div class="row-fluid">
+                    <!-- este es un amigo -->
+                    <div class="span2">
+                        <div class="span12" >
+                            <center><img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-del-usuario"></center>
+                        </div>
+                        <div class="span12">
+                            <button type="button" class="btn btn-inverse pull-left"><i class="icon-ban-circle icon-white icon-1x"></i></button>
+                            <button type="button" class="btn btn-danger pull-right"><i class="icon-minus icon-white icon-1x " ></i></button>
+                        </div>
                     </div>
-                    <div class="span8">
-                        <center><h4>Nombre de usuario </h4></center>
-                        <hr>
-                        <button type="button" class="btn btn-warning">Hacer Favorito</button><button type="button" class="btn btn-danger pull-right">Eliminar Amigo</button> 
-                    </div>
-                </div>
-                <div class="row-fluid" id="mensaje">
-                    <div class="span4" >
-                        <img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario">
-                    </div>
-                    <div class="span8">
-                        <center><h4>Nombre de usuario </h4></center>
-                        <hr>
-                        <button type="button" class="btn btn-warning">Hacer Favorito</button><button type="button" class="btn btn-danger pull-right">Eliminar Amigo</button> 
-                    </div>
-                </div>
-                <div class="row-fluid" id="mensaje">
-                    <div class="span4" >
-                        <img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario">
-                    </div>
-                    <div class="span8">
-                        <center><h4>Nombre de usuario </h4></center>
-                        <hr>
-                        <button type="button" class="btn btn-warning">Hacer Favorito</button><button type="button" class="btn btn-danger pull-right">Eliminar Amigo</button> 
-                    </div>
-                </div>
-            </div>    
-            <div class="span4">
-               </center><h2>Tus amigos Favoritos</h2></center><br>
-               <div class="row-fluid" id="mensaje-favorito">
-                    <div class="span4" >
-                        <img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario">
-                    </div>
-                    <div class="span8">
-                        <center><h4>Nombre de usuario </h4></center>
-                        <hr>
-                        <button type="button" class="btn btn-warning">Hacer Favorito</button><button type="button" class="btn btn-danger pull-right">Eliminar Amigo</button> 
-                    </div>
-                </div>
-            </div>    
-            <div class="span4">
-                </center><h2>Opciones</h2></center>
-            </div>        
+                    <!-- /este es un amigo -->
+                </div> 
+                
+            </div>
+            <div class="span3">
+                
+            </div>
         </div>
     </div>
     </body>
