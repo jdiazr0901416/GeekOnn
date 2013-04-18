@@ -42,7 +42,7 @@
             <div class="span9" id="contenedor-amigos">
                 <div class="row-fluid">
                     <!-- este es un amigo -->
-                    <div class="span2">
+                    <div class="span2" id="amigo">
                         <div class="span12" >
                             <center><img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-del-usuario"></center>
                         </div>
@@ -55,8 +55,49 @@
                 </div> 
                 
             </div>
-            <div class="span3">
-                
+            <div class="span3" id="contenedor-configuracion-principal">
+                <div class="row-fluid">
+                     <div class="row-fluid" id="contenedor-configuracion">
+                        <center><h3>Configuración</h3></center>
+                        <hr>
+                        <div class="row-fluid">
+                            <div class="row-fluid" >
+                                <div class="span3">
+                                    <center><i class="icon-lock  icon-4x"></i></center>
+                                </div>
+                                <div class="span9" id="configuracion-amigos">
+                                    <p><b>Estoy harto de alguien!</b></p>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span3">
+                                    <i class="icon-unlock  pull-right icon-4x"></i>
+                                </div>
+                                <div class="span9" id="configuracion-amigos">
+                                    <p><b>No puedo vivir sin esa persona!</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row-fluid" id="contenedor-configuracion">
+                        <center><h3>Buscar a un amigo</h3></center>
+                        <hr>
+                        <div class="row-fluid">
+                            <div class="span9">
+                                <form class="form-search">
+                                  <input type="text" class="input-medium search-query">
+                                </form>
+                            </div>
+                            <div class="span3">
+                                <button class="btn pull-left" onclick="respuestaBusquedaAmigo()">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="Encontrado">
+                        
+                    </div>
+                </div>
             </div>
         </div>
     </div>
