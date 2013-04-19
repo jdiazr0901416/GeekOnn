@@ -4,12 +4,52 @@ import java.io.PrintWriter;
 import java.sql.*;
 
 public class SentenciasSQL {
+        private Connection conexion;
+	private Statement statement;
+	private ResultSet resultset;
+	
 
-        DataBaseHandler objCon = new DataBaseHandler();
-        Connection conexion = objCon.getConnection();
-        Statement statement;
-        ResultSet resultset;
+    public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
+            String driver = "com.mysql.jdbc.Driver";
+            Class.forName(driver);
+            conexionLocalJulio();
+    }
 
+    public void connect() throws SQLException {
+            String urlUsedForDatabaseConnection = "jdbc:mysql://189.134.55.105:3307/hugme";
+            String mysqlUser = "jdiazr0901416";
+            String mysqlPassword="CrYnEt1995";
+
+            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            System.out.println("\n Succes; connection established.");		
+    }
+    public void conexionLocalBatiz() throws SQLException {
+            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
+            String mysqlUser ="root";
+            String mysqlPassword="n0m3l0";
+
+            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            System.out.println("\n Succes; connection established.");		
+    }
+    public void conexionLocalJulio() throws SQLException {
+            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3307/geekonn";
+            String mysqlUser ="jdiazr0901416";
+            String mysqlPassword="0421**";
+
+            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            System.out.println("\n Succes; connection established.");		
+    }
+
+    public void closeConnection() throws SQLException {
+            if(resultset !=null) resultset.close();
+            if(statement !=null) statement.close();
+            if(conexion !=null) conexion.close();
+
+            System.out.println("Connection closed succesfuly.");		
+    }
 
 /**************************Registro de Usuario*****************************************/    
      public void registrarNuevoUsuario(String nombreCompleto, String correoElectronico, String nombreUsuario, String password){
@@ -92,12 +132,6 @@ public class SentenciasSQL {
             System.out.println("Error en crearTablaAmigos");
         }
     }
-    
-    
-    
-    
-    
-    
 /****************************Crear Nueva Publicacion*********************************/    
     public void crearPublicacion(int idUsuario, String nombrePublicacion,String descripcionPublicacion){
         try{
@@ -136,7 +170,6 @@ public class SentenciasSQL {
 /***********************************************************************************************/    
 /***********************************MENSAJES****************************************************/
 /***********************************************************************************************/
-    
 /********************************Comprobar la Tabla*************************************/    
     public void conversacion(int idUsuario1, int idUsuario2, String mensajeEnviado){
        try{
@@ -183,4 +216,25 @@ public class SentenciasSQL {
             System.out.println("Error en anyadirMensaje");
         }
     }
+    public ResultSet obtenerIdAmigos(int userId){
+		ResultSet resultSet = null;
+		String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
+                System.out.println(friendsTableName);
+		try{
+			resultSet = statement.executeQuery("SELECT * FROM "+ friendsTableName +" WHERE bloqueado = " + 0);
+		}catch(SQLException e){
+			System.out.println("SQLError al obtener ids ");
+		}
+		return resultSet;
+    }
+    public ResultSet obtenerInfoUsuario(int userId){
+            ResultSet resultSet = null;
+            try{
+            resultSet = statement.executeQuery("SELECT * FROM usuariosGeekOnn WHERE idUsuario = " + userId);
+            }catch(SQLException e){
+            System.out.println("SQLError on getUserInfo");
+            }
+            return resultSet;
+            }
 }
+/* obtener ids de los amigos-------------------------------*/

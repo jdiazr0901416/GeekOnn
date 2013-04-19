@@ -83,7 +83,7 @@
               </div>
             </div>
           </div>
-          <div class="span12 pull-left"><h6>¿No estas registrado?<a href="registro.html">Registrate</a></h6></div>
+          <div class="span12 pull-left"><h6>¿No estas registrado?<a href="registro.jsp">Registrate</a></h6></div>
           <div class="modal-footer">
             <button class="btn btn-primary" type="submit">Iniciar sesión</button>
                </form>

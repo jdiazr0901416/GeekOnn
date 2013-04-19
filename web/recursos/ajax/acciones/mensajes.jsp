@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import = "com.geekon.system.SentenciasSQL" %>
+<%@ page import = "java.sql.ResultSet" %>
+<%@ page import = "javax.servlet.http.HttpServletResponse" %>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -54,13 +57,33 @@
 					<div class="row-fluid">
 					  <div class="span6 offset3"> 
 						<form action='' METHOD='POST' class='form-horizontal'>
-						  <center><h4>Seleciona  a tu amigo:&nbsp;<h4><select>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						  </select></center>
+						  <center><h4>Seleciona  a tu amigo:&nbsp;<h4>
+                                                    <select name="mensaje-amigo">
+                                                        <%
+                                                        String nombre = "";
+                                                        int userId = 1;
+                                                        SentenciasSQL cerrar = new SentenciasSQL();
+                                                         SentenciasSQL sentenciasLista = new SentenciasSQL();
+                                                         ResultSet resultSetLista =null;
+                                                         SentenciasSQL sentenciasID = new SentenciasSQL();;
+                                                         ResultSet resultSetID =null;
+                                                         resultSetLista =  sentenciasLista.obtenerIdAmigos(userId);
+
+                                                         while(resultSetLista.next()){
+                                                               int userIdTable = resultSetLista.getInt("idAmigos");
+                                                               System.out.println(userIdTable);
+                                                               resultSetID= sentenciasID.obtenerInfoUsuario(userIdTable);
+                                                                    while(resultSetID.next()){
+
+                                                                        if(resultSetID.first()){
+                                                                        nombre = resultSetID.getString("nombreUsuario");
+                                                                    }
+                                                                    out.println("<option>"+resultSetID.getString("nombreUsuario")+"</option>");
+                                                                    }
+                                                         }
+                                                         cerrar.closeConnection();
+                                                        %>
+                                                    </select></center>
 						  <br>
 						  <textarea rows="4" class="span12"></textarea>
 					  </div>

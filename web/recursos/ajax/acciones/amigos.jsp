@@ -71,9 +71,9 @@
                             </div>
                             <div class="row-fluid">
                                 <div class="span3">
-                                    <i class="icon-unlock  pull-right icon-4x"></i>
+                                    <i class="icon-unlock  pull-right icon-3x"></i>
                                 </div>
-                                <div class="span9" id="configuracion-amigos">
+                                <div class="span9">
                                     <p><b>No puedo vivir sin esa persona!</b></p>
                                 </div>
                             </div>
@@ -84,14 +84,12 @@
                         <center><h3>Buscar a un amigo</h3></center>
                         <hr>
                         <div class="row-fluid">
-                            <div class="span9">
-                                <form class="form-search">
-                                  <input type="text" class="input-medium search-query">
-                                </form>
-                            </div>
-                            <div class="span3">
-                                <button class="btn pull-left" onclick="respuestaBusquedaAmigo()">Buscar</button>
-                            </div>
+                            <form class="form-search">
+                                <div class="span12">
+                                      <input type="text" class="span12">
+                                      <br>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="row-fluid" id="Encontrado">

@@ -1,7 +1,7 @@
 <%-- 
-    Document   : registroo
-    Created on : 22-feb-2013, 16:44:51
-    Author     : Julio Diaz
+    Document   : index
+    Created on : 15-abr-2013, 10:20:41
+    Author     : Julio
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,28 +9,31 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>GEEKON</title>
+    <title>GeekOnn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="resources/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="resources/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="resources/css/registro-css.css" rel="stylesheet">
-
+    <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="recursos/bootstrap/docs/assets/bootstrap-responsive.css" rel="stylesheet">
+    <link href="recursos/css/registro-css.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="recursos/bootstrap/docs/assets/js/html5shiv.js"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link  rel="shortcut icon"href="resources/img/logo/icon.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="recursos//bootstrap/docs/assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
 
   <body>
-  <!-- navbar ------------------------------------------------------------------------------- -->
+     <!-- navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -39,20 +42,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="index.jsp">
-            <img src="resources/img/logo/geekon.png" height="60" width="140">
+          <a class="brand" href="index.html">
+            <img src="recursos/imagenes/logo/geekonn.png" height="60" width="140">
           </a>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
-              <li><a href="#myModal" data-toggle="modal" data-target="#myModal" id="a-iniciar-sesion">Inicia Sesión</a></li>
+              <li><a href="#myModal" data-toggle="modal" data-target="#myModal" id="a-iniciar-sesion">Inicia Seción</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
-    <!-- Termina navbar ---------------------------------------------------------------------------- -->
-
-    <!-- Modal -------------------------------------------------------------------------------------->
+    <!-- Termina navbar  -->
+    <!-- Modal -->
     <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="row-fluid">
         <div class="span12" id="color-modal"> 
@@ -63,7 +65,7 @@
           <div class="modal-body">
             <div class="row-fluid">
               <div class="span6 offset3"> 
-                <form action='Dispatcher' METHOD='POST' class='form-horizontal'>
+                <form action='' METHOD='POST' class='form-horizontal'>
                 <div class="control-group">
                   <div class="controls" style="margin-left:0;">
                     <div class="input-prepend">
@@ -81,7 +83,7 @@
               </div>
             </div>
           </div>
-          <div class="span12 pull-left"><h6>¿No estas registrado?<a href="registrar.html">Registrate</a></h6></div>
+          <div class="span12 pull-left"><h6>¿No estas registrado?<a href="registro.html">Registrate</a></h6></div>
           <div class="modal-footer">
             <button class="btn btn-primary" type="submit">Iniciar sesión</button>
                </form>
@@ -89,7 +91,7 @@
         </div>
       </div>
     </div>
-    <!-- Termina Modal ---------------------------------------------------------------------------------->
+    <!-- Termina Modal-->
 
     <div class="container-fluid">
       <center><h2>Registrate</h2></center>
