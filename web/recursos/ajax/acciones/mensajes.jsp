@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import = "com.geekon.system.SentenciasSQL" %>
+<%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>
 <%@ page import = "javax.servlet.http.HttpServletResponse" %>
 
@@ -56,18 +56,18 @@
 				  <div class="modal-body">
 					<div class="row-fluid">
 					  <div class="span6 offset3"> 
-						<form action='' METHOD='POST' class='form-horizontal'>
 						  <center><h4>Seleciona  a tu amigo:&nbsp;<h4>
-                                                    <select name="mensaje-amigo">
+                                                    <select name="mensaje-amigo" onchange="recuperaIdSelect(this.value)">
+                                                        <option>Elije un nombre</option>
                                                         <%
                                                         String nombre = "";
                                                         int userId = 1;
                                                         SentenciasSQL cerrar = new SentenciasSQL();
-                                                         SentenciasSQL sentenciasLista = new SentenciasSQL();
-                                                         ResultSet resultSetLista =null;
-                                                         SentenciasSQL sentenciasID = new SentenciasSQL();;
-                                                         ResultSet resultSetID =null;
-                                                         resultSetLista =  sentenciasLista.obtenerIdAmigos(userId);
+                                                        SentenciasSQL sentenciasLista = new SentenciasSQL();
+                                                        ResultSet resultSetLista =null;
+                                                        SentenciasSQL sentenciasID = new SentenciasSQL();;
+                                                        ResultSet resultSetID =null;
+                                                        resultSetLista =  sentenciasLista.obtenerIdAmigos(userId);
 
                                                          while(resultSetLista.next()){
                                                                int userIdTable = resultSetLista.getInt("idAmigos");
@@ -83,15 +83,15 @@
                                                          }
                                                          cerrar.closeConnection();
                                                         %>
-                                                    </select></center>
+                                                    </select>
+                                                    </center>
 						  <br>
-						  <textarea rows="4" class="span12"></textarea>
+                                                  <textarea rows="4" class="span12" onchange="recuperaMensaje(this.value)"></textarea>
 					  </div>
 					</div>
 				  </div>
 				  <div class="modal-footer">
-					<button class="btn btn-primary" type="submit">Enviar Mensaje</button>
-					   </form>
+					<button class="btn btn-primary" onclick="nombreUsuario()">Enviar Mensaje</button>
 				  </div>
 				</div>
 			  </div>
@@ -115,7 +115,7 @@
 			<!-- este es un usuario que envio mensaje anterior mente ...............................-->
 			<div class="row-fluid mostrar-conversacion" id="mensaje">
 			  <div class="span4" >
-				<img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario" onclick="ejecutarajax()">
+				<img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario" onclick="respuestaConversacion()">
 			  </div>
 			  <div class="span8 ">
 				<center><h4>Nombre de usuario </h4></center>
@@ -147,5 +147,7 @@
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
+        <script src="recursos/ajax/ajaxMensajes.js"></script>
+
   </body>
 </html>

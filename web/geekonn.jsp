@@ -149,5 +149,6 @@
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
+    <script src="recursos/ajax/ajaxMensajes.js"></script>
   </body>
 </html>
