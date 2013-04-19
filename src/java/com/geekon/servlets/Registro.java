@@ -1,23 +1,35 @@
 package com.geekon.servlets;
 import com.geekon.security.Cifrar;
-import java.io.*;
-import java.sql.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
 import com.geekon.system.*;
-import javax.servlet.http.*;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class Registro extends HttpServlet {
-    
+
+//Plantilla de servlet pensada para interacción con mySQL.
+
 	private static final long serialVersionUID = 1L;
-        SentenciasSQL sentenciasSQL = new SentenciasSQL();
+        SentenciasSQL sentenciasSQL;
         ResultSet resultSet;
         Statement statement; //java.sql.Statement
         Cifrar cifrar = new Cifrar();
 
+
 	public Registro() {
 		super();
 	}
+
 
 	public void destroy() {
 		super.destroy(); 
@@ -38,6 +50,7 @@ public class Registro extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+
 	public void doStuff(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException{
                 try{
             String nombreCompleto=request.getParameter("nombreCompleto");
@@ -56,13 +69,10 @@ public class Registro extends HttpServlet {
 		}
         }
 
-	/*Codigo Julio (Asco mil)
-         * 
-         * public void init(ServletConfig config) throws ServletException {
+        public void init(ServletConfig config) throws ServletException {
 		super.init(config);
-
 		try{
-			dataBaseHandler = new DataBaseHandler();
+			sentenciasSQL = new SentenciasSQL();
                         // Aquí se declaran cuantos DatabaseHandler objects se requieran.
 		}catch(ClassNotFoundException e){
 			System.out.println("Clase no encontrada" + e.getMessage());
@@ -73,7 +83,6 @@ public class Registro extends HttpServlet {
 		}catch(SQLException e){
 			System.out.println("SQL exception. .-." + e.getMessage());
 		}
-
-	}*/
+	}
 
 }

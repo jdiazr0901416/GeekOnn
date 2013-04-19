@@ -55,8 +55,8 @@ public class SentenciasSQL {
      public void registrarNuevoUsuario(String nombreCompleto, String correoElectronico, String nombreUsuario, String password){
 		try{
         statement=conexion.createStatement();
-	statement.execute("INSERT INTO idusuario " +  
-                "(Correo, Password, Nombre, Username) " +
+	statement.execute("INSERT INTO usuariosGeekonn " +  
+                "(correo, password, nombre, nombreUsuario) " +
                 "VALUES("
                 + "'" + correoElectronico + "',"
                 + "'" + password + "',"
@@ -66,8 +66,7 @@ public class SentenciasSQL {
         crearTablaAmigos(idUsuario);
                         System.out.print("registrado");
 		}catch(SQLException e){
-			System.out.println("SQLError on registerNewUser()");
-                        System.out.print("no registrado");
+			System.out.println("SQLError on al registrar usuario");
 		}
 	}
      
@@ -76,15 +75,14 @@ public class SentenciasSQL {
         int idUsuario=0;
         try{
             statement=conexion.createStatement();
-            resultset = statement.executeQuery("SELECT * FROM idusuario WHERE Correo='" +
-                    nombreOCorreo + "' OR Username='" + 
+            resultset = statement.executeQuery("SELECT * FROM usuariosGeekonn WHERE Correo='" +
+                    nombreOCorreo + "' OR nombreUsuario='" + 
                     nombreOCorreo + "';");
             if(resultset.next()){
-                 idUsuario = resultset.getInt("IdUsuario");
+                 idUsuario = resultset.getInt("idUsuario");
             }    
         }catch(SQLException e){
-			System.out.println("SQLError on registerNewUser()");
-                        System.out.print("no registrado");
+			System.out.println("SQLError on devolveridusuario");
        }    
         return idUsuario;
     }
