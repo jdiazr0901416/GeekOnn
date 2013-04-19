@@ -1,4 +1,4 @@
-package com.geekon.servlets;
+package com.geekonn.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
