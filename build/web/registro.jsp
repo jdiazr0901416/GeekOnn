@@ -16,14 +16,18 @@
 
     <!-- Le styles -->
     <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="recursos/bootstrap/docs/assets/bootstrap-responsive.css" rel="stylesheet">
+    <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/registro-css.css" rel="stylesheet">
+    <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
+    <script src="recursos/ajax/acciones/registro/ajaxRegistro.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="recursos/bootstrap/docs/assets/js/html5shiv.js"></script>
     <![endif]-->
-
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="recursos//bootstrap/docs/assets/ico/apple-touch-icon-114-precomposed.png">
@@ -31,7 +35,6 @@
                     <link rel="apple-touch-icon-precomposed" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
-
   <body>
      <!-- navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -97,13 +100,9 @@
       <center><h2>Registrate</h2></center>
       <hr>
       <div class="row-fluid">
-        <div class="span5 offset1">
-          <center><h3>¿sabes que tiene de nuevo GeekOn que otras redes sociales?<br></h3></center>
-          <p align=justify>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus dui sed augue lacinia consequat. Suspendisse est odio, eleifend eget commodo vitae, euismod eget sem. Suspendisse enim nibh, eleifend ut sagittis eget, vestibulum sed risus. Proin id rutrum nisl. Vestibulum nec ipsum eu libero congue tincidunt vitae vitae massa. Nam vulputate eros consequat urna semper ut gravida felis posuere. Nullam at sem est, et pharetra orci. Nam molestie suscipit tellus in ultricies. Donec quis lacus nunc, euismod accumsan lectus. Proin blandit viverra posuere. Maecenas scelerisque, lacus luctus fringilla bibendum, ligula diam placerat est, non aliquam odio nibh eu purus. Integer cursus suscipit ipsum, eget tincidunt erat elementum blandit. Sed ornare erat porta leo luctus non laoreet metus auctor. Cras nisi felis, mattis in pellentesque in, dignissim sit amet urna.</p>
-        </div>
-        <div class="span6">
+        <div class="span7">
           <center><h3>Comenzemos<br></h3></center>
-          <p>Primero necesitamos tus datos:</p><br>
+          <h4>Primero necesitamos tus datos</h4><br>
           <!-- -----------------------FORMULARIO COMIENZO--------------------- ------------------ -->
           <form method="POST" action="Registro">
           <!--------nombreCompleto----------->
@@ -142,13 +141,21 @@
                 <h4>Nombre de usuario:</h4>
               </div>
               <div class="span6">
-                <div class="control-group" id="div-control-space">
-                    <div class="controls" style="margin-left:0;">
-                      <div class="input-prepend">
-                          <span class="add-on"><i class="icon-user"></i></span><input class="input-medium" type="text" id="nombreUsuario" name="nombreUsuario" tabindex="1" onkeyup="existe(this.value)">
-                     </div>
-                    </div>
-                  </div>
+               <!-- ***************************************************************** -->
+               <div class="row-fluid">
+                   <div class="span6">
+                       <div class="control-group" id="div-control-space">
+                            <div class="controls" style="margin-left:0;">
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span><input class="span12" type="text"  name="nombreUsuario" tabindex="1" onkeyup="existe(this.value)">
+                            </div>
+                            </div>
+                      </div>
+                   </div>
+                   <div class="span6" id="respuestaNU">
+                   </div>    
+               </div>
+               <!-- ***************************************************************** -->
               </div>
             </div>
             <!-- --------------------------------password------------ ------------------ -->
@@ -186,6 +193,10 @@
         <center><button type="submit" class="btn btn-success">Registrarme</button></center>
           </form>
         </div>
+        <div class="span4 offset1">
+          <center><h3>¿sabes que tiene de nuevo GeekOn que otras redes sociales?<br></h3></center>
+          <p align=justify>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus dui sed augue lacinia consequat. Suspendisse est odio, eleifend eget commodo vitae, euismod eget sem. Suspendisse enim nibh, eleifend ut sagittis eget, vestibulum sed risus. Proin id rutrum nisl. Vestibulum nec ipsum eu libero congue tincidunt vitae vitae massa. Nam vulputate eros consequat urna semper ut gravida felis posuere. Nullam at sem est, et pharetra orci. Nam molestie suscipit tellus in ultricies. Donec quis lacus nunc, euismod accumsan lectus. Proin blandit viverra posuere. Maecenas scelerisque, lacus luctus fringilla bibendum, ligula diam placerat est, non aliquam odio nibh eu purus. Integer cursus suscipit ipsum, eget tincidunt erat elementum blandit. Sed ornare erat porta leo luctus non laoreet metus auctor. Cras nisi felis, mattis in pellentesque in, dignissim sit amet urna.</p>
+        </div>
       </div><!--/row-->
       <!-- navbar bootom ------------------------------------------------------------------------------- -->
    <div class="navbar navbar-inverse navbar-fixed-bottom">
@@ -220,19 +231,19 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="resources/bootstrap/docs/assets/js/jquery.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-transition.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-alert.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-modal.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-dropdown.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-scrollspy.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-tab.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-tooltip.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-popover.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-button.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
-    <script src="resources/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
-    <script src="recursos/ajax/acciones/registro/ajaxRegistro.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-transition.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-alert.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-modal.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-dropdown.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-tab.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-tooltip.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-popover.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-button.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
+    
   </body>
 </html>

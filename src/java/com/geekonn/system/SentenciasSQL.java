@@ -12,7 +12,7 @@ public class SentenciasSQL {
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
-            conexionLocalJulioUbuntu();
+            conexionLocalJulio();
     }
 
     public void connect() throws SQLException {
@@ -34,7 +34,7 @@ public class SentenciasSQL {
             System.out.println("\n Succes; connection established.");		
     }
     public void conexionLocalJulio() throws SQLException {
-            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
+            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3307/geekonn";
             String mysqlUser ="jdiazr0901416";
             String mysqlPassword="0421**";
 

@@ -14,9 +14,14 @@
     System.out.println(nombreUsuario);
     if(respuestaExiste==1){
         System.out.println("existe");
-        out.println("lo sentimos ya existe este usuario :(");
+        out.println("<div class='row-fluid'>");
+                           out.println("<div class='span12'>");
+                               out.println("<p class='text-center'>lo sentimos ya existe este usuario</p>");
+                           out.println("</div>");
+                       out.println("</div>");
     }else{
         System.out.println("no existe");
         out.println("este usuario esta disponible ^^");
     }
 %>
+                       
