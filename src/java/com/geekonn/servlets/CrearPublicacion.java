@@ -1,21 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.geekon.servlets;
+package com.geekonn.servlets;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import com.geekon.system.*;
-/**
- *
- * @author Alumnos
- */
-public class CrearPublicacion extends HttpServlet {
-        SentenciasSQL sentenciasSQL = new SentenciasSQL();
+
+public class CrearPublicacion{
+        /*SentenciasSQL sentenciasSQL = new SentenciasSQL();
         public void destroy() {
 		super.destroy(); 
 	}
@@ -48,5 +35,5 @@ public class CrearPublicacion extends HttpServlet {
             String descripcionPublicacion = request.getParameter("descripcionPublicacion");
             sentenciasSQL.crearPublicacion(idUsuario, nombrePublicacion, descripcionPublicacion);
                 response.sendRedirect("./geekonn-personal.jsp");
-        }
+        }*/
 }

@@ -1,23 +1,20 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.geekon.servlets;
 
-import com.geekon.system.*;
+package com.geekonn.servlets;
+
+import com.geekonn.system.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import com.geekon.security.*;
+import com.geekonn.security.*;
 
 /**
  *
  * @author Alumnos
  */
 public class InicioSesion extends HttpServlet {
-    SentenciasSQL sentenciasSQL = new SentenciasSQL();
+    SentenciasSQL sentenciasSQL;
     Cifrar nuevoCifado = new Cifrar();
 
    public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -45,9 +42,12 @@ public class InicioSesion extends HttpServlet {
                     boolean boleano = sentenciasSQL.inicioSesion(correoOUsuario, password);
                     if(boleano){
                             int idUsuario = sentenciasSQL.devolverIDUsuario(correoOUsuario);
-                            HttpSession sesionOk = request.getSession(true);
-                            sesionOk.setAttribute("correoORusuario", idUsuario);
-                            response.sendRedirect("./geekonn-personal.jsp");
+                            /**************************************/
+                            /**************************************/
+                            /******Aqui se Crean las Sesiones******/
+                            /**************************************/
+                            /**************************************/
+                            response.sendRedirect("./geekonn.jsp");
                     }else{
                        request.setAttribute("error","Nombre o Password Incorrectos");
                        request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -57,5 +57,20 @@ public class InicioSesion extends HttpServlet {
 			System.out.println("SQL exception. .-." + e.getMessage());
 		}
         }
+        public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		try{
+			sentenciasSQL = new SentenciasSQL();
+                        // Aquí se declaran cuantos DatabaseHandler objects se requieran.
+		}catch(ClassNotFoundException e){
+			System.out.println("Clase no encontrada" + e.getMessage());
+		}catch(InstantiationException e){
+			System.out.println("Objeto no creado" + e.getMessage());
+		}catch(IllegalAccessException e){
+			System.out.println("Acceso ilegal" + e.getMessage());
+		}catch(SQLException e){
+			System.out.println("SQL exception. .-." + e.getMessage());
+		}
+	}
 
 }

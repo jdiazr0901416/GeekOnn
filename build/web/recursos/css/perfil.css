@@ -1,0 +1,130 @@
+/*contenido perfil-----------------------------------*/
+#color-tabs{
+	color: black;
+}
+#yo{
+	background-color: white;
+	border-left: 2px solid;
+	border-right: 2px solid;
+	border-color: rgb(77,191,217);
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius:5px 5px 5px 5px;
+	-webkit-border-radius:5px 5px 5px 5px;
+}
+/*lado izquierdo-----------------*/
+#informacion-basica{
+	border-left:2px solid;
+	border-color: yellow;
+	border-radius: 0px 10px 10px 0px;
+	-moz-border-radius:0px 10px 10px 0px;
+	-webkit-border-radius:0px 10px 10px 0px;
+	background-color: white;
+}
+#informacion-basica:hover{
+	border-left:2px solid;
+	border-color: yellow;
+	border-radius: 0px 10px 10px 0px;
+	-moz-border-radius:0px 10px 10px 0px;
+	-webkit-border-radius:0px 10px 10px 0px;
+	box-shadow: 1px 1px 1px #888888;
+	-moz-box-shadow: 1px 1px 1px #888888; 
+	-webkit-box-shadow: 1px 1px 1px #888888; 
+	background-color: white;
+}
+#contacto{
+	border-left:3px solid;
+	border-color: rgb(140,196,116);
+	border-radius: 0px 10px 10px 0px;
+	-moz-border-radius:0px 10px 10px 0px;
+	-webkit-border-radius:0px 10px 10px 0px;
+	background-color: white;
+	margin-top: 10px;
+	margin-left: -1px;
+}
+#contacto:hover{
+	border-left:3px solid;
+	border-color: rgb(140,196,116);
+	border-radius: 0px 10px 10px 0px;
+	-moz-border-radius:0px 10px 10px 0px;
+	-webkit-border-radius:0px 10px 10px 0px;
+	box-shadow: 1px 1px 1px #888888;
+	-moz-box-shadow: 1px 1px 1px #888888; 
+	-webkit-box-shadow: 1px 1px 1px #888888; 
+	background-color: white;
+	margin-top: 10px;
+	margin-left: -1px;
+}
+#lado-izquierdo{
+	margin-top: 10px;
+}
+/*lado izquierdo-----------------*/
+/*lado derecho-----------------*/
+#mi-experiencia{
+	border-right:2px solid;
+	border-color: rgb(188,86,121);
+	border-radius: 10px 0px 0px 10px;
+	-moz-border-radius:10px 0px 0px 10px;
+	-webkit-border-radius:10px 0px 0px 10px;
+	background-color: white;
+}
+#mi-experiencia:hover{
+	border-right:2px solid;
+	border-color: rgb(188,86,121);
+	border-radius: 10px 0px 0px 10px;
+	-moz-border-radius:10px 0px 0px 10px;
+	-webkit-border-radius:10px 0px 0px 10px;
+	box-shadow: 1px 1px 1px #888888;
+	-moz-box-shadow: 1px 1px 1px #888888; 
+	-webkit-box-shadow: 1px 1px 1px #888888;  
+	background-color: white;
+}
+#filosofia{
+	border-right:3px solid;
+	border-color: rgb(228,111,97);
+	border-radius: 10px 0px 0px 10px;
+	-moz-border-radius:10px 0px 0px 10px;
+	-webkit-border-radius:10px 0px 0px 10px;
+	background-color: white;
+	margin-top: 10px;
+	margin-left: 1px;
+}
+#filosofia:hover{
+	border-right:3px solid;
+	border-color: rgb(228,111,97);
+	border-radius: 10px 0px 0px 10px;
+	-moz-border-radius:10px 0px 0px 10px;
+	-webkit-border-radius:10px 0px 0px 10px;
+	box-shadow: 1px 1px 1px #888888;
+	-moz-box-shadow: 1px 1px 1px #888888; 
+	-webkit-box-shadow: 1px 1px 1px #888888;  
+	background-color: white;
+	margin-top: 10px;
+	margin-left: 1px;
+}
+#lado-derecho{
+	margin-top: 10px;
+}
+#contenedor-principal{
+	margin-top: 52px;
+	margin-bottom: 52px;
+}
+/*lado derecho-----------------*/
+#portada{
+	background-color: gray;
+	min-height: 100px;
+	max-height: 100px;
+}
+#portada-imagen-usuario{
+	min-height: 50px;
+	background-color: rgb(220,220,220);
+	max-width: 50px;
+	margin-top: 50px;
+}
+	#tamanio-imagen-portada{
+		width: 50px;
+		height: 50px;
+	}
+#portada-nombre-usuario{
+	margin-top: 50px;
+}
+/*contenido perfil-----------------------------------*/

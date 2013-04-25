@@ -1,17 +1,9 @@
-package com.geekon.servlets;
+package com.geekonn.servlets;
 
-import com.geekon.security.Cifrar;
-import com.geekon.system.SentenciasSQL;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-public class EnviarMensaje extends HttpServlet {
-    SentenciasSQL sentenciasSQL = new SentenciasSQL();
+
+public class EnviarMensaje{
+    /*SentenciasSQL sentenciasSQL = new SentenciasSQL();
 
    public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		try {
@@ -35,5 +27,5 @@ public class EnviarMensaje extends HttpServlet {
             int idUsuario1 = Integer.parseInt(cadenaIdUsuario1);
             int idUsuario2 = Integer.parseInt(cadenaIdUsuario2);
             sentenciasSQL.conversacion(idUsuario1, idUsuario2, mensajeEnviado);
-        }
+        }*/
 }

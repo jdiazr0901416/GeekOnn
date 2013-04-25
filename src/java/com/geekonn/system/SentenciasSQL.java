@@ -1,4 +1,4 @@
-package com.geekon.system;
+package com.geekonn.system;
 
 import java.io.PrintWriter;
 import java.sql.*;
@@ -12,7 +12,7 @@ public class SentenciasSQL {
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
-            conexionLocalJulio();
+            conexionLocalJulioUbuntu();
     }
 
     public void connect() throws SQLException {
@@ -34,8 +34,17 @@ public class SentenciasSQL {
             System.out.println("\n Succes; connection established.");		
     }
     public void conexionLocalJulio() throws SQLException {
-            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3307/geekonn";
+            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
             String mysqlUser ="jdiazr0901416";
+            String mysqlPassword="0421**";
+
+            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            System.out.println("\n Succes; connection established.");		
+    }
+    public void conexionLocalJulioUbuntu() throws SQLException {
+            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
+            String mysqlUser ="root";
             String mysqlPassword="0421**";
 
             conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
@@ -91,16 +100,16 @@ public class SentenciasSQL {
     boolean boleano = false;
             try{
             statement = conexion.createStatement();
-            resultset = statement.executeQuery("SELECT * FROM idusuario WHERE Correo='" +
-                    correoOUsuario + "' OR Username='" + 
-                    correoOUsuario + "' AND Password='" + 
+            resultset = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE correo='" +
+                    correoOUsuario + "' OR nombreUsuario='" + 
+                    correoOUsuario + "' AND password='" + 
                     password + "';");
             if(resultset.next()){
                 boleano = true;
             }
            
             }catch(SQLException e){
-                        System.out.print("Error");
+                        System.out.print("Error en inicioSesion");
             }
     return boleano;
     }
@@ -167,9 +176,7 @@ public class SentenciasSQL {
     }
 /***********************************************************************************************/    
 /***********************************MENSAJES****************************************************/
-/***********************************************************************************************/
-/********************************Comprobar la Tabla*************************************/    
-    public void conversacion(int idUsuario1, int idUsuario2, String mensajeEnviado){
+     public void conversacion(int idUsuario1, int idUsuario2, String mensajeEnviado){
        try{
         statement = conexion.createStatement();
         String nombreTabla;
@@ -178,7 +185,7 @@ public class SentenciasSQL {
         }else{
             nombreTabla = "conversacion" + idUsuario2 + "para" + idUsuario1;
         }  
-            resultset = statement.executeQuery("SELECT * FROM tablamensajes WHERE Tablas = '" + nombreTabla + "';");
+            resultset = statement.executeQuery("SELECT * FROM tablamensajes WHERE tablas = '" + nombreTabla + "';");
             if(resultset.next()){
                 anyadirMensaje(nombreTabla, mensajeEnviado);
             }else{
@@ -196,7 +203,7 @@ public class SentenciasSQL {
             "(idMensaje INTEGER NOT NULL AUTO_INCREMENT, ").concat(
             "Mensaje VARCHAR(500), primary key(idMensaje))");
             statement.executeUpdate(CrearTablaSentenciaSQL);
-            String InsertarTablaMensajesSentenciaSQL = "INSERT INTO tablamensajes(Tablas)".concat(
+            String InsertarTablaMensajesSentenciaSQL = "INSERT INTO tablamensajes(tablas)".concat(
                    " VALUES('").concat(nombreTabla).concat("')");
             statement.execute(InsertarTablaMensajesSentenciaSQL);
             anyadirMensaje(nombreTabla, mensajeEnviado);
@@ -214,7 +221,8 @@ public class SentenciasSQL {
             System.out.println("Error en anyadirMensaje");
         }
     }
-    public ResultSet obtenerIdAmigos(int userId){
+/***********************************************************************************************/
+public ResultSet obtenerIdAmigos(int userId){
 		ResultSet resultSet = null;
 		String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
                 System.out.println(friendsTableName);
@@ -228,11 +236,23 @@ public class SentenciasSQL {
     public ResultSet obtenerInfoUsuario(int userId){
             ResultSet resultSet = null;
             try{
-            resultSet = statement.executeQuery("SELECT * FROM usuariosGeekOnn WHERE idUsuario = " + userId);
+            resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE idUsuario = " + userId);
             }catch(SQLException e){
             System.out.println("SQLError on getUserInfo");
             }
             return resultSet;
             }
+    public int revisar(String nombreUsuario) throws SQLException{   
+    ResultSet resultSet = null;
+    try{
+    resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE nombreUsuario = '" + nombreUsuario + "'");
+    }catch(SQLException e){
+    System.out.println("SQLError on getUserInfo");
+    }
+    if(resultSet.isBeforeFirst()){
+      return 1;
+    }else{
+      return 0;
+    }   
+  }
 }
-/* obtener ids de los amigos-------------------------------*/

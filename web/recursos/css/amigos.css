@@ -1,0 +1,24 @@
+/* amigos */
+#imagen-del-usuario{
+	width: 150px;
+	height: 150px;
+        margin-bottom: 5px;
+}
+#amigo{
+    margin-top: 20px;
+}
+#configuracion-amigos{
+	margin-top: 20px;
+}
+#contenedor-configuracion-principal{
+	margin-top: 20px;
+}
+#contenedor-configuracion{
+	background-color: white;
+	border: 1px solid;
+	border-color: rgb(39,40,34);
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius:5px 5px 5px 5px;
+	-webkit-border-radius:5px 5px 5px 5px;
+}
+/* / amigos */
