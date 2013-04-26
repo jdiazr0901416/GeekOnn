@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import = "com.geekonn.system.SentenciasSQL" %>
+<%@ page import = "java.sql.ResultSet" %>
+<%@ page import = "javax.servlet.http.HttpServletResponse" %>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -20,6 +23,7 @@
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/amigos.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
+    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -57,6 +61,110 @@
             </div>
             <div class="span3" id="contenedor-configuracion-principal">
                 <div class="row-fluid">
+                    <!-- Modal bloqueo -------------------------------------------------------------------------------------->
+			<div id="myModalBloqueo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="row-fluid">
+				<div class="span12" id="color-modal"> 
+				  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel">Bloquear Amigo</h3>
+				  </div>
+				  <div class="modal-body">
+					<div class="row-fluid">
+					  <div class="span6 offset3"> 
+						  <center><h4>Seleciona  a tu amigo:&nbsp;<h4>
+                                                    <select name="mensaje-amigo" onchange="recuperaIdSelect(this.value)">
+                                                        <option>Elije un nombre</option>
+                                                        <%
+                                                        int userId=1;
+                                                        String nombre = "";
+                                                        SentenciasSQL cerrar = new SentenciasSQL();
+                                                        SentenciasSQL sentenciasLista = new SentenciasSQL();
+                                                        ResultSet resultSetLista =null;
+                                                        SentenciasSQL sentenciasID = new SentenciasSQL();;
+                                                        ResultSet resultSetID =null;
+                                                        resultSetLista =  sentenciasLista.obtenerIdAmigos(userId);
+
+                                                         while(resultSetLista.next()){
+                                                               int userIdTable = resultSetLista.getInt("idAmigos");
+                                                               System.out.println(userIdTable);
+                                                               resultSetID= sentenciasID.obtenerInfoUsuario(userIdTable);
+                                                                    while(resultSetID.next()){
+
+                                                                        if(resultSetID.first()){
+                                                                        nombre = resultSetID.getString("nombreUsuario");
+                                                                    }
+                                                                    out.println("<option>"+resultSetID.getString("nombreUsuario")+"</option>");
+                                                                    }
+                                                         }
+                                                         cerrar.closeConnection();
+                                                        %>
+                                                    </select>
+                                                    </center>
+						  <br>
+ 
+					  </div>
+					</div>
+				  </div>
+				  <div class="modal-footer">
+					<button class="btn btn-primary" onclick="bloquearUsuario()">Bloquear Amigo</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<!-- Termina Modal ---------------------------------------------------------------------------------->
+                        <!-- Modal desbloqueo -------------------------------------------------------------------------------------->
+			<div id="myModalDesbloqueo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="row-fluid">
+				<div class="span12" id="color-modal"> 
+				  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel">Desbloquear Amigo</h3>
+				  </div>
+				  <div class="modal-body">
+					<div class="row-fluid">
+					  <div class="span6 offset3"> 
+						  <center><h4>Seleciona  a tu amigo:&nbsp;<h4>
+                                                    <select name="mensaje-amigo" onchange="recuperaIdSelect2(this.value)">
+                                                        <option>Elije un nombre</option>
+                                                        <%
+                                                        userId=1;
+                                                        nombre = "";
+                                                        SentenciasSQL cerrar2 = new SentenciasSQL();
+                                                        SentenciasSQL sentenciasLista2 = new SentenciasSQL();
+                                                        ResultSet resultSetLista2 =null;
+                                                        SentenciasSQL sentenciasID2 = new SentenciasSQL();;
+                                                        ResultSet resultSetID2 =null;
+                                                        resultSetLista2 =  sentenciasLista2.obtenerIdAmigosBloqueados(userId);
+
+                                                         while(resultSetLista2.next()){
+                                                               int userIdTable = resultSetLista2.getInt("idAmigos");
+                                                               System.out.println(userIdTable);
+                                                               resultSetID2= sentenciasID2.obtenerInfoUsuario(userIdTable);
+                                                                    while(resultSetID2.next()){
+
+                                                                        if(resultSetID2.first()){
+                                                                        nombre = resultSetID2.getString("nombreUsuario");
+                                                                    }
+                                                                    out.println("<option>"+resultSetID2.getString("nombreUsuario")+"</option>");
+                                                                    }
+                                                         }
+                                                         cerrar2.closeConnection();
+                                                        %>
+                                                    </select>
+                                                    </center>
+						  <br>
+ 
+					  </div>
+					</div>
+				  </div>
+				  <div class="modal-footer">
+					<button class="btn btn-primary" onclick="desbloquearUsuario()">Desbloquear Amigo</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<!-- Termina Modal ---------------------------------------------------------------------------------->
                       <div class="span12">
                             <div class="row-fluid">
                                 <div class="row-fluid meta-black">
@@ -71,7 +179,7 @@
                                                <center><i class="icon-lock icon-4x icon-derecha"></i></center>
                                             </div>
                                             <div class="span9">
-                                                <p class="text-center"><h4>Bloquear a esta persona</h4></p>
+                                                <p class="text-center"><h4><a href="#myModalBloqueo" data-toggle="modal" data-target="#myModalBloqueo" id="a-iniciar-sesion">Bloquear a esta persona</a></h4></p>
                                             </div>
                                         </div>
                                         <div class="row-fluid">
@@ -79,7 +187,7 @@
                                                 <center><i class="icon-unlock icon-4x icon-derecha"></i></center>
                                             </div>
                                             <div class="span9">
-                                                <p class="text-center"><h4>Desbloquear a esta persona</h4></p>
+                                                <p class="text-center"><h4><a href="#myModalBloqueo" data-toggle="modal" data-target="#myModalDesbloqueo" id="a-iniciar-sesion">Desbloquear a esta persona</a></h4></p>
                                             </div>
                                         </div>
                                     </div>
@@ -117,5 +225,23 @@
             </div>
         </div>
     </div>
+     <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="recursos/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-transition.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-alert.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-modal.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-dropdown.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-tab.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-tooltip.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-popover.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-button.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
+    <script src="recursos/ajax/ajax.js"></script>
+    
     </body>
 </html>

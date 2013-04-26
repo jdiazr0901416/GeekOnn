@@ -12,7 +12,7 @@ public class SentenciasSQL {
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
-            conexionLocalJulioUbuntu();
+            conexionLocalJulio();
     }
 
     public void connect() throws SQLException {
@@ -222,16 +222,27 @@ public class SentenciasSQL {
         }
     }
 /***********************************************************************************************/
-public ResultSet obtenerIdAmigos(int userId){
-		ResultSet resultSet = null;
-		String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
-                System.out.println(friendsTableName);
-		try{
-			resultSet = statement.executeQuery("SELECT * FROM "+ friendsTableName +" WHERE bloqueado = " + 0);
-		}catch(SQLException e){
-			System.out.println("SQLError al obtener ids ");
-		}
-		return resultSet;
+    public ResultSet obtenerIdAmigos(int userId){
+                    ResultSet resultSet = null;
+                    String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
+                    System.out.println(friendsTableName);
+                    try{
+                            resultSet = statement.executeQuery("SELECT * FROM "+ friendsTableName +" WHERE bloqueado = " + 0);
+                    }catch(SQLException e){
+                            System.out.println("SQLError al obtener ids ");
+                    }
+                    return resultSet;
+    }
+    public ResultSet obtenerIdAmigosBloqueados(int userId){
+
+                    ResultSet resultSet = null;
+                    String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
+                    try{
+                            resultSet = statement.executeQuery("SELECT * FROM "+ friendsTableName +" WHERE bloqueado = " + 1);
+                    }catch(SQLException e){
+                            System.out.println("SQLError on getFriendsIDs bloqueados");
+                    }
+                    return resultSet;
     }
     public ResultSet obtenerInfoUsuario(int userId){
             ResultSet resultSet = null;
@@ -241,18 +252,40 @@ public ResultSet obtenerIdAmigos(int userId){
             System.out.println("SQLError on getUserInfo");
             }
             return resultSet;
-            }
-    public int revisar(String nombreUsuario) throws SQLException{   
-    ResultSet resultSet = null;
-    try{
-    resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE nombreUsuario = '" + nombreUsuario + "'");
-    }catch(SQLException e){
-    System.out.println("SQLError on getUserInfo");
     }
-    if(resultSet.isBeforeFirst()){
-      return 1;
-    }else{
-      return 0;
-    }   
+    public int revisar(String nombreUsuario) throws SQLException{   
+        ResultSet resultSet = null;
+        try{
+            resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE nombreUsuario = '" + nombreUsuario + "'");
+        }catch(SQLException e){
+            System.out.println("SQLError on getUserInfo");
+        }
+        if(resultSet.isBeforeFirst()){
+             return 1;
+        }else{
+             return 0;
+        }   
   }
+    public void blockAFriend(int userId,int friendId){
+            String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
+
+            try{
+                statement.execute("UPDATE " + friendsTableName + " SET bloqueado = 1" + 
+                            " WHERE idAmigos = " + friendId);
+
+            }catch(SQLException e){
+                    System.out.println("SQLError on blockAFriend");
+            }
+    }
+
+    public void unblockAFriend(int userId,int friendId){
+            String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
+            try{
+                statement.execute("UPDATE " + friendsTableName + " SET bloqueado = 0" + 
+                            " WHERE idAmigos = " + friendId);
+
+            }catch(SQLException e){
+                    System.out.println("SQLError on unblockAFriend");
+            }
+    }
 }

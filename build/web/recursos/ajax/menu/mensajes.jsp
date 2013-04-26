@@ -97,10 +97,7 @@
 			  </div>
 			</div>
 			<!-- Termina Modal ---------------------------------------------------------------------------------->
-                        <!-- para recuperar de quien es cada conversacion en la secion de cada usuario se encontrara su id
-                        por ejemplo id=1 luego al imprimir cada conversacion reciente se mandara como parametro al metodo
-                        respuestaConversacion(el nombre de usuario o mas facil su id)asi cuando el metodo reciba en el ajax explico que hacer
-			<!-- este es un usuarui que envio mensaje anterior mente ...............................-->
+                        
 			<div class="row-fluid mostrar-conversacion" id="mensaje">
 			  <div class="span4" >
 				<img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario" onclick="respuestaConversacion()">
