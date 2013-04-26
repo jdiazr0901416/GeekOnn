@@ -1,8 +1,41 @@
-/* amigos */
-#imagen-del-usuario{
-	width: 150px;
-	height: 150px;
+/* Large desktop */
+@media (min-width: 1200px) {
+    #imagen-del-usuario{
+        width: 100%;
+	height: 100%;
         margin-bottom: 5px;
+    }
+}
+/* Portrait tablet to landscape and desktop */
+@media (max-width: 1190px) {
+    #imagen-del-usuario{
+        width: 80%;
+	height: 80%;
+        margin-bottom: 5px;
+    }
+}
+@media (max-width: 900px) {
+    #imagen-del-usuario{
+        width: 60%;
+	height: 60%;
+        margin-bottom: 5px;
+    }
+    .botones-bloqueo{
+        zoom:80%;
+    }
+}
+@media (max-width: 700px) {
+    #imagen-del-usuario{
+        width: 50%;
+	height: 50%;
+        margin-bottom: 5px;
+    }
+    .botones-bloqueo{
+        zoom:65%;
+    }
+}
+.icon-derecha{
+    margin-left: 7px;
 }
 #amigo{
     margin-top: 20px;
@@ -20,5 +53,45 @@
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius:5px 5px 5px 5px;
 	-webkit-border-radius:5px 5px 5px 5px;
+}
+#contenedor-configuracion:hover{
+	background-color: white;
+	border: 1px solid;
+	border-color: rgb(2,139,238);
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius:5px 5px 5px 5px;
+	-webkit-border-radius:5px 5px 5px 5px;
+        zoom:110%
+}
+.meta-black{
+	background-color: rgb(39,40,34);
+	border-radius: 10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	color: white;
+	padding-right: 6px;
+}
+#bloqueo{	
+	border: 3px solid;
+	border-color: black;
+	background-color: white;
+}
+#bloqueo:hover{	
+	border: 3px solid;
+	border-color: red;
+	background-color: white;
+}
+.busqueda-amigo{
+    margin-top: 15px;
+}
+#busqueda{
+    border: 3px solid;
+    border-color: black;
+    background-color: white;
+}
+#busqueda:hover{
+    border: 3px solid;
+    border-color: rgb(47,150,180);
+    background-color: white;
 }
 /* / amigos */

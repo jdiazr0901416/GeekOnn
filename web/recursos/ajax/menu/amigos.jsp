@@ -47,8 +47,8 @@
                             <center><img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-del-usuario"></center>
                         </div>
                         <div class="span12">
-                            <button type="button" class="btn btn-inverse pull-left"><i class="icon-ban-circle icon-white icon-1x"></i></button>
-                            <button type="button" class="btn btn-danger pull-right"><i class="icon-minus icon-white icon-1x " ></i></button>
+                            <button type="button" class="btn btn-inverse pull-left botones-bloqueo"><i class="icon-ban-circle icon-white icon-1x"></i></button>
+                            <button type="button" class="btn btn-danger pull-right botones-bloqueo"><i class="icon-minus icon-white icon-1x " ></i></button>
                         </div>
                     </div>
                     <!-- /este es un amigo -->
@@ -57,40 +57,58 @@
             </div>
             <div class="span3" id="contenedor-configuracion-principal">
                 <div class="row-fluid">
-                     <div class="row-fluid" id="contenedor-configuracion">
-                        <center><h3>Configuración</h3></center>
-                        <hr>
-                        <div class="row-fluid">
-                            <div class="row-fluid" >
-                                <div class="span3">
-                                    <center><i class="icon-lock  icon-4x"></i></center>
-                                </div>
-                                <div class="span9" id="configuracion-amigos">
-                                    <p><b>Estoy harto de alguien!</b></p>
-                                </div>
-                            </div>
+                      <div class="span12">
                             <div class="row-fluid">
-                                <div class="span3">
-                                    <i class="icon-unlock  pull-right icon-3x"></i>
+                                <div class="row-fluid meta-black">
+                                    <div class="span12">
+                                        <p class="text-center"><b>Configuración</b></p>
+                                    </div>
                                 </div>
-                                <div class="span9">
-                                    <p><b>No puedo vivir sin esa persona!</b></p>
+                                <div class="row-fluid" id="bloqueo">
+                                    <div class="span12">
+                                        <div class="row-fluid">
+                                            <div class="span3">
+                                               <center><i class="icon-lock icon-4x icon-derecha"></i></center>
+                                            </div>
+                                            <div class="span9">
+                                                <p class="text-center"><h4>Bloquear a esta persona</h4></p>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid">
+                                            <div class="span3">
+                                                <center><i class="icon-unlock icon-4x icon-derecha"></i></center>
+                                            </div>
+                                            <div class="span9">
+                                                <p class="text-center"><h4>Desbloquear a esta persona</h4></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <br>
-                    <div class="row-fluid" id="contenedor-configuracion">
-                        <center><h3>Buscar a un amigo</h3></center>
-                        <hr>
-                        <div class="row-fluid">
-                            <form class="form-search">
-                                <div class="span12">
-                                      <input type="text" class="span12">
-                                      <br>
+                     </div>
+                    <div class="row-fluid busqueda-amigo">
+                          <div class="span12">
+                                <div class="row-fluid">
+                                    <div class="row-fluid meta-black">
+                                        <div class="span12">
+                                            <p class="text-center"><b>Buscar un amigo</b></p>
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid" id="busqueda">
+                                        <div class="span12 busqueda-amigo" >
+                                            <center><div class="control-group" id="div-control-space">
+                                                <div class="controls" style="margin-left:0;">
+                                                  <div class="input-prepend">
+                                                      <span class="add-on"><i class="icon-user"></i></span><input  class="input-large" type="text" tabindex="1">
+                                                  </div>
+                                                </div>
+                                            </div></center>
+                                        </div>
+                                        <center><button type="button" class="btn btn-info">Buscar</button></center>
+                                    </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
                     </div>
                     <div class="row-fluid" id="Encontrado">
                         

@@ -13,15 +13,15 @@
     int respuestaExiste = existe.revisar(nombreUsuario);
     System.out.println(nombreUsuario);
     if(respuestaExiste==1){
-        System.out.println("existe");
-        out.println("<div class='row-fluid'>");
-                           out.println("<div class='span12'>");
-                               out.println("<p class='text-center'>lo sentimos ya existe este usuario</p>");
-                           out.println("</div>");
-                       out.println("</div>");
+        out.println("<div class='alert alert-error'>");
+        out.println("<button type='button' class='close' data-dismiss='alert'>×</button>");
+        out.println("<strong>El nombre de usuario no esta disponible &nbsp; <i class='icon-thumbs-down'></i></strong>");
+        out.println("</div>");
     }else{
-        System.out.println("no existe");
-        out.println("este usuario esta disponible ^^");
+        out.println("<div class='alert alert-success'>");
+        out.println("<button type='button' class='close' data-dismiss='alert'>×</button>");
+        out.println("<strong>El nombre de usuario esta disponible &nbsp; <i class='icon-thumbs-up'></i></strong>");
+        out.println("</div>");
     }
 %>
                        
