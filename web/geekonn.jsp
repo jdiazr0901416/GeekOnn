@@ -4,13 +4,10 @@
     Author     : Julio
 --%>
 <%--
-*
-*FALTAN SESIONES
-*
+ESTOY DECLARANDO UNA VARIABLE INT PARA QUE SE PUEDA IMPRIMIR EL VALOR DEL IDUSUARIO
+QUE HAYA INICIADO SESION CHECA COMO LO IMPRIMO EN EL TEXTO BIENVENIDO
 --%>
-<%int usr = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
-<!--<%//int idUsuario = Integer.valueOf((String)session.getAttribute("sessionIdUsuario"));%>-->
-
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -40,6 +37,9 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
+     <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
+     <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
+     <script src="recursos/ajax/acciones/conf/ajaxConfiguracion.js"></script>
   </head>
   <body>
      <!-- navbar -->
@@ -59,13 +59,14 @@
               <div class="btn-group">
                 <button  data-toggle="dropdown"><img alt='' src="recursos/imagenes/imagenesUsuario/navbar/icon-user.png"></button>
                 <ul class="dropdown-menu pull-right">
-                  <li><a href="#">Opciones</a></li>
+                  <li><a onclick="respuestaConfiguracion()">Opciones</a></li>
                   <li class="divider"></li>
-                  <li><a href="#">Cerrar Sesión</a></li>
+                  <li><a href="LogOut">Cerrar Sesión</a></li>
                 </ul>
               </div>
             </ul>
             <ul class="nav pull-right">
+              <!--AQUI MODIFIQUE PARA QUE IMPRIMIERA EL USERNAME DEL USUARIO -->  
               <li><a href="perfilUsuario.html" id="nav-imgUsuario-Nombre"><%=(String)session.getAttribute("sessionUsername")%></a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -105,7 +106,7 @@
         <div class="span9" id="principal">
             <div class="container-fluid" id="">
                 <div class="row-fluid">
-                    <h1>Bienvenido <%out.print(usr);%></h1>
+                    <h1>Bienvenido<%out.print(idUsuario);%></h1><!--AQUI TE ESTOY IMPRIMIENDO LA VARIABLE DECLARADA AL PRINCIPIO -->
                 </div>
             </div>
         </div>
@@ -156,6 +157,6 @@
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
-    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
+    
   </body>
 </html>

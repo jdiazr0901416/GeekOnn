@@ -21,7 +21,7 @@
     <!-- Le styles -->
     <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="recursos/css/geekon-personal-css.css" rel="stylesheet">
+    <link href="recursos/css/mensajes.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->

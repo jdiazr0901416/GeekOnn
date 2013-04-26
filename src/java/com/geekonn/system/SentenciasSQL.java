@@ -1,61 +1,77 @@
 package com.geekonn.system;
 
-import java.io.PrintWriter;
 import java.sql.*;
 
 public class SentenciasSQL {
-        private Connection conexion;
-	private Statement statement;
-	private ResultSet resultset;
-	
+    private Connection conexion;
+    private Statement statement;
+    private ResultSet resultset;
 
+/************************************** CODIGO PARA LAS CONEXIONES ***************************************************/    
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
-            String driver = "com.mysql.jdbc.Driver";
-            Class.forName(driver);
-            conexionLocalBatiz();
+        String driver = "com.mysql.jdbc.Driver";
+        Class.forName(driver);
+        conexionSinPass();
     }
 
     public void connect() throws SQLException {
-            String urlUsedForDatabaseConnection = "jdbc:mysql://189.134.55.105:3307/hugme";
-            String mysqlUser = "jdiazr0901416";
-            String mysqlPassword="CrYnEt1995";
-
-            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
-            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            System.out.println("\n Succes; connection established.");		
+        //Que Bonito Copy PASTE de HUGME Julio
+        String urlUsedForDatabaseConnection = "jdbc:mysql://189.134.55.105:3307/hugme";
+        String mysqlUser = "jdiazr0901416";
+        String mysqlPassword="CrYnEt1995";
+        conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+        statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        System.out.println("\n Succes; connection established.");		
     }
+    
     public void conexionLocalBatiz() throws SQLException {
-            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
-            String mysqlUser ="root";
-            String mysqlPassword="n0m3l0";
-
-            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
-            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            System.out.println("\n Succes; connection established.");		
+        String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
+        String mysqlUser ="root";
+        String mysqlPassword="n0m3l0";
+        conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+        statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        System.out.println("\n Succes; connection established.");		
     }
+    
     public void conexionLocalJulio() throws SQLException {
-            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3307/geekonn";
-            String mysqlUser ="jdiazr0901416";
-            String mysqlPassword="0421**";
-
-            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
-            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            System.out.println("\n Succes; connection established.");		
+        String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3307/geekonn";
+        String mysqlUser ="jdiazr0901416";
+        String mysqlPassword="0421**";
+        conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+        statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        System.out.println("\n Succes; connection established.");		
     }
-
+    
+    public void conexionLocalJulioUbuntu() throws SQLException {
+        String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
+        String mysqlUser ="root";
+        String mysqlPassword="0421**";
+        conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+        statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        System.out.println("\n Succes; connection established.");		
+    }
+    
+    public void conexionSinPass() throws SQLException {
+        String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
+        String mysqlUser ="root";
+        String mysqlPassword="";
+        conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+        statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        System.out.println("\n Conexion realizada");		
+    }
+    
     public void closeConnection() throws SQLException {
-            if(resultset !=null) resultset.close();
-            if(statement !=null) statement.close();
-            if(conexion !=null) conexion.close();
-
-            System.out.println("Connection closed succesfuly.");		
+        if(resultset !=null) resultset.close();
+        if(statement !=null) statement.close();
+        if(conexion !=null) conexion.close();
+        System.out.println("Conexion Cerrada Exitosamente.");		
     }
 
-/**************************Registro de Usuario*****************************************/    
+/**************************Registro de Usuario**************************************************************************/    
      public void registrarNuevoUsuario(String nombreCompleto, String correoElectronico, String nombreUsuario, String password){
 		try{
         statement=conexion.createStatement();
-	statement.execute("INSERT INTO usuariosgeekonn " +  
+	statement.execute("INSERT INTO usuariosGeekonn " +  
                 "(correo, password, nombre, nombreUsuario) " +
                 "VALUES("
                 + "'" + correoElectronico + "',"
@@ -75,7 +91,7 @@ public class SentenciasSQL {
         int idUsuario=0;
         try{
             statement=conexion.createStatement();
-            resultset = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE Correo='" +
+            resultset = statement.executeQuery("SELECT * FROM usuariosGeekonn WHERE Correo='" +
                     nombreOCorreo + "' OR nombreUsuario='" + 
                     nombreOCorreo + "';");
             if(resultset.next()){
@@ -86,37 +102,32 @@ public class SentenciasSQL {
        }    
         return idUsuario;
     }
-/***************************DEVOLVER USERNAME BY ID******************************************************/
-        public String getUsernamebyId(int idUsuario) throws SQLException{
-        
+/**************************************VER SI EL USUARIO O EMAIL Y CONTRASENA SON CORRECTOS************************************/    
+    public boolean comprobarCorreoOUsuarioYcontrasena(String correoOUsuario, String password) throws SQLException{
+        ResultSet rs = null;
+        try{
+        String sql = "SELECT * FROM usuariosgeekonn WHERE correo='" +
+                    correoOUsuario + "' OR nombreUsuario='" + 
+                    correoOUsuario + "' AND password='" + 
+                    password + "'";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        rs = ps.executeQuery();
+        return rs.next();
+        }catch(SQLException e){
+            System.out.print("Error en SentenciasSQL METODO: isAcountExist");
+        }
+        return rs.next();
+   }
+/*********************************SABIENDO EL IDUSUARIO OBTENER EL USERNAME**************************************************/    
+    public String ObtenerUsernameSabiendoElid(int idUsuario) throws SQLException{  
         String sql = "SELECT * FROM usuariosgeekonn WHERE idusuario='"+idUsuario+"'";
         PreparedStatement ps = conexion.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
-       
         if(rs.next()){
             return rs.getString("nombreUsuario");
         }
-       
         return null;
-    }
-/************************Iniciar Sesion de Usuario******************************************************************/    
-    public boolean inicioSesion(String correoOUsuario, String password){
-    boolean boleano = false;
-            try{
-            statement = conexion.createStatement();
-            resultset = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE correo='" +
-                    correoOUsuario + "' OR nombreUsuario='" + 
-                    correoOUsuario + "' AND password='" + 
-                    password + "';");
-            if(resultset.next()){
-                boleano = true;
-            }
-           
-            }catch(SQLException e){
-                        System.out.print("Error en inicioSesion");
-            }
-    return boleano;
-    }
+    }    
 /**************************Devolver Informacion de Usuario************************************************/
     public ResultSet devolverInformacionUsuario(int idUsuario){
          try{
@@ -240,22 +251,23 @@ public ResultSet obtenerIdAmigos(int userId){
     public ResultSet obtenerInfoUsuario(int userId){
             ResultSet resultSet = null;
             try{
-            resultSet = statement.executeQuery("SELECT * FROM usuariosgeekOnn WHERE idUsuario = " + userId);
+            resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE idUsuario = " + userId);
             }catch(SQLException e){
             System.out.println("SQLError on getUserInfo");
             }
             return resultSet;
             }
-    /* VERIFICAR SI EXISTE UNA CUENTA SIRVE PARA MI INICIO DE SESION */
-        public boolean isAcountExists(String correoOUsuario, String password) throws SQLException{
-        String sql = "SELECT * FROM usuariosgeekonn WHERE correo='" +
-                    correoOUsuario + "' OR nombreUsuario='" + 
-                    correoOUsuario + "' AND password='" + 
-                    password + "';";
-        PreparedStatement ps = conexion.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
-       
-        return rs.next();
-   } 
+    public int revisar(String nombreUsuario) throws SQLException{   
+    ResultSet resultSet = null;
+    try{
+    resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE nombreUsuario = '" + nombreUsuario + "'");
+    }catch(SQLException e){
+    System.out.println("SQLError on getUserInfo");
+    }
+    if(resultSet.isBeforeFirst()){
+      return 1;
+    }else{
+      return 0;
+    }   
+  }
 }
-/* obtener ids de los amigos-------------------------------*/

@@ -1,4 +1,3 @@
-
 package com.geekonn.servlets;
 
 import com.geekonn.security.Cifrar;
@@ -46,9 +45,9 @@ public class InicioSesion extends HttpServlet {
            
            
              HttpSession respuesta = request.getSession(true);
-        String username = request.getParameter("username");
+     /*   String username = request.getParameter("username");
         String Contraseña1 = request.getParameter("Contrasena");
-        ResultSet rs;
+        ResultSet rs;*/
         
         //MLUS d = new MLUS();
         //Validador v = new Validador();
@@ -58,12 +57,12 @@ public class InicioSesion extends HttpServlet {
         String password1 = request.getParameter("password");
         String password = nuevoCifado.encriptar(password1); 
         try {
-        if (sentenciasSQL.isAcountExists(correoOUsuario, password)) {
+        if (sentenciasSQL.comprobarCorreoOUsuarioYcontrasena(correoOUsuario, password)) {
                 
                     //Significa que la cuenta si existe
                     //OBTENGO EL NOMBRE DEL USUARIO Y LO GUARDO EN UNA SESION
                     int idUsuario = sentenciasSQL.devolverIDUsuario(correoOUsuario);
-                    String Username = sentenciasSQL.getUsernamebyId(idUsuario);
+                    String Username = sentenciasSQL.ObtenerUsernameSabiendoElid(idUsuario);
                     respuesta.setAttribute("sessionUsername", Username);
                     respuesta.setAttribute("sessionIdUsuario", idUsuario);
                               

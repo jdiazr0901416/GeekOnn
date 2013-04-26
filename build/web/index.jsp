@@ -3,11 +3,16 @@
     Created on : 15-abr-2013, 10:20:41
     Author     : Julio
 --%>
+<%--SESIONES BOUCHAN--%>
+<%--AGREGO UNA LIBRERIA PARA IMPLEMENTAR UN EXAMINADOR DE SESIONES
+    ESTO VA A BUSCAR SI  HAY UNA SESION Y ME REDIRIGE AUTOMATICAMENTE
+--%>
 <%@taglib prefix="t" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%-- EXAMINA SESIONES ABIERTAS Y HACE VALIDACION--%>
 <t:if test="${sessionScope['sessionUsername']!=null}">
-   <% response.sendRedirect("geekonn.jsp");%>
+    <% response.sendRedirect("geekonn.jsp");%>
 </t:if>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -19,14 +24,17 @@
 
     <!-- Le styles -->
     <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="recursos/bootstrap/docs/assets/bootstrap-responsive.css" rel="stylesheet">
+    <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/index-css.css" rel="stylesheet">
+    <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="recursos/bootstrap/docs/assets/js/html5shiv.js"></script>
     <![endif]-->
-
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="recursos//bootstrap/docs/assets/ico/apple-touch-icon-114-precomposed.png">
@@ -34,7 +42,6 @@
                     <link rel="apple-touch-icon-precomposed" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
-
   <body>
      <!-- navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -68,7 +75,7 @@
           <div class="modal-body">
             <div class="row-fluid">
               <div class="span6 offset3"> 
-                <form action='InicioSesion' METHOD='POST' class='form-horizontal'>
+                <form action='InicioSesion' METHOD='POST' class='form-horizontal'><!--Modifique para Redirigir al Servlet-->
                 <div class="control-group">
                   <div class="controls" style="margin-left:0;">
                     <div class="input-prepend">
