@@ -133,3 +133,28 @@
     font-size: 16px;
     font-weight: bold;
 }
+.tituloNF{
+    background-color: rgb(65,133,245);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloP{
+    background-color: rgb(140,196,116);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloM{
+    background-color: rgb(251,203,67);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloA{
+    background-color: rgb(228,111,97);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloO{
+    background-color: rgb(188,86,121);
+    font-size: 16px;
+    font-weight: bold;
+}

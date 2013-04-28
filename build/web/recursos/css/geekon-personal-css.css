@@ -56,4 +56,22 @@ body {
     font-size: 16px;
     font-weight: bold;
 }
+.tituloM{
+    background-color: rgb(251,203,67);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloA{
+    background-color: rgb(228,111,97);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloO{
+    background-color: rgb(188,86,121);
+    font-size: 16px;
+    font-weight: bold;
+}
+.popover-up{
+    margin-top: 100px;
+}
 /* / mini-news-feed*/

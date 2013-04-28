@@ -23,7 +23,7 @@
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/geekon-personal-css.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
-    <script src="recursos/ajax/popOvers/popOvers.js"></script>
+    
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -78,27 +78,27 @@
       <div class="row-fluid" id="contenedor-principal">
         <div class="span1" id="menu">
           <div class="row-fluid" id="contenedor-iconos">
-              <div class="span12" id="M-home" onmouseover="newsFeedInMenu()" rel="popover" data-content="Observa todas los nuevos avances tecnologicos que tus amigos tienen para ti" data-original-title="NewsFeed">
+              <div class="span12" id="M-home" rel="popover" data-content="Observa todas los nuevos avances tecnologicos que tus amigos tienen para ti" data-original-title="NewsFeed">
               <p><i class="icon-home icon-white pull-right icon-4x" id="icon-white-menu-mn"></i></p>
             </div>
           </div>
           <div class="row-fluid">
-            <div class="span12" id="M-perfil" onmouseover="newsFeedInPerfil()" rel="popover" data-content="Revisa lo que tienes para mostrar hacia tus amigos en geekonn, aqui estan tus datos y demas" data-original-title="Perfil">
+            <div class="span12" id="M-perfil"  rel="popover" data-content="Revisa lo que tienes para mostrar hacia tus amigos en geekonn, aqui estan tus datos y demas" data-original-title="Perfil">
               <p><i class="icon-user icon-white pull-right icon-4x" id="icon-white-menu-mn"></i></p>
             </div>
           </div>
           <div class="row-fluid">
-            <div class="span12" id="M-mensajes" onmouseover="newsFeedInMenuMensajes()" rel="popover" data-content="Observa todas los nuevos avances tecnologicos que tus amigos tienen para ti" data-original-title="NewsFeed">
+            <div class="span12" id="M-mensajes"  rel="popover" data-content="Comunicate con tus amigos, no te quedes con las palabras en la mente" data-original-title="Mensajes">
               <p><i class="icon-envelope-alt icon-white pull-right icon-3x" id="icon-white-menu"></i></p>
             </div>
           </div>
            <div class="row-fluid">
-            <div class="span12" id="M-amigos" onmouseover="newsFeedInMenuAmigos()" rel="popover" data-content="Observa todas los nuevos avances tecnologicos que tus amigos tienen para ti" data-original-title="NewsFeed">
+            <div class="span12" id="M-amigos"  rel="popover" data-content="Aqui estan los enlaces a lois muros de tus amigos, hay varias opciones de control aqui" data-original-title="Amigos">
               <p><i class="icon-group icon-white pull-right icon-3x" id="icon-white-menu"></i></p>
             </div>
           </div>
           <div class="row-fluid">
-            <div class="span12" id="M-opiniones" onmouseover="newsFeedInMenuOpiniones()" rel="popover" data-content="Observa todas los nuevos avances tecnologicos que tus amigos tienen para ti" data-original-title="NewsFeed">
+            <div class="span12" id="M-opiniones"  rel="popover" data-content="comparte algo nuevo al mundo geek, que nadie se quede sin saberlo" data-original-title="Opiniones">
               <p><i class="icon-comment icon-white pull-right icon-3x" id="icon-white-menu"></i></p>
             </div>
           </div>
@@ -161,6 +161,7 @@
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
+    <script src="recursos/ajax/popOvers/popOvers.js"></script>
     
     
     
