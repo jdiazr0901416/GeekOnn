@@ -46,5 +46,14 @@ body {
 #principal{
     margin-left: 90px;
 } 
-
+.tituloNF{
+    background-color: rgb(65,133,245);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloP{
+    background-color: rgb(140,196,116);
+    font-size: 16px;
+    font-weight: bold;
+}
 /* / mini-news-feed*/
