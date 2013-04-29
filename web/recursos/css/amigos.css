@@ -71,6 +71,11 @@
 	color: white;
 	padding-right: 6px;
 }
+.meta-black-E{
+	background-color: rgb(39,40,34);
+	color: white;
+	padding-right: 6px;
+}
 #bloqueo{	
 	border: 3px solid;
 	border-color: black;
@@ -124,4 +129,10 @@
     background-color: rgb(188,86,121);
     font-size: 16px;
     font-weight: bold;
+}
+#encontrado{
+    margin-top: 10px;
+}
+.amigo-recuperado{
+    margin-top: 15px;
 }

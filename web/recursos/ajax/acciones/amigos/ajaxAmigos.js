@@ -1,5 +1,6 @@
 var nombreUsuarioG;
 var nombreUsuarioG2;
+var nombreUsuarioG3;
 function recuperaIdSelect(str){
     this.nombreUsuarioG=str;
     console.log(str);
@@ -8,8 +9,13 @@ function recuperaIdSelect2(str){
     this.nombreUsuarioG2=str;
     console.log(str);
 }
+function recuperaIdSelect3(str){
+    this.nombreUsuarioG3=str;
+    console.log("entre a id3 "+str);
+}
 function respuestaBusquedaAmigo(){
     var conexion;
+    console.log("entre a rba");
     if (window.XMLHttpRequest)
       {
       conexion=new XMLHttpRequest();
@@ -22,7 +28,7 @@ function respuestaBusquedaAmigo(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("Encontrado").innerHTML=conexion.responseText;
+        document.getElementById("encontrado").innerHTML=conexion.responseText;
         }
       }
     conexion.open("GET","recursos/ajax/acciones/amigos/AmigoEncontrado.jsp",true);
@@ -71,4 +77,10 @@ function desbloquearUsuario(){
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/desbloquearAmigo.jsp?nombre="+nombre,true);
     conexion.send();
+}
+function visitarAmigo(str){
+    console.log("entre a visitar");
+    var nombreUsuario;
+    nombreUsuario=str;
+    console.log("nombreUsuario");
 }
