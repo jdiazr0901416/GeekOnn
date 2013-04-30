@@ -35,9 +35,10 @@ function respuestaBusquedaAmigo(){
     conexion.send();
 }
 function bloquearUsuario(){
-    var conexion;
     var nombre;
-    nombre= this.nombreUsuarioG;
+    nombre=this.nombreUsuarioG;
+    console.log("entre"+nombre);
+    var conexion;
     if (window.XMLHttpRequest)
       {
       conexion=new XMLHttpRequest();
@@ -84,4 +85,44 @@ function visitarAmigo(str){
     var nombreUsuario;
     nombreUsuario=str;
     console.log("nombreUsuario");
+}
+function limpiar(){
+    var conexion;
+    if (window.XMLHttpRequest)
+      {
+      conexion=new XMLHttpRequest();
+      }
+    else
+      {
+      conexion=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    conexion.onreadystatechange=function()
+      {
+      if (conexion.readyState===4 && conexion.status===200)
+        {
+        document.getElementById("principal2").innerHTML=conexion.responseText;
+        }
+      }
+    conexion.open("GET","recursos/ajax/menu/limpiar.jsp",true);
+    conexion.send();
+}
+function respuestaAmigos2(){
+    var conexion;
+    if (window.XMLHttpRequest)
+      {
+      conexion=new XMLHttpRequest();
+      }
+    else
+      {
+      conexion=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    conexion.onreadystatechange=function()
+      {
+      if (conexion.readyState===4 && conexion.status===200)
+        {
+        document.getElementById("principal3").innerHTML=conexion.responseText;
+        }
+      }
+    conexion.open("GET","recursos/ajax/menu/amigos.jsp",false);
+    conexion.send();
 }

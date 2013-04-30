@@ -10,6 +10,7 @@
 <%@ page import = "javax.servlet.http.HttpServletResponse" %>
 <% 
     String nombreUsuario= request.getParameter("nombre");
+    System.out.println("entre a bloquear y te imprimo nombre"+ nombreUsuario);
     SentenciasSQL recuperarId = new SentenciasSQL();
     SentenciasSQL bloquearAmigo = new SentenciasSQL();
     int idUsuario2=recuperarId.devolverIDUsuario(nombreUsuario);

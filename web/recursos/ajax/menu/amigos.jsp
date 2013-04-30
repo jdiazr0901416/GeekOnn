@@ -42,8 +42,8 @@
   </head>
   <body>
 <!-- amigos!------------------------------------------------------------------------------------------------------------------------------------ -->
-    <div class="container-fluid" >
-        <div class="row-fluid">
+    <div class="container-fluid" id="principal2" >
+        <div class="row-fluid" id="principal3">
             <div class="span9" id="contenedor-amigos">
                 <div class="row-fluid" id="contenedor-amigos-recuperados">
                     <%
@@ -107,7 +107,6 @@
                                                         <select name="mensaje-amigo" onchange="recuperaIdSelect(this.value)">
                                                             <option>Elije un nombre</option>
                                                             <%
-                                                            userId=1;
                                                             nombre = "";
                                                             SentenciasSQL cerrar = new SentenciasSQL();
                                                             SentenciasSQL sentenciasLista = new SentenciasSQL();
@@ -138,7 +137,7 @@
                                             </div>
                                       </div>
                                       <div class="modal-footer">
-                                            <button class="btn btn-primary" id="bloquearAmigo">Bloquear Amigo</button>
+                                          <button class="btn btn-primary" id="bloquearAmigo" onclick="bloquearUsuario()">Bloquear Amigo</button>
                                       </div>
                                     </div>
                               </div>
@@ -159,7 +158,6 @@
                                                         <select name="mensaje-amigo" onchange="recuperaIdSelect2(this.value)">
                                                             <option>Elije un nombre</option>
                                                             <%
-                                                            userId=1;
                                                             nombre = "";
                                                             SentenciasSQL cerrar2 = new SentenciasSQL();
                                                             SentenciasSQL sentenciasLista2 = new SentenciasSQL();

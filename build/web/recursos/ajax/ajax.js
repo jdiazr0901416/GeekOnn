@@ -19,6 +19,7 @@ function respuestaNewsFeed(){
     conexion.open("GET","recursos/ajax/menu/respuestaNewsFeed.jsp",true);
     conexion.send();
 }
+
 function respuestaPerfil(){
     var conexion;
     if (window.XMLHttpRequest)
@@ -75,7 +76,8 @@ function respuestaAmigos(){
       if (conexion.readyState===4 && conexion.status===200)
         {
         document.getElementById("principal").innerHTML=conexion.responseText;
-        document.getElementById('bloquearAmigo').addEventListener('click',bloquearUsuario,false);
+        document.getElementById('bloquearAmigo').addEventListener('click',limpiar,false);
+        document.getElementById('bloquearAmigo').addEventListener('click',respuestaAmigos2,true);
         }
       }
     conexion.open("GET","recursos/ajax/menu/amigos.jsp",true);

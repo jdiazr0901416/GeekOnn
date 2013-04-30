@@ -70,7 +70,7 @@
                                                         resultSetLista =  sentenciasLista.obtenerIdAmigos(userId);
 
                                                          while(resultSetLista.next()){
-                                                               int userIdTable = resultSetLista.getInt("idAmigos");
+                                                               int userIdTable = resultSetLista.getInt("idAmigo");
                                                                System.out.println(userIdTable);
                                                                resultSetID= sentenciasID.obtenerInfoUsuario(userIdTable);
                                                                     while(resultSetID.next()){

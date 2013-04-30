@@ -271,7 +271,7 @@ public class SentenciasSQL {
 
             try{
                 statement.execute("UPDATE " + friendsTableName + " SET bloqueado = 1" + 
-                            " WHERE idAmigos = " + friendId);
+                            " WHERE idAmigo = " + friendId);
 
             }catch(SQLException e){
                     System.out.println("SQLError on blockAFriend");
@@ -282,7 +282,7 @@ public class SentenciasSQL {
             String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
             try{
                 statement.execute("UPDATE " + friendsTableName + " SET bloqueado = 0" + 
-                            " WHERE idAmigos = " + friendId);
+                            " WHERE idAmigo = " + friendId);
 
             }catch(SQLException e){
                     System.out.println("SQLError on unblockAFriend");
