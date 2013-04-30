@@ -51,8 +51,8 @@
             <div class="span8">
               <center><h4>Nombre de usuario</h4></center>
               <hr>
-              <button type="button" class="btn btn-inverse pull-left"><i class="icon-ban-circle icon-white icon-1x">&nbsp;Bloquear</i></button>
-              <button type="button" class="btn btn-danger pull-right"><i class="icon-minus icon-white icon-1x ">&nbsp;Eliminar</i></button>
+              <button type="button" class="btn btn-inverse pull-left"><i class="icon-ban-circle icon-white icon-1x"></i></button>
+              <button type="button" class="btn btn-danger pull-right"><i class="icon-minus icon-white icon-1x "></i></button>
             </div>
           </div>
 

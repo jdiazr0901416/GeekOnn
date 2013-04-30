@@ -69,10 +69,6 @@
                                         out.println("<p class='text-center'>"+resultSetID0.getString("nombreUsuario")+"</p>");
                                         out.println("<center><img src='recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png' alt='' class='img-rounded' id='imagen-del-usuario'></center>");
                                     out.println("</div>");
-                                    out.println("<div class='span12'>");
-                                        out.println("<button type='button' class='btn btn-inverse pull-left botones-bloqueo'><i class='icon-ban-circle icon-white icon-1x'></i></button>");
-                                        out.println("<button type='button' class='btn btn-danger pull-right botones-bloqueo'><i class='icon-minus icon-white icon-1x'></i></button>");
-                                    out.println("</div>");
                                 out.println("</div>");
                                 }
                      }
@@ -244,7 +240,7 @@
                                                   <center><div class="control-group" id="div-control-space">
                                                       <div class="controls" style="margin-left:0;">
                                                         <div class="input-prepend">
-                                                            <span class="add-on"><i class="icon-user"></i></span><input  class="input-large" type="text" tabindex="1" onkeyup="recuperaIdSelect3(this.value)">
+                                                            <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" tabindex="1" onkeyup="recuperaIdSelect3(this.value)">
                                                         </div>
                                                       </div>
                                                   </div></center>

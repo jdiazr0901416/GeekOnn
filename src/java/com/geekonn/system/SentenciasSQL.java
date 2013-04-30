@@ -12,7 +12,7 @@ public class SentenciasSQL {
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
-            conexionLocalJulio();
+            conexionLocalBatiz();
     }
 
     public void connect() throws SQLException {
@@ -288,4 +288,31 @@ public class SentenciasSQL {
                     System.out.println("SQLError on unblockAFriend");
             }
     }
+
+/**************************************VER SI EL USUARIO O EMAIL Y CONTRASENA SON CORRECTOS************************************/    
+    public boolean comprobarCorreoOUsuarioYcontrasena(String correoOUsuario, String password) throws SQLException{
+        ResultSet rs = null;
+        try{
+        String sql = "SELECT * FROM usuariosgeekonn WHERE correo='" +
+                    correoOUsuario + "' OR nombreUsuario='" + 
+                    correoOUsuario + "' AND password='" + 
+                    password + "'";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        rs = ps.executeQuery();
+        return rs.next();
+        }catch(SQLException e){
+            System.out.print("Error en SentenciasSQL METODO: isAcountExist");
+        }
+        return rs.next();
+   }
+/*********************************SABIENDO EL IDUSUARIO OBTENER EL USERNAME**************************************************/    
+    public String ObtenerUsernameSabiendoElid(int idUsuario) throws SQLException{  
+        String sql = "SELECT * FROM usuariosgeekonn WHERE idusuario='"+idUsuario+"'";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        if(rs.next()){
+            return rs.getString("nombreUsuario");
+        }
+        return null;
+    }    
 }
