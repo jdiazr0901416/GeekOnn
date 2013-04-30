@@ -8,11 +8,12 @@
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>
 <%@ page import = "javax.servlet.http.HttpServletResponse" %>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <% 
+    
     String nombreUsuario= request.getParameter("nombre");
     SentenciasSQL recuperarId = new SentenciasSQL();
     SentenciasSQL bloquearAmigo = new SentenciasSQL();
-    int idUsuario1=1;
     int idUsuario2=recuperarId.devolverIDUsuario(nombreUsuario);
-    bloquearAmigo.unblockAFriend(idUsuario1, idUsuario2);
+    bloquearAmigo.unblockAFriend(idUsuario, idUsuario2);
 %>    

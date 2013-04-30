@@ -1,3 +1,4 @@
+document.write("<script type='text/javascript' src='recursos/ajax/acciones/amigos/ajaxAmigos.js'></script>");
 function respuestaNewsFeed(){
     var conexion;
     if (window.XMLHttpRequest)
@@ -74,6 +75,7 @@ function respuestaAmigos(){
       if (conexion.readyState===4 && conexion.status===200)
         {
         document.getElementById("principal").innerHTML=conexion.responseText;
+        document.getElementById('bloquearAmigo').addEventListener('click',bloquearUsuario,false);
         }
       }
     conexion.open("GET","recursos/ajax/menu/amigos.jsp",true);

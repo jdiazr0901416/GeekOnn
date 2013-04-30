@@ -5,9 +5,12 @@
 --%>
 <%@taglib prefix="t" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:if test="${sessionScope['sessionUsername']==null}">
-    <% response.sendRedirect("indexjsp");%>
+    <% response.sendRedirect("index.jsp");%>
 </t:if>
-<%//int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));
+System.out.println(idUsuario);
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,8 +27,8 @@
     <link href="recursos/css/geekon-personal-css.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
     <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
-    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
     <script src="recursos/ajax/acciones/conf/ajaxConfiguracion.js"></script>
+    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>

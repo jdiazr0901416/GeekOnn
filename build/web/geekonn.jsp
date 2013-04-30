@@ -3,11 +3,14 @@
     Created on : 15-abr-2013, 10:22:41
     Author     : Julio
 --%>
-<%--
-*
-*FALTAN SESIONES
-*
---%>
+<%@taglib prefix="t" uri="http://java.sun.com/jsp/jstl/core" %>
+<t:if test="${sessionScope['sessionUsername']==null}">
+    <% response.sendRedirect("index.jsp");%>
+</t:if>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));
+System.out.println(idUsuario);
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,7 +26,9 @@
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/geekon-personal-css.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
-    
+    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
+    <script src="recursos/ajax/acciones/conf/ajaxConfiguracion.js"></script>
+    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -38,9 +43,7 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
-     <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
-     <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
-     <script src="recursos/ajax/acciones/conf/ajaxConfiguracion.js"></script>
+     
   </head>
   <body>
      <!-- navbar -->
@@ -62,12 +65,12 @@
                 <ul class="dropdown-menu pull-right">
                   <li><a onclick="respuestaConfiguracion()">Opciones</a></li>
                   <li class="divider"></li>
-                  <li><a href="#">Cerrar Sesión</a></li>
+                  <li><a href="LogOut">Cerrar Sesión</a></li>
                 </ul>
               </div>
             </ul>
             <ul class="nav pull-right">
-              <li><a href="perfilUsuario.html" id="nav-imgUsuario-Nombre">Nombre del usuario</a></li>
+              <li><a href="perfilUsuario.html" id="nav-imgUsuario-Nombre"><%=(String)session.getAttribute("sessionUsername")%></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

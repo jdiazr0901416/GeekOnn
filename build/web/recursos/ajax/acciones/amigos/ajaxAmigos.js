@@ -51,6 +51,7 @@ function bloquearUsuario(){
       if (conexion.readyState===4 && conexion.status===200)
         {
         document.getElementById("Encontrado").innerHTML=conexion.responseText;
+        
         }
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/bloquearAmigo.jsp?nombre="+nombre,true);

@@ -8,6 +8,7 @@
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>
 <%@ page import = "javax.servlet.http.HttpServletResponse" %>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -46,7 +47,7 @@
             <div class="span9" id="contenedor-amigos">
                 <div class="row-fluid" id="contenedor-amigos-recuperados">
                     <%
-                    int userId=1;
+                    int userId=idUsuario;
                     String nombre = "";
                     SentenciasSQL cerrar0 = new SentenciasSQL();
                     SentenciasSQL sentenciasLista0 = new SentenciasSQL();
@@ -56,7 +57,7 @@
                     resultSetLista0 =  sentenciasLista0.obtenerIdAmigos(userId);
 
                      while(resultSetLista0.next()){
-                           int userIdTable = resultSetLista0.getInt("idAmigos");
+                           int userIdTable = resultSetLista0.getInt("idAmigo");
                            System.out.println(userIdTable);
                            resultSetID0= sentenciasID0.obtenerInfoUsuario(userIdTable);
                                 while(resultSetID0.next()){
@@ -116,7 +117,7 @@
                                                             resultSetLista =  sentenciasLista.obtenerIdAmigos(userId);
 
                                                              while(resultSetLista.next()){
-                                                                   int userIdTable = resultSetLista.getInt("idAmigos");
+                                                                   int userIdTable = resultSetLista.getInt("idAmigo");
                                                                    System.out.println(userIdTable);
                                                                    resultSetID= sentenciasID.obtenerInfoUsuario(userIdTable);
                                                                         while(resultSetID.next()){
@@ -137,7 +138,7 @@
                                             </div>
                                       </div>
                                       <div class="modal-footer">
-                                            <button class="btn btn-primary" onclick="bloquearUsuario()">Bloquear Amigo</button>
+                                            <button class="btn btn-primary" id="bloquearAmigo">Bloquear Amigo</button>
                                       </div>
                                     </div>
                               </div>
@@ -168,7 +169,7 @@
                                                             resultSetLista2 =  sentenciasLista2.obtenerIdAmigosBloqueados(userId);
 
                                                              while(resultSetLista2.next()){
-                                                                   int userIdTable = resultSetLista2.getInt("idAmigos");
+                                                                   int userIdTable = resultSetLista2.getInt("idAmigo");
                                                                    System.out.println(userIdTable);
                                                                    resultSetID2= sentenciasID2.obtenerInfoUsuario(userIdTable);
                                                                         while(resultSetID2.next()){

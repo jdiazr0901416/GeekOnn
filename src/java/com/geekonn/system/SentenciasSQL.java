@@ -12,7 +12,7 @@ public class SentenciasSQL {
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
-            conexionLocalBatiz();
+            conexionLocalJulio();
     }
 
     public void connect() throws SQLException {
