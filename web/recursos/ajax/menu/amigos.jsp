@@ -42,8 +42,8 @@
   </head>
   <body>
 <!-- amigos!------------------------------------------------------------------------------------------------------------------------------------ -->
-    <div class="container-fluid" id="principal2" >
-        <div class="row-fluid" id="principal3">
+    <div class="container-fluid">
+        <div class="row-fluid">
             <div class="span9" id="contenedor-amigos">
                 <div class="row-fluid" id="contenedor-amigos-recuperados">
                     <%

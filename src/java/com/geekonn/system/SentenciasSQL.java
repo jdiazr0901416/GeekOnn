@@ -12,7 +12,7 @@ public class SentenciasSQL {
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
-            conexionLocalJulio();
+            conexionLocalBatiz();
     }
 
     public void connect() throws SQLException {
@@ -64,7 +64,7 @@ public class SentenciasSQL {
      public void registrarNuevoUsuario(String nombreCompleto, String correoElectronico, String nombreUsuario, String password){
 		try{
         statement=conexion.createStatement();
-	statement.execute("INSERT INTO usuariosGeekonn " +  
+	statement.execute("INSERT INTO usuariosgeekonn " +  
                 "(correo, password, nombre, nombreUsuario) " +
                 "VALUES("
                 + "'" + correoElectronico + "',"
@@ -84,7 +84,7 @@ public class SentenciasSQL {
         int idUsuario=0;
         try{
             statement=conexion.createStatement();
-            resultset = statement.executeQuery("SELECT * FROM usuariosGeekonn WHERE Correo='" +
+            resultset = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE Correo='" +
                     nombreOCorreo + "' OR nombreUsuario='" + 
                     nombreOCorreo + "';");
             if(resultset.next()){
