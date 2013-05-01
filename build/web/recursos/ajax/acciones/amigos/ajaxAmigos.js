@@ -51,12 +51,13 @@ function bloquearUsuario(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("Encontrado").innerHTML=conexion.responseText;
+        document.getElementById("principal").innerHTML=conexion.responseText;
         
         }
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/bloquearAmigo.jsp?nombre="+nombre,true);
     conexion.send();
+    //respuestaAmigos2();
 }
 function desbloquearUsuario(){
     var conexion;
@@ -79,6 +80,7 @@ function desbloquearUsuario(){
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/desbloquearAmigo.jsp?nombre="+nombre,true);
     conexion.send();
+    
 }
 function visitarAmigo(str){
     console.log("entre a visitar");
@@ -107,6 +109,7 @@ function limpiar(){
     conexion.send();
 }
 function respuestaAmigos2(){
+    console.log("entre amigos2");
     var conexion;
     if (window.XMLHttpRequest)
       {
@@ -120,7 +123,7 @@ function respuestaAmigos2(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("principal3").innerHTML=conexion.responseText;
+        document.getElementById("principal").innerHTML=conexion.responseText;
         }
       }
     conexion.open("GET","recursos/ajax/menu/amigos.jsp",false);

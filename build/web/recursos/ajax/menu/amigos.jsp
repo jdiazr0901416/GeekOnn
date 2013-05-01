@@ -42,8 +42,8 @@
   </head>
   <body>
 <!-- amigos!------------------------------------------------------------------------------------------------------------------------------------ -->
-    <div class="container-fluid" id="principal2" >
-        <div class="row-fluid" id="principal3">
+    <div class="container-fluid">
+        <div class="row-fluid">
             <div class="span9" id="contenedor-amigos">
                 <div class="row-fluid" id="contenedor-amigos-recuperados">
                     <%
@@ -137,7 +137,7 @@
                                             </div>
                                       </div>
                                       <div class="modal-footer">
-                                          <button class="btn btn-primary" id="bloquearAmigo" onclick="bloquearUsuario()">Bloquear Amigo</button>
+                                          <button class="btn btn-primary" id="bloquearAmigo" data-dismiss="modal" aria-hidden="true" onclick="bloquearUsuario()">Bloquear Amigo</button>
                                       </div>
                                     </div>
                               </div>
@@ -188,7 +188,7 @@
                                             </div>
                                       </div>
                                       <div class="modal-footer">
-                                            <button class="btn btn-primary" onclick="desbloquearUsuario()">Desbloquear Amigo</button>
+                                            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="desbloquearUsuario()">Desbloquear Amigo</button>
                                       </div>
                                     </div>
                               </div>
@@ -215,13 +215,17 @@
                                                   <div class="span3">
                                                       <center><i class="icon-unlock icon-4x icon-derecha"></i></center>
                                                   </div>
+                                                  
                                                   <div class="span9">
-                                                      <p class="text-center"><h4><a href="#myModalBloqueo" data-toggle="modal" data-target="#myModalDesbloqueo" id="a-iniciar-sesion">Desbloquear un amigo</a></h4></p>
+                                                      <p class="text-center"><h4><a href="#myModalBloqueo" data-toggle="modal" data-target="#myModalDesbloqueo" id="a-iniciar-sesion ">Desbloquear un amigo</a></h4></p>
                                                   </div>
                                               </div>
                                           </div>
                                       </div>
                                   </div>
+                              </div>
+                            <div class="span12">
+                              <div class="row-fluid" id="respuestaDesbloquear">
                               </div>
                          </div>
                        </div>

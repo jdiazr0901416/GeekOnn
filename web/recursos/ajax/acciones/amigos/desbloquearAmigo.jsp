@@ -16,4 +16,5 @@
     SentenciasSQL bloquearAmigo = new SentenciasSQL();
     int idUsuario2=recuperarId.devolverIDUsuario(nombreUsuario);
     bloquearAmigo.unblockAFriend(idUsuario, idUsuario2);
+    response.sendRedirect("http://localhost:8080/GeekOnn/recursos/ajax/menu/amigos.jsp");
 %>    

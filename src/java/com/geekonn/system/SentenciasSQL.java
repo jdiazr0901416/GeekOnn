@@ -12,7 +12,7 @@ public class SentenciasSQL {
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
-            conexionLocalBatiz();
+            conexionLocalJulio();
     }
 
     public void connect() throws SQLException {
@@ -306,7 +306,7 @@ public class SentenciasSQL {
         return rs.next();
    }
 /*********************************SABIENDO EL IDUSUARIO OBTENER EL USERNAME**************************************************/    
-    public String ObtenerUsernameSabiendoElid(int idUsuario) throws SQLException{  
+    public String ObtenerUsernameSabiendoId(int idUsuario) throws SQLException{  
         String sql = "SELECT * FROM usuariosgeekonn WHERE idusuario='"+idUsuario+"'";
         PreparedStatement ps = conexion.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
