@@ -1,3 +1,4 @@
+document.write("<script type='text/javascript' src='recursos/ajax/acciones/amigos/ajaxAmigos.js'></script>");
 function respuestaNewsFeed(){
     var conexion;
     if (window.XMLHttpRequest)
@@ -18,6 +19,7 @@ function respuestaNewsFeed(){
     conexion.open("GET","recursos/ajax/menu/respuestaNewsFeed.jsp",true);
     conexion.send();
 }
+
 function respuestaPerfil(){
     var conexion;
     if (window.XMLHttpRequest)
@@ -74,6 +76,7 @@ function respuestaAmigos(){
       if (conexion.readyState===4 && conexion.status===200)
         {
         document.getElementById("principal").innerHTML=conexion.responseText;
+        
         }
       }
     conexion.open("GET","recursos/ajax/menu/amigos.jsp",true);

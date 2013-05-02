@@ -3,6 +3,9 @@
     Created on : 15-abr-2013, 10:20:41
     Author     : Julio
 --%>
+<%--Esto va en todas las paginas y no te olvides de cerrar } del Else hasta el final de todo el HTML--%>
+
+<%--DECLARO LA VARIABLE idUsuario--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

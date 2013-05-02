@@ -3,15 +3,7 @@
     Created on : 15-abr-2013, 10:20:41
     Author     : Julio
 --%>
-<%--SESIONES BOUCHAN--%>
-<%--AGREGO UNA LIBRERIA PARA IMPLEMENTAR UN EXAMINADOR DE SESIONES
-    ESTO VA A BUSCAR SI  HAY UNA SESION Y ME REDIRIGE AUTOMATICAMENTE
---%>
-<%@taglib prefix="t" uri="http://java.sun.com/jsp/jstl/core" %>
-<%-- EXAMINA SESIONES ABIERTAS Y HACE VALIDACION--%>
-<t:if test="${sessionScope['sessionUsername']!=null}">
-    <% response.sendRedirect("geekonn.jsp");%>
-</t:if>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,8 +17,9 @@
     <!-- Le styles -->
     <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="recursos/css/index-css.css" rel="stylesheet">
+    <link href="recursos/css/registro-css.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
+    <script src="recursos/ajax/acciones/registro/ajaxRegistro.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -52,7 +45,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="index.jsp">
+          <a class="brand" href="index.html">
             <img src="recursos/imagenes/logo/geekonn.png" height="60" width="140">
           </a>
           <div class="nav-collapse collapse">
@@ -75,11 +68,11 @@
           <div class="modal-body">
             <div class="row-fluid">
               <div class="span6 offset3"> 
-                <form action='InicioSesion' METHOD='POST' class='form-horizontal'>
+                <form action='' METHOD='POST' class='form-horizontal'>
                 <div class="control-group">
                   <div class="controls" style="margin-left:0;">
                     <div class="input-prepend">
-                      <span class="add-on"><i class="icon-user"></i></span><input placeholder="Nombre de usuario o correo" type="text" size="25" id="username" name="nombreUsuario" tabindex="1">
+                      <span class="add-on"><i class="icon-user"></i></span><input placeholder="Nombre de usuario" type="text" size="25" id="username" name="username" tabindex="1">
                    </div>
                   </div>
                 </div>
@@ -93,7 +86,7 @@
               </div>
             </div>
           </div>
-          <div class="span12 pull-left"><h6>¿No estas registrado?<a href="registro.jsp">Registrate</a></h6></div>
+          <div class="span12 pull-left"><h6>¿No estas registrado?<a href="registro.html">Registrate</a></h6></div>
           <div class="modal-footer">
             <button class="btn btn-primary" type="submit">Iniciar sesión</button>
                </form>
@@ -102,40 +95,17 @@
       </div>
     </div>
     <!-- Termina Modal-->
-    <div class="container-fluid" id="contenedor-principal">
+
+    <div class="container-fluid">
+      <center><h2>Registrate</h2></center>
+      <hr>
       <div class="row-fluid">
-        <div class="span6" id="bloque-derecho">
-            <center><h1>Unetenos!</h1></center>
-            <br><br>
-            <div class="span8 offset2">
-              <p class="text-center" id="descripcion">Geekon es una red social enfocada a la gente que le gusta estar al dia acerca de la tecnologia y de sus grandes avances.</p>
-            </div>
-            <br><br><br>
-            <hr>
-            <div class="row-fluid">
-              <div class="span3 offset1" id="imagen-on-off">
-                <img src="recursos/imagenes/logo/on-off.png">
-              </div>
-              <div class="span7" id="descripcion-2">
-                <p align ="justify"><br><br>Atrevete a entrar a un mundo donde puedes enseñarle al mundo todo lo que sabes acerca de los nuevos avances tecnologicos asi como ver lo que los demas tienen para ti. Descubre y explora un mundo de opinion donde estamos seguors la pasaras genial!.</p>
-              </div>
-            </div>
-            <br>
-            <p></p>
-        </div>
-        <div class="span6" id="bloque-izquierdo">
-          <div class="row-fluid">
-            <div class="span12" id="bloque-izquierdo-uno">
-              <h1>Ponte en estado On!</h1>
-              <br><br>
-              <center><img src="recursos/imagenes/thumbnails/Estado-on.jpg"><center>
-                <br>
-            </div>
-          </div>
-          <div class="row-fluid">
-            <div class="span12" id="bloque-izquierdo-dos">
-              <center><h4>Ya quieres formar parte de nosotros? danos un poco de información</h4></center>
-              <!-- -------------------------------------------- ------------------ -->
+        <div class="span7">
+          <center><h3>Comenzemos<br></h3></center>
+          <h4>Primero necesitamos tus datos</h4><br>
+          <!-- -----------------------FORMULARIO COMIENZO--------------------- ------------------ -->
+          <form method="POST" action="Registro">
+          <!--------nombreCompleto----------->
             <div class="row-fluid">
               <div class="span5 offset1" id="text-aling-right">
                 <h4>Nombre:</h4>
@@ -144,13 +114,13 @@
               <div class="control-group" id="div-control-space">
                 <div class="controls" style="margin-left:0;">
                   <div class="input-prepend">
-                    <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" id="username" name="username" tabindex="1">
+                    <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" id="username" name="nombreCompleto" tabindex="1">
                  </div>
                 </div>
               </div>
             </div>
             </div>
-            <!-- -------------------------------------------- ------------------ -->
+            <!-- -------------------------correoElectronico------------------- ------------------ -->
             <div class="row-fluid">
               <div class="span5 offset1" id="text-aling-right">
                 <h4>Correo electronico:</h4>
@@ -159,14 +129,36 @@
                 <div class="control-group" id="div-control-space">
                   <div class="controls" style="margin-left:0;">
                     <div class="input-prepend">
-                      <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1" id="form-input-space">
+                      <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
                   </div>
                   </div>
                </div>
               </div>
             </div>
-            <!-- -------------------------------------------- ------------------ -->
-            <!-- -------------------------------------------- ------------------ -->
+            <!-- ---------------------------nombreUsuario----------------- ------------------ -->
+            <div class="row-fluid">
+              <div class="span5 offset1" id="text-aling-right">
+                <h4>Nombre de usuario:</h4>
+              </div>
+              <div class="span6">
+               <!-- ***************************************************************** -->
+               <div class="row-fluid">
+                   <div class="span6">
+                       <div class="control-group" id="div-control-space">
+                            <div class="controls" style="margin-left:0;">
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span><input class="span12" type="text"  name="nombreUsuario" tabindex="1" onkeyup="existe(this.value)">
+                            </div>
+                            </div>
+                      </div>
+                   </div>
+                   <div class="span6" id="respuestaNU">
+                   </div>    
+               </div>
+               <!-- ***************************************************************** -->
+              </div>
+            </div>
+            <!-- --------------------------------password------------ ------------------ -->
             <div class="row-fluid">
               <div class="span5 offset1" id="text-aling-right">
                 <h4>Contraseña:</h4>
@@ -175,21 +167,38 @@
                 <div class="control-group" id="div-control-space">
                     <div class="controls" style="margin-left:0;">
                       <div class="input-prepend">
-                        <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1">
+                    <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="password" id="contrasenia" name="password" tabindex="1">
                      </div>
                     </div>
                   </div>
               </div>
             </div>
             <!-- -------------------------------------------- ------------------ -->
-            <center><button type="button" class="btn btn-success">Registrarme</button></center>
-            <br>
+            <div class="row-fluid">
+              <div class="span5 offset1" id="text-aling-right">
+                <h4>Repetir Contraseña:</h4>
+              </div>
+              <div class="span6">
+                <div class="control-group" id="div-control-space">
+                    <div class="controls" style="margin-left:0;">
+                      <div class="input-prepend">
+                        <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="password" id="username" name="passwordRepetido" tabindex="1">
+                     </div>
+                    </div>
+                  </div>
+              </div>
             </div>
-          </div>
+            <!-- -------------------------------------------- ------------------ -->
+        <br>
+        <center><button type="submit" class="btn btn-success">Registrarme</button></center>
+          </form>
         </div>
-      </div>
-      </div><!-- /row-->
-          <!-- navbar bootom ------------------------------------------------------------------------------- -->
+        <div class="span4 offset1">
+          <center><h3>¿sabes que tiene de nuevo GeekOn que otras redes sociales?<br></h3></center>
+          <p align=justify>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus dui sed augue lacinia consequat. Suspendisse est odio, eleifend eget commodo vitae, euismod eget sem. Suspendisse enim nibh, eleifend ut sagittis eget, vestibulum sed risus. Proin id rutrum nisl. Vestibulum nec ipsum eu libero congue tincidunt vitae vitae massa. Nam vulputate eros consequat urna semper ut gravida felis posuere. Nullam at sem est, et pharetra orci. Nam molestie suscipit tellus in ultricies. Donec quis lacus nunc, euismod accumsan lectus. Proin blandit viverra posuere. Maecenas scelerisque, lacus luctus fringilla bibendum, ligula diam placerat est, non aliquam odio nibh eu purus. Integer cursus suscipit ipsum, eget tincidunt erat elementum blandit. Sed ornare erat porta leo luctus non laoreet metus auctor. Cras nisi felis, mattis in pellentesque in, dignissim sit amet urna.</p>
+        </div>
+      </div><!--/row-->
+      <!-- navbar bootom ------------------------------------------------------------------------------- -->
    <div class="navbar navbar-inverse navbar-fixed-bottom">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -213,6 +222,10 @@
       </div>
     </div>
     <!-- Termina navbar ---------------------------------------------------------------------------- -->
+      <footer>
+        <hr>
+        <p>&copy; Evotek 2013</p>
+      </footer>
     </div><!--/.fluid-container-->
 
     <!-- Le javascript
@@ -231,6 +244,6 @@
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
-
+    
   </body>
 </html>

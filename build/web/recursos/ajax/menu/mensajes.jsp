@@ -3,7 +3,17 @@
     Created on : 15-abr-2013, 10:22:41
     Author     : Julio
 --%>
-
+<%--Esto va en todas las paginas y no te olvides de cerrar } del Else hasta el final de todo el HTML--%>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    response.sendRedirect("index.jsp");
+}else{%>
+<%--DECLARO LA VARIABLE idUsuario--%>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>
@@ -70,7 +80,7 @@
                                                         resultSetLista =  sentenciasLista.obtenerIdAmigos(userId);
 
                                                          while(resultSetLista.next()){
-                                                               int userIdTable = resultSetLista.getInt("idAmigos");
+                                                               int userIdTable = resultSetLista.getInt("idAmigo");
                                                                System.out.println(userIdTable);
                                                                resultSetID= sentenciasID.obtenerInfoUsuario(userIdTable);
                                                                     while(resultSetID.next()){
@@ -97,10 +107,7 @@
 			  </div>
 			</div>
 			<!-- Termina Modal ---------------------------------------------------------------------------------->
-                        <!-- para recuperar de quien es cada conversacion en la secion de cada usuario se encontrara su id
-                        por ejemplo id=1 luego al imprimir cada conversacion reciente se mandara como parametro al metodo
-                        respuestaConversacion(el nombre de usuario o mas facil su id)asi cuando el metodo reciba en el ajax explico que hacer
-			<!-- este es un usuarui que envio mensaje anterior mente ...............................-->
+                        
 			<div class="row-fluid mostrar-conversacion" id="mensaje">
 			  <div class="span4" >
 				<img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario" onclick="respuestaConversacion()">
@@ -151,3 +158,4 @@
 
   </body>
 </html>
+<%}%>

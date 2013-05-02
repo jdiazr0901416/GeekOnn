@@ -3,7 +3,17 @@
     Created on : 16-abr-2013, 10:38:29
     Author     : Julio
 --%>
-
+<%--Esto va en todas las paginas y no te olvides de cerrar } del Else hasta el final de todo el HTML--%>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    response.sendRedirect("index.jsp");
+}else{%>
+<%--DECLARO LA VARIABLE idUsuario--%>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -59,7 +69,7 @@
               </div>
             </ul>
             <ul class="nav pull-right">
-              <li><a href="perfilUsuario.html" id="nav-imgUsuario-Nombre">Nombre del usuario</a></li>
+              <li><a href="perfilUsuario.html" id="nav-imgUsuario-Nombre"><%=(String)session.getAttribute("sessionUsername")%></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -73,7 +83,7 @@
                     <div class="span12" id="portada">
                       <div class="row-fluid">
                         <div class="span2" id="portada-imagen-usuario"><img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="tamanio-imagen-portada"></div>
-                        <div class="span6" id="portada-nombre-usuario"><h4>Nombre usuario</h4></div>
+                        <div class="span6" id="portada-nombre-usuario"><h4><%=(String)session.getAttribute("sessionUsername")%></h4></div>
                         <div class="span1 offset3" id="portada-on-off"><img src="" class="img-rounded"></div>
                       </div>
                     </div>
@@ -173,3 +183,4 @@
     <script src="recursos/ajax/ajax.js"></script>
   </body>
 </html>
+<%}%>

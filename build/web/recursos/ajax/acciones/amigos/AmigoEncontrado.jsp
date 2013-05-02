@@ -1,4 +1,23 @@
+<%-- 
+    Document   : geekonn-P
+    Created on : 15-abr-2013, 10:22:41
+    Author     : Julio
+--%>
+<%--Esto va en todas las paginas y no te olvides de cerrar } del Else hasta el final de todo el HTML--%>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    response.sendRedirect("index.jsp");
+}else{%>
+<%--DECLARO LA VARIABLE idUsuario--%>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import = "com.geekonn.system.SentenciasSQL" %>
+<%@ page import = "java.sql.ResultSet" %>
+<%@ page import = "javax.servlet.http.HttpServletResponse" %>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -12,8 +31,9 @@
     <!-- Le styles -->
     <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="recursos/css/geekon-personal-css.css" rel="stylesheet">
+    <link href="recursos/css/amigos.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
+    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -29,15 +49,21 @@
                     <link rel="apple-touch-icon-precomposed" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
-<div class="row-fluid mostrar-conversacion" id="mensaje">
-  <div class="span4" >
-        <img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario" onclick="respuestaConversacion()">
-  </div>
-  <div class="span8">
-        <center><h4>Nombre de usuario</h4></center>
-        <hr>
-        <button type="button" class="btn btn-inverse pull-left"><i class="icon-ban-circle icon-white icon-1x">&nbsp;Bloquear</i></button>
-        <button type="button" class="btn btn-danger pull-right"><i class="icon-minus icon-white icon-1x ">&nbsp;Eliminar</i></button>
-  </div>
-</div>
+          <div class="row-fluid meta-black-E">
+              <div class="span12">
+                  <p class="text-center"><b>Esto encontramos para ti</b></p>
+              </div>
+          </div>
+          <div class="row-fluid" id="busqueda">
+              <div class="span4" >
+                <img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario">
+              </div>
+            <div class="span8">
+              <center><h4>Nombre de usuario</h4></center>
+              <hr>
+              <button type="button" class="btn btn-inverse pull-left"><i class="icon-ban-circle icon-white icon-1x"></i></button>
+              <button type="button" class="btn btn-danger pull-right"><i class="icon-minus icon-white icon-1x "></i></button>
+            </div>
+          </div>
 
+<%}%>

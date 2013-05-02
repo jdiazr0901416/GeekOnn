@@ -65,7 +65,12 @@ public class InicioSesion extends HttpServlet {
                     String Username = sentenciasSQL.ObtenerUsernameSabiendoElid(idUsuario);
                     respuesta.setAttribute("sessionUsername", Username);
                     respuesta.setAttribute("sessionIdUsuario", idUsuario);
-                              
+                    if(sentenciasSQL.comprobarSiEstaOnline(Username)){
+                        String Username2 = "TEN CUIDADO ALGUIEN MAS YA ESTABA ONLINE CON TU USERNAME ANTES QUE TU";
+                        respuesta.setAttribute("sessionUsername", Username2);
+                    }else{
+                        sentenciasSQL.ponerOnline(Username);
+                    }          
                 }else{
                     respuesta.setAttribute("error", "Tus Datos estan mal");
                 }

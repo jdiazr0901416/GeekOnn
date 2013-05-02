@@ -3,7 +3,17 @@
     Created on : 15-abr-2013, 10:22:41
     Author     : Julio
 	--%>
-
+<%--Esto va en todas las paginas y no te olvides de cerrar } del Else hasta el final de todo el HTML--%>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    response.sendRedirect("index.jsp");
+}else{%>
+<%--DECLARO LA VARIABLE idUsuario--%>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- hacer programacion pertinente-->
 <!DOCTYPE html>
@@ -163,3 +173,4 @@
     <script src="recursos/ajax/ajax.js"></script>
   </body>
 </html>
+<%}%>

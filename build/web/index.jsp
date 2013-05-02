@@ -75,7 +75,7 @@
           <div class="modal-body">
             <div class="row-fluid">
               <div class="span6 offset3"> 
-                <form action='InicioSesion' METHOD='POST' class='form-horizontal'><!--Modifique para Redirigir al Servlet-->
+                <form action='InicioSesion' METHOD='POST' class='form-horizontal'>
                 <div class="control-group">
                   <div class="controls" style="margin-left:0;">
                     <div class="input-prepend">

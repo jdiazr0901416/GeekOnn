@@ -1,57 +1,30 @@
 package com.geekonn.system;
 
+import java.io.PrintWriter;
 import java.sql.*;
 
 public class SentenciasSQL {
-    private Connection conexion;
-    private Statement statement;
-    private ResultSet resultset;
+        private Connection conexion;
+	private Statement statement;
+	private ResultSet resultset;
+	
 
-/************************************** CODIGO PARA LAS CONEXIONES ***************************************************/    
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
-        String driver = "com.mysql.jdbc.Driver";
-        Class.forName(driver);
-        conexionSinPass();
+            String driver = "com.mysql.jdbc.Driver";
+            Class.forName(driver);
+            conexionSinPass();
     }
 
     public void connect() throws SQLException {
-        //Que Bonito Copy PASTE de HUGME Julio
-        String urlUsedForDatabaseConnection = "jdbc:mysql://189.134.55.105:3307/hugme";
-        String mysqlUser = "jdiazr0901416";
-        String mysqlPassword="CrYnEt1995";
-        conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
-        statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-        System.out.println("\n Succes; connection established.");		
+            String urlUsedForDatabaseConnection = "jdbc:mysql://189.134.55.105:3307/hugme";
+            String mysqlUser = "jdiazr0901416";
+            String mysqlPassword="CrYnEt1995";
+
+            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            System.out.println("\n Succes; connection established.");		
     }
-    
-    public void conexionLocalBatiz() throws SQLException {
-        String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
-        String mysqlUser ="root";
-        String mysqlPassword="n0m3l0";
-        conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
-        statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-        System.out.println("\n Succes; connection established.");		
-    }
-    
-    public void conexionLocalJulio() throws SQLException {
-        String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3307/geekonn";
-        String mysqlUser ="jdiazr0901416";
-        String mysqlPassword="0421**";
-        conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
-        statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-        System.out.println("\n Succes; connection established.");		
-    }
-    
-    public void conexionLocalJulioUbuntu() throws SQLException {
-        String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
-        String mysqlUser ="root";
-        String mysqlPassword="0421**";
-        conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
-        statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-        System.out.println("\n Succes; connection established.");		
-    }
-    
-    public void conexionSinPass() throws SQLException {
+        public void conexionSinPass() throws SQLException {
         String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
         String mysqlUser ="root";
         String mysqlPassword="";
@@ -59,19 +32,47 @@ public class SentenciasSQL {
         statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         System.out.println("\n Conexion realizada");		
     }
-    
-    public void closeConnection() throws SQLException {
-        if(resultset !=null) resultset.close();
-        if(statement !=null) statement.close();
-        if(conexion !=null) conexion.close();
-        System.out.println("Conexion Cerrada Exitosamente.");		
+    public void conexionLocalBatiz() throws SQLException {
+            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
+            String mysqlUser ="root";
+            String mysqlPassword="n0m3l0";
+
+            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            System.out.println("\n Succes; connection established.");		
+    }
+    public void conexionLocalJulio() throws SQLException {
+            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3307/geekonn";
+            String mysqlUser ="jdiazr0901416";
+            String mysqlPassword="0421**";
+
+            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            System.out.println("\n Succes; connection established.");		
+    }
+    public void conexionLocalJulioUbuntu() throws SQLException {
+            String urlUsedForDatabaseConnection ="jdbc:mysql://127.0.0.1:3306/geekonn";
+            String mysqlUser ="root";
+            String mysqlPassword="0421**";
+
+            conexion = DriverManager.getConnection(urlUsedForDatabaseConnection, mysqlUser, mysqlPassword);
+            statement = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            System.out.println("\n Succes; connection established.");		
     }
 
-/**************************Registro de Usuario**************************************************************************/    
+    public void closeConnection() throws SQLException {
+            if(resultset !=null) resultset.close();
+            if(statement !=null) statement.close();
+            if(conexion !=null) conexion.close();
+
+            System.out.println("Connection closed succesfuly.");		
+    }
+
+/**************************Registro de Usuario*****************************************/    
      public void registrarNuevoUsuario(String nombreCompleto, String correoElectronico, String nombreUsuario, String password){
 		try{
         statement=conexion.createStatement();
-	statement.execute("INSERT INTO usuariosGeekonn " +  
+	statement.execute("INSERT INTO usuariosgeekonn " +  
                 "(correo, password, nombre, nombreUsuario) " +
                 "VALUES("
                 + "'" + correoElectronico + "',"
@@ -91,7 +92,7 @@ public class SentenciasSQL {
         int idUsuario=0;
         try{
             statement=conexion.createStatement();
-            resultset = statement.executeQuery("SELECT * FROM usuariosGeekonn WHERE Correo='" +
+            resultset = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE Correo='" +
                     nombreOCorreo + "' OR nombreUsuario='" + 
                     nombreOCorreo + "';");
             if(resultset.next()){
@@ -237,16 +238,26 @@ public class SentenciasSQL {
         }
     }
 /***********************************************************************************************/
-public ResultSet obtenerIdAmigos(int userId){
-		ResultSet resultSet = null;
-		String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
-                System.out.println(friendsTableName);
-		try{
-			resultSet = statement.executeQuery("SELECT * FROM "+ friendsTableName +" WHERE bloqueado = " + 0);
-		}catch(SQLException e){
-			System.out.println("SQLError al obtener ids ");
-		}
-		return resultSet;
+    public ResultSet obtenerIdAmigos(int userId){
+                    ResultSet resultSet = null;
+                    String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
+                    System.out.println(friendsTableName);
+                    try{
+                            resultSet = statement.executeQuery("SELECT * FROM "+ friendsTableName +" WHERE bloqueado = " + 0);
+                    }catch(SQLException e){
+                            System.out.println("SQLError al obtener ids ");
+                    }
+                    return resultSet;
+    }
+    public ResultSet obtenerIdAmigosBloqueados(int userId){
+                    ResultSet resultSet = null;
+                    String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
+                    try{
+                            resultSet = statement.executeQuery("SELECT * FROM "+ friendsTableName +" WHERE bloqueado = " + 1);
+                    }catch(SQLException e){
+                            System.out.println("SQLError on getFriendsIDs bloqueados");
+                    }
+                    return resultSet;
     }
     public ResultSet obtenerInfoUsuario(int userId){
             ResultSet resultSet = null;
@@ -256,18 +267,75 @@ public ResultSet obtenerIdAmigos(int userId){
             System.out.println("SQLError on getUserInfo");
             }
             return resultSet;
-            }
-    public int revisar(String nombreUsuario) throws SQLException{   
-    ResultSet resultSet = null;
-    try{
-    resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE nombreUsuario = '" + nombreUsuario + "'");
-    }catch(SQLException e){
-    System.out.println("SQLError on getUserInfo");
     }
-    if(resultSet.isBeforeFirst()){
-      return 1;
-    }else{
-      return 0;
-    }   
+    public int revisar(String nombreUsuario) throws SQLException{   
+        ResultSet resultSet = null;
+        try{
+            resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE nombreUsuario = '" + nombreUsuario + "'");
+        }catch(SQLException e){
+            System.out.println("SQLError on getUserInfo");
+        }
+        if(resultSet.isBeforeFirst()){
+             return 1;
+        }else{
+             return 0;
+        }   
   }
+    public void blockAFriend(int userId,int friendId){
+            String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
+
+            try{
+                statement.execute("UPDATE " + friendsTableName + " SET bloqueado = 1" + 
+                            " WHERE idAmigo = " + friendId);
+
+            }catch(SQLException e){
+                    System.out.println("SQLError on blockAFriend");
+            }
+    }
+
+    public void unblockAFriend(int userId,int friendId){
+            String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
+            try{
+                statement.execute("UPDATE " + friendsTableName + " SET bloqueado = 0" + 
+                            " WHERE idAmigo = " + friendId);
+
+            }catch(SQLException e){
+                    System.out.println("SQLError on unblockAFriend");
+            }
+    }
+/*********************************INSERTAR A TABLA DE USUARIOS ONLINE**************************************************/    
+public void ponerOnline(String Username){
+    try{
+        statement=conexion.createStatement();
+	statement.execute("INSERT INTO usuariosonline " +  
+                "(usuario) " +
+                "VALUES("
+                + "'" + Username + "');" );
+        System.out.print("ponerOnline() Correcto ya esta Online");
+		}catch(SQLException e){
+			System.out.println("SQLError en ponerOnline SentenciasSQL");
+		}
+}
+public boolean comprobarSiEstaOnline(String Username) throws SQLException{
+        ResultSet rs = null;
+        try{
+        String sql = "SELECT * FROM usuariosonline WHERE usuario='" + 
+                    Username + "'";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        rs = ps.executeQuery();
+        return rs.next();
+        }catch(SQLException e){
+            System.out.print("Error en SentenciasSQL METODO: comprobarSiEstaOnline");
+        }
+        return rs.next();
+   }
+public void ponerOffline(String Username){
+    try{
+        statement=conexion.createStatement();
+	statement.execute("DELETE FROM usuariosonline WHERE usuario='"+Username+"'");
+        System.out.print("ponerOffline() Correcto");
+		}catch(SQLException e){
+			System.out.println("SQLError en ponerOffline SentenciasSQL");
+		}
+}
 }

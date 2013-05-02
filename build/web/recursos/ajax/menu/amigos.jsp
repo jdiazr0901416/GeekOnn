@@ -3,8 +3,21 @@
     Created on : 15-abr-2013, 10:22:41
     Author     : Julio
 --%>
+<%--Esto va en todas las paginas y no te olvides de cerrar } del Else hasta el final de todo el HTML--%>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    response.sendRedirect("index.jsp");
+}else{%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import = "com.geekonn.system.SentenciasSQL" %>
+<%@ page import = "java.sql.ResultSet" %>
+<%@ page import = "javax.servlet.http.HttpServletResponse" %>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -20,6 +33,7 @@
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/amigos.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
+    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -37,13 +51,42 @@
   </head>
   <body>
 <!-- amigos!------------------------------------------------------------------------------------------------------------------------------------ -->
-    <div class="container-fluid" >
+    <div class="container-fluid">
         <div class="row-fluid">
             <div class="span9" id="contenedor-amigos">
-                <div class="row-fluid">
-                    <!-- este es un amigo -->
+                <div class="row-fluid" id="contenedor-amigos-recuperados">
+                    <%
+                    int userId=idUsuario;
+                    String nombre = "";
+                    SentenciasSQL cerrar0 = new SentenciasSQL();
+                    SentenciasSQL sentenciasLista0 = new SentenciasSQL();
+                    ResultSet resultSetLista0 =null;
+                    SentenciasSQL sentenciasID0 = new SentenciasSQL();;
+                    ResultSet resultSetID0 =null;
+                    resultSetLista0 =  sentenciasLista0.obtenerIdAmigos(userId);
+
+                     while(resultSetLista0.next()){
+                           int userIdTable = resultSetLista0.getInt("idAmigo");
+                           System.out.println(userIdTable);
+                           resultSetID0= sentenciasID0.obtenerInfoUsuario(userIdTable);
+                                while(resultSetID0.next()){
+
+                                    if(resultSetID0.first()){
+                                    nombre = resultSetID0.getString("nombreUsuario");
+                                }
+                                out.println("<div class='span2 amigo-recuperado' >");
+                                    out.println("<div class='span12' id='visitarAmigo' value='nombreUsuario' onclick='visitarAmigo(this.value)'>");
+                                        out.println("<p class='text-center'>"+resultSetID0.getString("nombreUsuario")+"</p>");
+                                        out.println("<center><img src='recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png' alt='' class='img-rounded' id='imagen-del-usuario'></center>");
+                                    out.println("</div>");
+                                out.println("</div>");
+                                }
+                     }
+                     cerrar0.closeConnection();
+                    %>
+                    <!-- este es un amigo 
                     <div class="span2" id="amigo">
-                        <div class="span12" >
+                        <div class="span12" id="visitarAmigo" value="nombreUsuario" onclick="visitarAmigo(this.value)">
                             <center><img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-del-usuario"></center>
                         </div>
                         <div class="span12">
@@ -53,69 +96,200 @@
                     </div>
                     <!-- /este es un amigo -->
                 </div> 
-                
             </div>
             <div class="span3" id="contenedor-configuracion-principal">
                 <div class="row-fluid">
-                      <div class="span12">
-                            <div class="row-fluid">
-                                <div class="row-fluid meta-black">
-                                    <div class="span12">
-                                        <p class="text-center"><b>Configuración</b></p>
+                    <div class="span12">
+                    <div class="row-fluid">
+                        <!-- Modal bloqueo -------------------------------------------------------------------------------------->
+                            <div id="myModalBloqueo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="row-fluid">
+                                    <div class="span12" id="color-modal"> 
+                                      <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h3 id="myModalLabel">Bloquear Amigo</h3>
+                                      </div>
+                                      <div class="modal-body">
+                                            <div class="row-fluid">
+                                              <div class="span6 offset3"> 
+                                                      <center><h4>Seleciona  a tu amigo:&nbsp;<h4>
+                                                        <select name="mensaje-amigo" onchange="recuperaIdSelect(this.value)">
+                                                            <option>Elije un nombre</option>
+                                                            <%
+                                                            nombre = "";
+                                                            SentenciasSQL cerrar = new SentenciasSQL();
+                                                            SentenciasSQL sentenciasLista = new SentenciasSQL();
+                                                            ResultSet resultSetLista =null;
+                                                            SentenciasSQL sentenciasID = new SentenciasSQL();;
+                                                            ResultSet resultSetID =null;
+                                                            resultSetLista =  sentenciasLista.obtenerIdAmigos(userId);
+
+                                                             while(resultSetLista.next()){
+                                                                   int userIdTable = resultSetLista.getInt("idAmigo");
+                                                                   System.out.println(userIdTable);
+                                                                   resultSetID= sentenciasID.obtenerInfoUsuario(userIdTable);
+                                                                        while(resultSetID.next()){
+
+                                                                            if(resultSetID.first()){
+                                                                            nombre = resultSetID.getString("nombreUsuario");
+                                                                        }
+                                                                        out.println("<option>"+resultSetID.getString("nombreUsuario")+"</option>");
+                                                                        }
+                                                             }
+                                                             cerrar.closeConnection();
+                                                            %>
+                                                        </select>
+                                                        </center>
+                                                      <br>
+
+                                              </div>
+                                            </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button class="btn btn-primary" id="bloquearAmigo" data-dismiss="modal" aria-hidden="true" onclick="bloquearUsuario()">Bloquear Amigo</button>
+                                      </div>
                                     </div>
-                                </div>
-                                <div class="row-fluid" id="bloqueo">
-                                    <div class="span12">
-                                        <div class="row-fluid">
-                                            <div class="span3">
-                                               <center><i class="icon-lock icon-4x icon-derecha"></i></center>
-                                            </div>
-                                            <div class="span9">
-                                                <p class="text-center"><h4>Bloquear a esta persona</h4></p>
-                                            </div>
-                                        </div>
-                                        <div class="row-fluid">
-                                            <div class="span3">
-                                                <center><i class="icon-unlock icon-4x icon-derecha"></i></center>
-                                            </div>
-                                            <div class="span9">
-                                                <p class="text-center"><h4>Desbloquear a esta persona</h4></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                              </div>
                             </div>
-                        </div>
-                     </div>
-                    <div class="row-fluid busqueda-amigo">
-                          <div class="span12">
-                                <div class="row-fluid">
-                                    <div class="row-fluid meta-black">
-                                        <div class="span12">
-                                            <p class="text-center"><b>Buscar un amigo</b></p>
-                                        </div>
+                            <!-- Termina Modal ---------------------------------------------------------------------------------->
+                            <!-- Modal desbloqueo -------------------------------------------------------------------------------------->
+                            <div id="myModalDesbloqueo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="row-fluid">
+                                    <div class="span12" id="color-modal"> 
+                                      <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h3 id="myModalLabel">Desbloquear Amigo</h3>
+                                      </div>
+                                      <div class="modal-body">
+                                            <div class="row-fluid">
+                                              <div class="span6 offset3"> 
+                                                      <center><h4>Seleciona  a tu amigo:&nbsp;<h4>
+                                                        <select name="mensaje-amigo" onchange="recuperaIdSelect2(this.value)">
+                                                            <option>Elije un nombre</option>
+                                                            <%
+                                                            nombre = "";
+                                                            SentenciasSQL cerrar2 = new SentenciasSQL();
+                                                            SentenciasSQL sentenciasLista2 = new SentenciasSQL();
+                                                            ResultSet resultSetLista2 =null;
+                                                            SentenciasSQL sentenciasID2 = new SentenciasSQL();;
+                                                            ResultSet resultSetID2 =null;
+                                                            resultSetLista2 =  sentenciasLista2.obtenerIdAmigosBloqueados(userId);
+
+                                                             while(resultSetLista2.next()){
+                                                                   int userIdTable = resultSetLista2.getInt("idAmigo");
+                                                                   System.out.println(userIdTable);
+                                                                   resultSetID2= sentenciasID2.obtenerInfoUsuario(userIdTable);
+                                                                        while(resultSetID2.next()){
+
+                                                                            if(resultSetID2.first()){
+                                                                            nombre = resultSetID2.getString("nombreUsuario");
+                                                                        }
+                                                                        out.println("<option>"+resultSetID2.getString("nombreUsuario")+"</option>");
+                                                                        }
+                                                             }
+                                                             cerrar2.closeConnection();
+                                                            %>
+                                                        </select>
+                                                        </center>
+                                                      <br>
+
+                                              </div>
+                                            </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="desbloquearUsuario()">Desbloquear Amigo</button>
+                                      </div>
                                     </div>
-                                    <div class="row-fluid" id="busqueda">
-                                        <div class="span12 busqueda-amigo" >
-                                            <center><div class="control-group" id="div-control-space">
-                                                <div class="controls" style="margin-left:0;">
-                                                  <div class="input-prepend">
-                                                      <span class="add-on"><i class="icon-user"></i></span><input  class="input-large" type="text" tabindex="1">
+                              </div>
+                            </div>
+                            <!-- Termina Modal ---------------------------------------------------------------------------------->
+                            <div class="span12">
+                                  <div class="row-fluid">
+                                      <div class="row-fluid meta-black">
+                                          <div class="span12">
+                                              <p class="text-center"><b>Configuración</b></p>
+                                          </div>
+                                      </div>
+                                      <div class="row-fluid" id="bloqueo">
+                                          <div class="span12">
+                                              <div class="row-fluid">
+                                                  <div class="span3">
+                                                     <center><i class="icon-lock icon-4x icon-derecha"></i></center>
                                                   </div>
-                                                </div>
-                                            </div></center>
-                                        </div>
-                                        <center><button type="button" class="btn btn-info">Buscar</button></center>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="row-fluid" id="Encontrado">
-                        
+                                                  <div class="span9">
+                                                      <p class="text-center"><h4><a href="#myModalBloqueo" data-toggle="modal" data-target="#myModalBloqueo" id="a-iniciar-sesion">Bloquear un umigo</a></h4></p>
+                                                  </div>
+                                              </div>
+                                              <div class="row-fluid">
+                                                  <div class="span3">
+                                                      <center><i class="icon-unlock icon-4x icon-derecha"></i></center>
+                                                  </div>
+                                                  
+                                                  <div class="span9">
+                                                      <p class="text-center"><h4><a href="#myModalBloqueo" data-toggle="modal" data-target="#myModalDesbloqueo" id="a-iniciar-sesion ">Desbloquear un amigo</a></h4></p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                            <div class="span12">
+                              <div class="row-fluid" id="respuestaDesbloquear">
+                              </div>
+                         </div>
+                       </div>
+                      <div class="span12">       
+                          <div class="row-fluid busqueda-amigo">
+                                <div class="span12">
+                                      <div class="row-fluid">
+                                          <div class="row-fluid meta-black">
+                                              <div class="span12">
+                                                  <p class="text-center"><b>Buscar un amigo</b></p>
+                                              </div>
+                                          </div>
+                                          <div class="row-fluid" id="busqueda">
+                                              <div class="span12 busqueda-amigo" >
+                                                  <center><div class="control-group" id="div-control-space">
+                                                      <div class="controls" style="margin-left:0;">
+                                                        <div class="input-prepend">
+                                                            <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" tabindex="1" onkeyup="recuperaIdSelect3(this.value)">
+                                                        </div>
+                                                      </div>
+                                                  </div></center>
+                                              </div>
+                                              <center><button type="button" class="btn btn-info" onclick="respuestaBusquedaAmigo()">Buscar</button></center>
+                                          </div>
+                                      </div>
+                                  </div>
+                          </div>
+                      </div>
+                    <div class="span12">                                      
+                        <div class="row-fluid" id="encontrado">
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+     <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="recursos/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-transition.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-alert.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-modal.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-dropdown.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-tab.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-tooltip.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-popover.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-button.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
+    <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
+    <script src="recursos/ajax/ajax.js"></script>
+    
     </body>
 </html>
+<%}%>
