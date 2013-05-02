@@ -10,7 +10,6 @@
 <%@ page import = "javax.servlet.http.HttpServletResponse" %>
 <%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <% 
-    
     String nombreUsuario= request.getParameter("nombre");
     SentenciasSQL recuperarId = new SentenciasSQL();
     SentenciasSQL bloquearAmigo = new SentenciasSQL();

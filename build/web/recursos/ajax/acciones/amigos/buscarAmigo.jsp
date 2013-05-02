@@ -1,9 +1,8 @@
 <%-- 
-    Document   : desbloquearAmigo
-    Created on : 26-abr-2013, 0:27:01
+    Document   : buscarAmigo
+    Created on : 01-may-2013, 21:47:51
     Author     : Julio
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>

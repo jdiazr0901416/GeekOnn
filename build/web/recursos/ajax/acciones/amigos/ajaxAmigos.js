@@ -57,7 +57,6 @@ function bloquearUsuario(){
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/bloquearAmigo.jsp?nombre="+nombre,true);
     conexion.send();
-    //respuestaAmigos2();
 }
 function desbloquearUsuario(){
     var conexion;
@@ -75,42 +74,17 @@ function desbloquearUsuario(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("Encontrado").innerHTML=conexion.responseText;
+        document.getElementById("principal").innerHTML=conexion.responseText;
         }
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/desbloquearAmigo.jsp?nombre="+nombre,true);
     conexion.send();
     
 }
-function visitarAmigo(str){
-    console.log("entre a visitar");
-    var nombreUsuario;
-    nombreUsuario=str;
-    console.log("nombreUsuario");
-}
-function limpiar(){
+function buscarAmigo(str){
     var conexion;
-    if (window.XMLHttpRequest)
-      {
-      conexion=new XMLHttpRequest();
-      }
-    else
-      {
-      conexion=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-    conexion.onreadystatechange=function()
-      {
-      if (conexion.readyState===4 && conexion.status===200)
-        {
-        document.getElementById("principal2").innerHTML=conexion.responseText;
-        }
-      }
-    conexion.open("GET","recursos/ajax/menu/limpiar.jsp",true);
-    conexion.send();
-}
-function respuestaAmigos2(){
-    console.log("entre amigos2");
-    var conexion;
+    var nombre;
+    nombre= str;
     if (window.XMLHttpRequest)
       {
       conexion=new XMLHttpRequest();
@@ -126,6 +100,7 @@ function respuestaAmigos2(){
         document.getElementById("principal").innerHTML=conexion.responseText;
         }
       }
-    conexion.open("GET","recursos/ajax/menu/amigos.jsp",false);
+    conexion.open("POST","recursos/ajax/acciones/amigos/buscarAmigo.jsp?nombre="+nombre,true);
     conexion.send();
+    
 }

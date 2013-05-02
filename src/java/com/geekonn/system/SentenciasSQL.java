@@ -234,7 +234,6 @@ public class SentenciasSQL {
                     return resultSet;
     }
     public ResultSet obtenerIdAmigosBloqueados(int userId){
-
                     ResultSet resultSet = null;
                     String friendsTableName = "tabla_amigos_".concat(String.valueOf(userId));
                     try{
@@ -315,4 +314,17 @@ public class SentenciasSQL {
         }
         return null;
     }    
+    public int buscarUsuarioGeekonn(String nombreUsuario){
+        int idUsuario=0;
+        try{
+            statement=conexion.createStatement();
+            resultset = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE nombreUsuario like = '%" + nombreUsuario + "%'");
+            if(resultset.next()){
+                 idUsuario = resultset.getInt("idUsuario");
+            }    
+        }catch(SQLException e){
+			System.out.println("SQLError on devolveridusuario");
+       }    
+        return idUsuario;
+    }
 }

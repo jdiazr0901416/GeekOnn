@@ -165,7 +165,6 @@
                                                             SentenciasSQL sentenciasID2 = new SentenciasSQL();;
                                                             ResultSet resultSetID2 =null;
                                                             resultSetLista2 =  sentenciasLista2.obtenerIdAmigosBloqueados(userId);
-
                                                              while(resultSetLista2.next()){
                                                                    int userIdTable = resultSetLista2.getInt("idAmigo");
                                                                    System.out.println(userIdTable);
