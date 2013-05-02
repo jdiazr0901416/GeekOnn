@@ -3,7 +3,15 @@
     Created on : 15-abr-2013, 10:20:41
     Author     : Julio
 --%>
-
+<%--SESIONES BOUCHAN--%>
+<%--AGREGO UNA LIBRERIA PARA IMPLEMENTAR UN EXAMINADOR DE SESIONES
+    ESTO VA A BUSCAR SI  HAY UNA SESION Y ME REDIRIGE AUTOMATICAMENTE
+--%>
+<%@taglib prefix="t" uri="http://java.sun.com/jsp/jstl/core" %>
+<%-- EXAMINA SESIONES ABIERTAS Y HACE VALIDACION--%>
+<t:if test="${sessionScope['sessionUsername']!=null}">
+    <% response.sendRedirect("geekonn.jsp");%>
+</t:if>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">

@@ -75,7 +75,7 @@ public class InicioSesion extends HttpServlet {
                 System.out.println("SQL exception. .-." + e.getMessage());
             }
 
-       response.sendRedirect("Sesiones.jsp");
+       response.sendRedirect("Sesion.jsp");
         }
         public void init(ServletConfig config) throws ServletException {
 		super.init(config);

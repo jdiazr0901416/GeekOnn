@@ -1,14 +1,12 @@
-<%--ESTO VA EN TODOS LOS HEADERS DE LAS SESIONES--%>
 <% 
 response.setHeader("Cache-Control","no-cache");
 response.setHeader("Cache-Control","no-store");
 response.setDateHeader("Expires", 0);
-String Username = (String)session.getAttribute("sessionUsername");
-if(Username == null){
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
     response.sendRedirect("index.jsp");
 }else{%>
-<%--HAY QUE CERRAR LA LLAME DEL ELSE HASTA EL FINAL DE TODO EL HTML--%>    
-<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%><%--ESTO ES PARA OBTENER EL ID--%>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -161,4 +159,4 @@ if(Username == null){
     
   </body>
 </html>
-<%}%>
+<% } %>
