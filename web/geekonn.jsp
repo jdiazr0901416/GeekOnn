@@ -1,13 +1,14 @@
-<%-- 
-    Document   : geekonn-P
-    Created on : 15-abr-2013, 10:22:41
-    Author     : Julio
---%>
-<%--
-ESTOY DECLARANDO UNA VARIABLE INT PARA QUE SE PUEDA IMPRIMIR EL VALOR DEL IDUSUARIO
-QUE HAYA INICIADO SESION CHECA COMO LO IMPRIMO EN EL TEXTO BIENVENIDO
---%>
-<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
+<%--ESTO VA EN TODOS LOS HEADERS DE LAS SESIONES--%>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String Username = (String)session.getAttribute("sessionUsername");
+if(Username == null){
+    response.sendRedirect("index.jsp");
+}else{%>
+<%--HAY QUE CERRAR LA LLAME DEL ELSE HASTA EL FINAL DE TODO EL HTML--%>    
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%><%--ESTO ES PARA OBTENER EL ID--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -160,3 +161,4 @@ QUE HAYA INICIADO SESION CHECA COMO LO IMPRIMO EN EL TEXTO BIENVENIDO
     
   </body>
 </html>
+<%}%>
