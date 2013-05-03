@@ -187,7 +187,31 @@
                                             </div>
                                       </div>
                                       <div class="modal-footer">
-                                            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="buscarAmigo(this.value)">Desbloquear Amigo</button>
+                                            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="desbloquearUsuario(this.value)">Desbloquear Amigo</button>
+                                      </div>
+                                    </div>
+                              </div>
+                            </div>
+                            <!-- Termina Modal ---------------------------------------------------------------------------------->
+                            <!-- Modal desbloqueo -------------------------------------------------------------------------------------->
+                            <div id="myModalDesbloqueoN" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="row-fluid">
+                                    <div class="span12" id="color-modal"> 
+                                      <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h3 id="myModalLabel">Desbloquear Amigo</h3>
+                                      </div>
+                                      <div class="modal-body">
+                                            <div class="row-fluid">
+                                              <div class="span12">
+                                                  <br>
+                                                  <center><h1>No tienes amigos bloqueados aun</h1></center>
+                                                  <br>
+                                              </div>
+                                            </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Salir</button>
                                       </div>
                                     </div>
                               </div>
@@ -216,7 +240,17 @@
                                                   </div>
                                                   
                                                   <div class="span9">
-                                                      <p class="text-center"><h4><a href="#myModalBloqueo" data-toggle="modal" data-target="#myModalDesbloqueo" id="a-iniciar-sesion ">Desbloquear un amigo</a></h4></p>
+                                                      <%
+                                                        SentenciasSQL cerrar3 = new SentenciasSQL();
+                                                        SentenciasSQL sentenciasLista3 = new SentenciasSQL();
+                                                        if(sentenciasLista3.revisarAmigosBloqueados(idUsuario)==false){
+                                                           out.print("<p class='text-center'><h4><a href='#myModalBloqueo' data-toggle='modal' data-target='#myModalDesbloqueoN' id='a-iniciar-sesion'>Desbloquear un amigo</a></h4></p>");
+                                                        }else{
+                                                            out.print("<p class='text-center'><h4><a href='#myModalBloqueo' data-toggle='modal' data-target='#myModalDesbloqueo' id='a-iniciar-sesion'>Desbloquear un amigo</a></h4></p>");
+                                                        }
+                                                        cerrar3.closeConnection();
+                                                      %>
+                                                      
                                                   </div>
                                               </div>
                                           </div>
@@ -242,7 +276,7 @@
                                                   <center><div class="control-group" id="div-control-space">
                                                       <div class="controls" style="margin-left:0;">
                                                         <div class="input-prepend">
-                                                            <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" tabindex="1" onkeyup="buscarAmigo(this.value)">
+                                                            <span class="add-on"><i class="icon-search"></i></span><input  class="input-medium" type="text" tabindex="1" onkeyup="buscarAmigo(this.value)">
                                                         </div>
                                                       </div>
                                                   </div></center>

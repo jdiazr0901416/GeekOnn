@@ -1,10 +1,13 @@
-	<%-- 
+
+<%-- 
     Document   : geekonn-P
     Created on : 15-abr-2013, 10:22:41
     Author     : Julio
 	--%>
-
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.geekonn.system.SentenciasSQL"%>
+<%@page import="java.sql.*"%>
 <!-- hacer programacion pertinente-->
 <!DOCTYPE html>
 <html lang="es">
@@ -34,114 +37,62 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
+                                   <%SentenciasSQL sentenciasSQL = new SentenciasSQL();%>
   </head>
   <body>
 	<div class="container-fluid" id="contenedor-mensajes">
 		<div class="row-fluid">
 			<div class="span12">
-				<center><h4>Conversación con: --nombre de usuario--</h4></center>
+                            <%int idUsuarioConversacion =  Integer.parseInt(request.getParameter("idUsuario"));
+                            ResultSet resultsetConversacion = sentenciasSQL.devolverInformacionUsuario(idUsuarioConversacion);
+                            String usuarioConversacion = "";
+                            if(resultsetConversacion.next()){
+                                usuarioConversacion = resultsetConversacion.getString("nombreUsuario");
+                                                           }
+                            %>
+                            
+				<center><h4>Conversación con: -- <%=usuarioConversacion%> --</h4></center>
 			</div>
 		</div>
 		<div class="row-fluid">
 			<div class="span11 offset1" id="contenedor-ultimos-mensajes-conversacion">
-			  <!-- este es un mensaje------------>
-			  <div class="row-fluid">
-				<div class="span2">
-				  <img src="">
-				  imagen usuario
-				</div>
-				<div class="span10">
-				  <p align="justify">
-					Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario
-				  </p>
-				</div>
-			  </div>
-			   <!-- este es un mensaje------------>
-			   <!-- este es un mensaje------------>
-			  <div class="row-fluid">
-				<div class="span2">
-				  <img src="">
-				  imagen usuario
-				</div>
-				<div class="span10">
-				  <p align="justify">
-					Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario
-				  </p>
-				</div>
-			  </div>
-			   <!-- este es un mensaje------------>
-			   <!-- este es un mensaje------------>
-			  <div class="row-fluid">
-				<div class="span2">
-				  <img src="">
-				  imagen usuario
-				</div>
-				<div class="span10">
-				  <p align="justify">
-					Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario
-				  </p>
-				</div>
-			  </div>
-			   <!-- este es un mensaje------------>
-			   <!-- este es un mensaje------------>
-			  <div class="row-fluid">
-				<div class="span2">
-				  <img src="">
-				  imagen usuario
-				</div>
-				<div class="span10">
-				  <p align="justify">
-					Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario
-				  </p>
-				</div>
-			  </div>
-			   <!-- este es un mensaje------------>
-			   <!-- este es un mensaje------------>
-			  <div class="row-fluid">
-				<div class="span2">
-				  <img src="">
-				  imagen usuario
-				</div>
-				<div class="span10">
-				  <p align="justify">
-					Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario
-				  </p>
-				</div>
-			  </div>
-			   <!-- este es un mensaje------------>
-			   <!-- este es un mensaje------------>
-			  <div class="row-fluid">
-				<div class="span2">
-				  <img src="">
-				  imagen usuario
-				</div>
-				<div class="span10">
-				  <p align="justify">
-					Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario
-				  </p>
-				</div>
-			  </div>
-			   <!-- este es un mensaje------------>
-			   <!-- este es un mensaje------------>
-			  <div class="row-fluid">
-				<div class="span2">
-				  <img src="">
-				  imagen usuario
-				</div>
-				<div class="span10">
-				  <p align="justify">
-					Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario--Conversación con: --nombre de usuario
-				  </p>
-				</div>
-			  </div>
-			  </div>
-			   <!-- este es un mensaje------------>
-			   <div class="row-fluid">
+			  <!-- Formulario para continuar conversacion-->
+                          <div class="row-fluid">
 				  <div class="span12">
-					<textarea rows="5" class="span11 offset1"></textarea>
-					<p class="text-right"><button type="button" class="btn btn-info">Enviar</button></p>
+                                      <form>
+                                          <textarea rows="5" class="span11 offset1" name="<%=usuarioConversacion%>" onkeyup="recuperaMensaje(this.value)" onfocus="recuperaIdSelect(this.name)"></textarea>
+                                        <p class="text-right"><button type="button" class="btn btn-info"  onclick="nombreUsuario()">Enviar</button></p>
+                                      </form>
 				  </div>
 				</div>
+                          <!--Mensajes enviados ya-->
+                          <%int usuarioReceptor = Integer.parseInt(request.getParameter("idUsuario"));
+                            
+                            ResultSet resultsetMensajes = sentenciasSQL.obtenerMensajes(idUsuario, usuarioReceptor);%>
+			  <div class="row-fluid">
+				<div class="span2">
+				  <img src="">
+				</div>
+                                <%for(int i=1;resultsetMensajes.next() && i<=15; i++){%>
+				<div class="span10">
+				  <p align="justify">
+                                        <%  int emisor = resultsetMensajes.getInt("idEmisor");
+                                            int receptor =  resultsetMensajes.getInt("idReceptor");
+                                            String mensaje = resultsetMensajes.getString("mensaje");
+                                            String nombreUsuario = "";
+                                            System.out.println(emisor);
+                                            ResultSet resultsetUsuario = sentenciasSQL.devolverInformacionUsuario(emisor);
+                                            if(resultsetUsuario.next()){
+                                               nombreUsuario =  resultsetUsuario.getString("nombreUsuario");                                                
+                                            }
+                                            out.println("Envio " + nombreUsuario + ": " + mensaje);
+                                        %>
+				  </p>
+				</div>
+                                <%}
+                                sentenciasSQL.closeConnection();%>
+			  </div>
+                         <!--Aqui termina todo-->
 		</div>
 	</div>
       <!-- Le javascript
@@ -161,5 +112,6 @@
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
+    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
   </body>
 </html>

@@ -35,38 +35,7 @@
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
   <body>
-     <!-- navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="index.html">
-            <img alt='' src="recursos/imagenes/logo/geekonn.png" height="60" width="140">
-          </a>
-          <div class="nav-collapse collapse">
-            <ul class="nav pull-right">
-              <div class="btn-group">
-                <button  data-toggle="dropdown"><img alt='' src="recursos/imagenes/imagenesUsuario/navbar/icon-user.png"></button>
-                <ul class="dropdown-menu pull-right">
-                  <li><a href="#">Opciones</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Cerrar Sesión</a></li>
-                </ul>
-              </div>
-            </ul>
-            <ul class="nav pull-right">
-              <li><a href="perfilUsuario.html" id="nav-imgUsuario-Nombre">Nombre del usuario</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-    <!-- Termina navbar  -->
-                      <!-- portada --------------------------------------- -->
+<!-- portada --------------------------------------- -->
 <div class="container-fluid" >
         <div class="row-fluid">
                   <div class="row-fluid">

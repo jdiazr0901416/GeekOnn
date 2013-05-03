@@ -3,7 +3,7 @@
     Created on : 15-abr-2013, 10:22:41
     Author     : Julio
 --%>
-
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>
@@ -60,18 +60,18 @@
                                                     <select name="mensaje-amigo" onchange="recuperaIdSelect(this.value)">
                                                         <option>Elije un nombre</option>
                                                         <%
-                                                        int userId=1;
                                                         String nombre = "";
+                                                        System.out.println(idUsuario);
                                                         SentenciasSQL cerrar = new SentenciasSQL();
                                                         SentenciasSQL sentenciasLista = new SentenciasSQL();
                                                         ResultSet resultSetLista =null;
                                                         SentenciasSQL sentenciasID = new SentenciasSQL();;
                                                         ResultSet resultSetID =null;
-                                                        resultSetLista =  sentenciasLista.obtenerIdAmigos(userId);
+                                                        resultSetLista =  sentenciasLista.obtenerIdAmigos(idUsuario);
 
                                                          while(resultSetLista.next()){
                                                                int userIdTable = resultSetLista.getInt("idAmigo");
-                                                               System.out.println(userIdTable);
+                                                               System.out.println("ids de usuarios" + userIdTable);
                                                                resultSetID= sentenciasID.obtenerInfoUsuario(userIdTable);
                                                                     while(resultSetID.next()){
 
@@ -91,35 +91,41 @@
 					</div>
 				  </div>
 				  <div class="modal-footer">
-					<button class="btn btn-primary" onclick="nombreUsuario()">Enviar Mensaje</button>
+					<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="nombreUsuario()">Enviar Mensaje</button>
 				  </div>
 				</div>
 			  </div>
 			</div>
 			<!-- Termina Modal ---------------------------------------------------------------------------------->
-                        
-			<div class="row-fluid mostrar-conversacion" id="mensaje">
-			  <div class="span4" >
-				<img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario" onclick="respuestaConversacion()">
-			  </div>
-			  <div class="span8">
-				<center><h4>Nombre de usuario</h4></center>
-				<hr>
-				<p>ultimo mensaje</p>
-			  </div>
-			</div>
-			<!-- este es un usuarui que envio mensaje anterior mente ...............................-->
+
 			<!-- este es un usuario que envio mensaje anterior mente ...............................-->
-			<div class="row-fluid mostrar-conversacion" id="mensaje">
+                        <%SentenciasSQL sentenciasSQL =  new SentenciasSQL();
+                                ResultSet listaConversaciones = sentenciasSQL.obtenerConversaciones(idUsuario);
+                                int idUsuarios;
+                                while(listaConversaciones.next()){
+                                     idUsuarios = listaConversaciones.getInt("idUsuario2");
+                                        if(idUsuario == idUsuarios){
+                                            idUsuarios = listaConversaciones.getInt("idUsuario1");
+                                        }
+                                        ResultSet informacionUsuario = sentenciasSQL.devolverInformacionUsuario(idUsuarios);
+                                        ResultSet ultimoMensaje = sentenciasSQL.obtenerMensajes(idUsuario,idUsuarios);
+                                            while(informacionUsuario.next()){%>
+                                                
+                          <div class="row-fluid mostrar-conversacion" id="mensaje"   >
 			  <div class="span4" >
-				<img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario" onclick="respuestaConversacion()">
+				<img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-mensaje-usuario" onclick="respuestaConversacion(this.alt)" alt=<%=idUsuarios%>>
 			  </div>
 			  <div class="span8 ">
-				<center><h4>Nombre de usuario </h4></center>
+                                            <center><h4><%out.println(informacionUsuario.getString("nombreUsuario"));%></h4></center>     
 				<hr>
-				<p>ultimo mensaje</p>
+                                <%if(ultimoMensaje.next()){%>
+                                <p><%out.println(ultimoMensaje.getString("Mensaje"));}%></p>
+                               
 			  </div>
 			</div>
+                                            <%}
+                                            }
+                                            sentenciasSQL.closeConnection();%>
 			<!-- este es un usuarui que envio mensaje anterior mente ...............................-->
 		  </div>
 		  <div class="span8" id="contenedor-enviar-mensajes">

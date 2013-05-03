@@ -3,7 +3,6 @@
     Created on : 15-abr-2013, 10:20:41
     Author     : Julio
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -45,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="index.html">
+          <a class="brand" href="index.jsp">
             <img src="recursos/imagenes/logo/geekonn.png" height="60" width="140">
           </a>
           <div class="nav-collapse collapse">
@@ -86,7 +85,7 @@
               </div>
             </div>
           </div>
-          <div class="span12 pull-left"><h6>¿No estas registrado?<a href="registro.html">Registrate</a></h6></div>
+          <div class="span12 pull-left"><h6>¿No estas registrado?<a href="registro.jsp">Registrate</a></h6></div>
           <div class="modal-footer">
             <button class="btn btn-primary" type="submit">Iniciar sesión</button>
                </form>
