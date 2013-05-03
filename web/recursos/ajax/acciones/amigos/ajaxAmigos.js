@@ -85,6 +85,7 @@ function buscarAmigo(str){
     var conexion;
     var nombre;
     nombre= str;
+    console.log("este es buscar amigo " + str);
     if (window.XMLHttpRequest)
       {
       conexion=new XMLHttpRequest();
@@ -97,7 +98,7 @@ function buscarAmigo(str){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("principal").innerHTML=conexion.responseText;
+        document.getElementById("").innerHTML=conexion.responseText;
         }
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/buscarAmigo.jsp?nombre="+nombre,true);

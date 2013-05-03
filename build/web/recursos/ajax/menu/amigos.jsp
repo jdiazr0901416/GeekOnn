@@ -187,7 +187,7 @@
                                             </div>
                                       </div>
                                       <div class="modal-footer">
-                                            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="desbloquearUsuario()">Desbloquear Amigo</button>
+                                            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="buscarAmigo(this.value)">Desbloquear Amigo</button>
                                       </div>
                                     </div>
                               </div>
@@ -242,12 +242,11 @@
                                                   <center><div class="control-group" id="div-control-space">
                                                       <div class="controls" style="margin-left:0;">
                                                         <div class="input-prepend">
-                                                            <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" tabindex="1" onkeyup="recuperaIdSelect3(this.value)">
+                                                            <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" tabindex="1" onkeyup="buscarAmigo(this.value)">
                                                         </div>
                                                       </div>
                                                   </div></center>
                                               </div>
-                                              <center><button type="button" class="btn btn-info" onclick="respuestaBusquedaAmigo()">Buscar</button></center>
                                           </div>
                                       </div>
                                   </div>

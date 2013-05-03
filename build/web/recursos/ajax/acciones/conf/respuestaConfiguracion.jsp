@@ -36,9 +36,12 @@
   </head>
   <body>
     <div class="container-fluid" id="contenedor-configuracion-usuario">
+    <div class="row-fluid">
+        <div class="span12">
         <div class="row-fluid">
             <center><h2>Configuración</h2></center>
             <hr>
+        </div>
             <div class="row-fluid">
                 <div class="span5">
                     <div class="row-fluid">
@@ -113,8 +116,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row-fluid">
+        <div class="row-fluid" id="parte-conf-2">
             <div class="span5">
                     <div class="row-fluid">
                         <div class="row-fluid meta-black">
@@ -202,7 +204,82 @@
                         </div>
                     </div>
                 </div>
+            <div class="span5">
+                    <div class="row-fluid">
+                        <div class="row-fluid meta-black">
+                            <div class="span12">
+                                <p class="text-center"><b>Contacto:</b></p>
+                            </div>
+                        </div>
+                        <div class="row-fluid" id="contacto">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="row-fluid">
+                                        <div class="span5">
+                                            <p><b>Correo Electronico:</b></p>
+                                        </div>
+                                        <div class="span7">
+                                            <div class="control-group" id="div-control-space">
+                                                <div class="controls" style="margin-left:0;">
+                                                  <div class="input-prepend">
+                                                    <span class="add-on"><i class="icon-envelope"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid">
+                                        <div class="span5">
+                                            <p><b>Telefono movil:</b></p>
+                                        </div>
+                                        <div class="span7">
+                                            <div class="control-group" id="div-control-space">
+                                                <div class="controls" style="margin-left:0;">
+                                                  <div class="input-prepend">
+                                                    <span class="add-on"><i class="icon-tablet"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid">
+                                        <div class="span5">
+                                            <p><b>Telefono de casa o trabajo:</b></p>
+                                        </div>
+                                        <div class="span7">
+                                            <div class="control-group" id="div-control-space">
+                                                <div class="controls" style="margin-left:0;">
+                                                  <div class="input-prepend">
+                                                    <span class="add-on"><i class="icon-book"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-fluid">
+                                        <div class="span5">
+                                            <p><b>Lugar de residencia:</b></p>
+                                        </div>
+                                        <div class="span7">
+                                            <div class="control-group" id="div-control-space">
+                                                <div class="controls" style="margin-left:0;">
+                                                  <div class="input-prepend">
+                                                    <span class="add-on"><i class="icon-home"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <center><button type="button" class="btn btn-info"><i class="icon-refresh icon-white"></i>&nbsp;Actualizar</button></center>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
             </div>
+         </div>
+        </div>
     </div>
     <!-- Le javascript
     ================================================== -->

@@ -9,10 +9,15 @@
 <%@ page import = "javax.servlet.http.HttpServletResponse" %>
 <%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <% 
+    String nombreAmigo;
     String nombreUsuario= request.getParameter("nombre");
-    SentenciasSQL recuperarId = new SentenciasSQL();
-    SentenciasSQL bloquearAmigo = new SentenciasSQL();
-    int idUsuario2=recuperarId.devolverIDUsuario(nombreUsuario);
-    bloquearAmigo.unblockAFriend(idUsuario, idUsuario2);
-    response.sendRedirect("http://localhost:8080/GeekOnn/recursos/ajax/menu/amigos.jsp");
+    SentenciasSQL sentencias = new SentenciasSQL();
+    SentenciasSQL sentenciasclose = new SentenciasSQL();
+    ResultSet resultSet =null;
+    resultSet = sentencias.buscarUsuarioGeekonn(nombreUsuario);
+    while(resultSet.next()){
+        System.out.println(resultSet.getString("nombreUsuario")+"soy amigo encontrado");
+    }
+    resultSet.close();
+    sentenciasclose.closeConnection();
 %>    

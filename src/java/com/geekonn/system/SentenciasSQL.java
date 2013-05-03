@@ -12,7 +12,7 @@ public class SentenciasSQL {
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
-            conexionLocalJulio();
+            conexionLocalBatiz();
     }
 
     public void connect() throws SQLException {
@@ -314,17 +314,14 @@ public class SentenciasSQL {
         }
         return null;
     }    
-    public int buscarUsuarioGeekonn(String nombreUsuario){
-        int idUsuario=0;
+    public ResultSet buscarUsuarioGeekonn(String nombreUsuario){
+        ResultSet resultSet = null;
         try{
             statement=conexion.createStatement();
-            resultset = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE nombreUsuario like = '%" + nombreUsuario + "%'");
-            if(resultset.next()){
-                 idUsuario = resultset.getInt("idUsuario");
-            }    
+            resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE nombreUsuario like '%" + nombreUsuario + "%'");  
         }catch(SQLException e){
-			System.out.println("SQLError on devolveridusuario");
+			System.out.println("SQLError on buscarUsuarioGeekonn");
        }    
-        return idUsuario;
+        return resultSet;
     }
 }
