@@ -22,6 +22,7 @@
     <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/geekon-personal-css.css" rel="stylesheet">
+    <link href="recursos/css/mensajes.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -51,47 +52,50 @@
                                                            }
                             %>
                             
-				<center><h4>Conversación con: -- <%=usuarioConversacion%> --</h4></center>
+				<center><h4>Conversación con: <%=usuarioConversacion%> </h4></center>
 			</div>
 		</div>
 		<div class="row-fluid">
 			<div class="span11 offset1" id="contenedor-ultimos-mensajes-conversacion">
-			  <!-- Formulario para continuar conversacion-->
-                          <div class="row-fluid">
-				  <div class="span12">
-                                      <form>
-                                          <textarea rows="5" class="span11 offset1" name="<%=usuarioConversacion%>" onkeyup="recuperaMensaje(this.value)" onfocus="recuperaIdSelect(this.name)"></textarea>
-                                        <p class="text-right"><button type="button" class="btn btn-info"  onclick="nombreUsuario()">Enviar</button></p>
-                                      </form>
-				  </div>
-				</div>
                           <!--Mensajes enviados ya-->
                           <%int usuarioReceptor = Integer.parseInt(request.getParameter("idUsuario"));
                             
                             ResultSet resultsetMensajes = sentenciasSQL.obtenerMensajes(idUsuario, usuarioReceptor);%>
-			  <div class="row-fluid">
-				<div class="span2">
-				  <img src="">
-				</div>
-                                <%for(int i=1;resultsetMensajes.next() && i<=15; i++){%>
-				<div class="span10">
-				  <p align="justify">
-                                        <%  int emisor = resultsetMensajes.getInt("idEmisor");
-                                            int receptor =  resultsetMensajes.getInt("idReceptor");
-                                            String mensaje = resultsetMensajes.getString("mensaje");
-                                            String nombreUsuario = "";
-                                            System.out.println(emisor);
-                                            ResultSet resultsetUsuario = sentenciasSQL.devolverInformacionUsuario(emisor);
-                                            if(resultsetUsuario.next()){
-                                               nombreUsuario =  resultsetUsuario.getString("nombreUsuario");                                                
-                                            }
-                                            out.println("Envio " + nombreUsuario + ": " + mensaje);
-                                        %>
-				  </p>
-				</div>
-                                <%}
-                                sentenciasSQL.closeConnection();%>
+			  <div class="row-fluid" id="contenedor-ultimos-mensajes-conversacion">
+                              <div class="span10 offset1" id="contenedor-ultimos-mensajes">
+                            <%for(int i=1;resultsetMensajes.next() && i<=15; i++){%>
+                                 <%  int emisor = resultsetMensajes.getInt("idEmisor");
+                                     int receptor =  resultsetMensajes.getInt("idReceptor");
+                                     String mensaje = resultsetMensajes.getString("mensaje");
+                                     String nombreUsuario = "";
+                                     System.out.println(emisor);
+                                     ResultSet resultsetUsuario = sentenciasSQL.devolverInformacionUsuario(emisor);
+                                     if(resultsetUsuario.next()){
+                                        nombreUsuario =  resultsetUsuario.getString("nombreUsuario");                                                
+                                     }
+                                     out.println("<div class='row-fluid'>");
+                                     out.println("<div class='span3'>");
+                                     out.println("<img src='' alt=''>");
+                                     out.println("</div>");
+                                     out.println("<div class='span9'>");
+                                     out.println("<p align='justify'>");
+                                     out.println(nombreUsuario + ": " + mensaje);
+                                     out.println("</p>");
+                                     out.println("</div>");
+                                     out.println("</div>");
+                                     
+                                     }
+                                     sentenciasSQL.closeConnection();
+                                 %>
+                              </div>
+                            </div>
 			  </div>
+                            <div class="row-fluid top">
+				  <div class="span10 offset1 top">
+                                        <textarea rows="5" class="span12" name="<%=usuarioConversacion%>" onkeyup="recuperaMensaje(this.value)" onfocus="recuperaIdSelect(this.name)"></textarea>
+                                        <p class="text-right"><button type="button" class="btn btn-info"  onclick="nombreUsuario()">Enviar</button></p>
+				  </div>
+                            </div>
                          <!--Aqui termina todo-->
 		</div>
 	</div>

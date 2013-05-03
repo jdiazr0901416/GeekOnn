@@ -46,4 +46,17 @@
 	background-color: white;
 	margin-bottom: 10px;
 }
+#contenedor-ultimos-mensajes{
+    border: 1px solid;
+    border-color: black;
+    border-radius: 10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    margin-top:10px; 
+    max-height: 850px;
+    overflow-y: auto;
+}
+.top{
+    margin-top: 15px;
+}
 /*mensajes--------------------------------------------*/

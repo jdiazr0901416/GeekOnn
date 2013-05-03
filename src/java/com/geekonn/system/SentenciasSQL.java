@@ -276,10 +276,10 @@ public class SentenciasSQL {
     public ResultSet devolverInformacionUsuario(int idUsuario){
          try{
              statement = conexion.createStatement();
-             resultset = statement.executeQuery("SELECT * FROM idusuario WHERE IdUsuario="+
+             resultset = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE idusuario="+
                      idUsuario + ";");           
          }catch(SQLException e){
-                        System.out.print("Error");
+                        System.out.print("Error en devolver info usuario");
             }
          return resultset;
     }
