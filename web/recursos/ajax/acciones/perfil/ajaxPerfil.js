@@ -1,4 +1,21 @@
 function informacionPerfil(){
-    $("#informacion-perfil").tooltip({ template: '<div class="tooltip fade bottom in" style="width:100px; "><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',trigger: "hover"});
-    $('#informacion-perfil').tooltip('show');
+    
+    var conexion;
+    if (window.XMLHttpRequest)
+      {
+      conexion=new XMLHttpRequest();
+      }
+    else
+      {
+      conexion=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    conexion.onreadystatechange=function()
+      {
+      if (conexion.readyState===4 && conexion.status===200)
+        {
+        document.getElementById("respuestaPerfil").innerHTML=conexion.responseText;
+        }
+      }
+    conexion.open("GET","recursos/ajax/acciones/perfil/ajaxPerfil.jsp",true);
+    conexion.send();
 }

@@ -36,7 +36,10 @@ function respuestaPerfil(){
       if (conexion.readyState===4 && conexion.status===200)
         {
         document.getElementById("principal").innerHTML=conexion.responseText;
-        //document.getElementById("informacion-perfil").addEventListener("mouseup", informacionPerfil , false);
+        document.getElementById("informacion-perfil").addEventListener("click", informacionPerfil , false);
+        document.getElementById("amigos-perfil").addEventListener("click", amigos , false);
+        document.getElementById("ultimas-opiniones-perfil").addEventListener("click", ultimasOpiniones , false);
+        document.getElementById("favoritos-perfil").addEventListener("click", favoritos , false);
         }
       }
     conexion.open("GET","recursos/ajax/menu/perfilV2.jsp",true);

@@ -69,16 +69,18 @@
                                 </div>
                             </div>
                             <div class="row-fluid ">
-                                <div class="span2 top" id="foto-perfil">
-                                    <img alt='' src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png"  class="img-rounded span12 foto-perfil-2">
-                                </div>
-                                <div class="span10 " id="biografia-perfil">
-                                    <div class="hero-unit biografia-perfil">
+                                <div class="span12" id="respuestaPerfil">
+                                    <div class="span2 top" id="foto-perfil">
+                                        <img alt='' src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png"  class="img-rounded span12 foto-perfil-2">
+                                    </div>
+                                    <div class="span10 " id="biografia-perfil">
+                                        <div class="hero-unit biografia-perfil">
+
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid informacion">
 
                                     </div>
-                                </div>
-                                <div class="row-fluid informacion">
-
                                 </div>
                             </div>
                         </div>
