@@ -63,8 +63,10 @@ public class InicioSesion extends HttpServlet {
                     //OBTENGO EL NOMBRE DEL USUARIO Y LO GUARDO EN UNA SESION
                     int idUsuario = sentenciasSQL.devolverIDUsuario(correoOUsuario);
                     String Username = sentenciasSQL.ObtenerUsernameSabiendoId(idUsuario);
+                    String nombre = sentenciasSQL.ObtenerNombreSabiendoId(idUsuario);
                     respuesta.setAttribute("sessionUsername", Username);
                     respuesta.setAttribute("sessionIdUsuario", idUsuario);
+                    respuesta.setAttribute("sessionNombre", nombre);
                               
                 }else{
                     respuesta.setAttribute("error", "Tus Datos estan mal");

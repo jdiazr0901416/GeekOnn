@@ -316,6 +316,15 @@ public class SentenciasSQL {
         }
         return null;
     }    
+    public String ObtenerNombreSabiendoId(int idUsuario) throws SQLException{  
+        String sql = "SELECT * FROM usuariosgeekonn WHERE idusuario='"+idUsuario+"'";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        if(rs.next()){
+            return rs.getString("nombre");
+        }
+        return null;
+    }    
 /**********************************************************************************************/
 /*********************************devolver informacion**********************************************/  
     

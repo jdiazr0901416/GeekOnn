@@ -1,4 +1,5 @@
 document.write("<script type='text/javascript' src='recursos/ajax/acciones/amigos/ajaxAmigos.js'></script>");
+document.write("<script type='text/javascript' src='recursos/ajax/acciones/perfil/ajaxPerfil.js'></script>");
 function respuestaNewsFeed(){
     var conexion;
     if (window.XMLHttpRequest)
@@ -35,6 +36,7 @@ function respuestaPerfil(){
       if (conexion.readyState===4 && conexion.status===200)
         {
         document.getElementById("principal").innerHTML=conexion.responseText;
+        //document.getElementById("informacion-perfil").addEventListener("mouseup", informacionPerfil , false);
         }
       }
     conexion.open("GET","recursos/ajax/menu/perfilV2.jsp",true);

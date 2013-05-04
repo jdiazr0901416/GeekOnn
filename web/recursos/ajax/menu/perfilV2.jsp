@@ -24,7 +24,7 @@
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/perfil.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
-    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
+    <script src="recursos/ajax/acciones/perfil/ajaxPerfil.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -49,29 +49,30 @@
                             <div class="row-fluid meta-black-T">
                                 <div class="span12">
                                     <div class="row-fluid">
-                                    <center><h3>Nombre Usuario</h3></center>
+                                    <center><h3><%=(String)session.getAttribute("sessionNombre")%></h3></center>
+                                    <hr>
                                     </div>
                                     <div class="row-fluid menu-perfil-2">
-                                        <div class="span2 offset2" id="informacion-perfil">
-                                            
+                                        <div class="span2 offset2 menu-p" id="informacion-perfil" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="prueba prueba">
+                                            <center><p><i class="icon-user icon-white"></i>&nbsp;<strong>Mi información</strong></p></center>
                                         </div>
-                                        <div class="span2" id="amigos-perfil">
-                                            
+                                        <div class="span2 menu-p" id="amigos-perfil">
+                                            <center><p><i class="icon-group icon-white"></i>&nbsp;<strong>Mis Amigos</strong></p></center>
                                         </div>
-                                        <div class="span2" id="ultimas-opiniones-perfil">
-                                            
+                                        <div class="span2 menu-p" id="ultimas-opiniones-perfil">
+                                            <center><p><i class="icon-comment icon-white"></i>&nbsp;<strong>Mis ultimas opiniones</strong></p></center>
                                         </div>
-                                        <div class="span2" id="favoritos-perfil">
-                                            
+                                        <div class="span2 menu-p" id="favoritos-perfil">
+                                            <center><p><i class="icon-user icon-white"></i>&nbsp;<strong>Mis Favoritos</strong></p></center>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row-fluid">
-                                <div class="span2" id="foto-perfil">
+                            <div class="row-fluid ">
+                                <div class="span2 top" id="foto-perfil">
                                     <img alt='' src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png"  class="img-rounded span12 foto-perfil-2">
                                 </div>
-                                <div class="span10" id="biografia-perfil">
+                                <div class="span10 " id="biografia-perfil">
                                     <div class="hero-unit biografia-perfil">
 
                                     </div>
