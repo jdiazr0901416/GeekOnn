@@ -80,11 +80,17 @@
                                         
                                     </div>
                                     <div class="row-fluid informacion">
-                                        <div class="row-fluid meta-black">
-                                             <div class="span8 offset2">
-                                                 
-                                             </div>
-                                         </div>
+                                        <div class="span12" id="sepaador">
+                                            <div class="row-fluid">
+                                                <div class="span8 offset2">
+                                                    <div class="row-fluid meta-black">
+                                                        <p class="text-center"><b>Yo:</b></p>
+                                                    </div>  
+                                                    <div class="row-fluid yo-1">
+                                                        <p class="text-center"><b>bla bla bla bla</b></p>
+                                                    </div> 
+                                                </div>
+                                            </div>
                                         <div class="row-fluid">
                                             <div class="span4 offset2">
                                                 <div class="row-fluid">
@@ -321,6 +327,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
