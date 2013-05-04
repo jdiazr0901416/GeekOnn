@@ -158,3 +158,26 @@
     font-size: 16px;
     font-weight: bold;
 }
+.foto-perfil-2{
+    height: 193px;
+}
+.biografia-perfil{
+    height: 73px;
+}
+.meta-black-T{
+	background-color: rgb(39,40,34);
+	border-radius: 10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	color: white;
+	padding-right: 6px;
+        margin-top: 15px;
+}
+.informacion{	
+	border-radius: 0px 0px 10px 10px;
+	-moz-border-radius:0px 0px 10px 10px;
+	-webkit-border-radius:0px 0px 10px 10px;
+	background-color: rgba(39,40,34,0.2);
+        border: 3px solid;
+        border-color: rgba(39,40,34,0.3);
+}

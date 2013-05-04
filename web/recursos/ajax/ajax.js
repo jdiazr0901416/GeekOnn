@@ -37,7 +37,7 @@ function respuestaPerfil(){
         document.getElementById("principal").innerHTML=conexion.responseText;
         }
       }
-    conexion.open("GET","recursos/ajax/menu/perfil.jsp",true);
+    conexion.open("GET","recursos/ajax/menu/perfilV2.jsp",true);
     conexion.send();
 }
 function respuestaMensajes(){
