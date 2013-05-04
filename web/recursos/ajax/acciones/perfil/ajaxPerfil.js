@@ -1,5 +1,4 @@
 function informacionPerfil(){
-    
     var conexion;
     if (window.XMLHttpRequest)
       {

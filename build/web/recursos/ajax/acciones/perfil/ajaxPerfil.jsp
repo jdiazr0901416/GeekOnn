@@ -45,7 +45,7 @@
                 <div class="span2 top" id="foto-perfil">
                     <img alt='' src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png"  class="img-rounded span12 foto-perfil-2">
                 </div>
-                <div class="span10 " id="biografia-perfil">
+                <div class="span10 top" id="biografia-perfil">
                     <div class="hero-unit biografia-perfil">
 
                     </div>

@@ -2,7 +2,7 @@
 #color-tabs{
 	color: black;
 }
-#yo{
+#yo-1{
 	background-color: white;
 	border-left: 2px solid;
 	border-right: 2px solid;
@@ -11,97 +11,10 @@
 	-moz-border-radius:5px 5px 5px 5px;
 	-webkit-border-radius:5px 5px 5px 5px;
 }
-/*lado izquierdo-----------------*/
-#informacion-basica{
-	border-left:2px solid;
-	border-color: yellow;
-	border-radius: 0px 10px 10px 0px;
-	-moz-border-radius:0px 10px 10px 0px;
-	-webkit-border-radius:0px 10px 10px 0px;
-	background-color: white;
-}
-#informacion-basica:hover{
-	border-left:2px solid;
-	border-color: yellow;
-	border-radius: 0px 10px 10px 0px;
-	-moz-border-radius:0px 10px 10px 0px;
-	-webkit-border-radius:0px 10px 10px 0px;
-	box-shadow: 1px 1px 1px #888888;
-	-moz-box-shadow: 1px 1px 1px #888888; 
-	-webkit-box-shadow: 1px 1px 1px #888888; 
-	background-color: white;
-}
-#contacto{
-	border-left:3px solid;
-	border-color: rgb(140,196,116);
-	border-radius: 0px 10px 10px 0px;
-	-moz-border-radius:0px 10px 10px 0px;
-	-webkit-border-radius:0px 10px 10px 0px;
-	background-color: white;
+#lado-derecho{
 	margin-top: 10px;
-	margin-left: -1px;
-}
-#contacto:hover{
-	border-left:3px solid;
-	border-color: rgb(140,196,116);
-	border-radius: 0px 10px 10px 0px;
-	-moz-border-radius:0px 10px 10px 0px;
-	-webkit-border-radius:0px 10px 10px 0px;
-	box-shadow: 1px 1px 1px #888888;
-	-moz-box-shadow: 1px 1px 1px #888888; 
-	-webkit-box-shadow: 1px 1px 1px #888888; 
-	background-color: white;
-	margin-top: 10px;
-	margin-left: -1px;
 }
 #lado-izquierdo{
-	margin-top: 10px;
-}
-/*lado izquierdo-----------------*/
-/*lado derecho-----------------*/
-#mi-experiencia{
-	border-right:2px solid;
-	border-color: rgb(188,86,121);
-	border-radius: 10px 0px 0px 10px;
-	-moz-border-radius:10px 0px 0px 10px;
-	-webkit-border-radius:10px 0px 0px 10px;
-	background-color: white;
-}
-#mi-experiencia:hover{
-	border-right:2px solid;
-	border-color: rgb(188,86,121);
-	border-radius: 10px 0px 0px 10px;
-	-moz-border-radius:10px 0px 0px 10px;
-	-webkit-border-radius:10px 0px 0px 10px;
-	box-shadow: 1px 1px 1px #888888;
-	-moz-box-shadow: 1px 1px 1px #888888; 
-	-webkit-box-shadow: 1px 1px 1px #888888;  
-	background-color: white;
-}
-#filosofia{
-	border-right:3px solid;
-	border-color: rgb(228,111,97);
-	border-radius: 10px 0px 0px 10px;
-	-moz-border-radius:10px 0px 0px 10px;
-	-webkit-border-radius:10px 0px 0px 10px;
-	background-color: white;
-	margin-top: 10px;
-	margin-left: 1px;
-}
-#filosofia:hover{
-	border-right:3px solid;
-	border-color: rgb(228,111,97);
-	border-radius: 10px 0px 0px 10px;
-	-moz-border-radius:10px 0px 0px 10px;
-	-webkit-border-radius:10px 0px 0px 10px;
-	box-shadow: 1px 1px 1px #888888;
-	-moz-box-shadow: 1px 1px 1px #888888; 
-	-webkit-box-shadow: 1px 1px 1px #888888;  
-	background-color: white;
-	margin-top: 10px;
-	margin-left: 1px;
-}
-#lado-derecho{
 	margin-top: 10px;
 }
 #contenedor-principal{
@@ -109,54 +22,8 @@
 	margin-bottom: 52px;
 }
 /*lado derecho-----------------*/
-#portada{
-	background-color: gray;
-	min-height: 100px;
-	max-height: 100px;
-}
-#portada-imagen-usuario{
-	min-height: 50px;
-	background-color: rgb(220,220,220);
-	max-width: 50px;
-	margin-top: 50px;
-}
-	#tamanio-imagen-portada{
-		width: 50px;
-		height: 50px;
-	}
 #portada-nombre-usuario{
 	margin-top: 50px;
-}
-/*contenido perfil-----------------------------------*/
-.tituloNF{
-    background-color: rgb(65,133,245);
-    font-size: 16px;
-    font-weight: bold;
-}
-.tituloNF{
-    background-color: rgb(65,133,245);
-    font-size: 16px;
-    font-weight: bold;
-}
-.tituloP{
-    background-color: rgb(140,196,116);
-    font-size: 16px;
-    font-weight: bold;
-}
-.tituloM{
-    background-color: rgb(251,203,67);
-    font-size: 16px;
-    font-weight: bold;
-}
-.tituloA{
-    background-color: rgb(228,111,97);
-    font-size: 16px;
-    font-weight: bold;
-}
-.tituloO{
-    background-color: rgb(188,86,121);
-    font-size: 16px;
-    font-weight: bold;
 }
 .foto-perfil-2{
     height: 193px;
@@ -173,13 +40,22 @@
 	padding-right: 6px;
         margin-top: 15px;
 }
+.meta-black{
+	background-color: rgb(39,40,34);
+	border-radius: 10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	color: white;
+	padding-right: 5px;
+        margin-top: 15px;
+}
 .informacion{	
 	border-radius: 0px 0px 10px 10px;
 	-moz-border-radius:0px 0px 10px 10px;
 	-webkit-border-radius:0px 0px 10px 10px;
 	background-color: rgba(39,40,34,0.2);
         border: 3px solid;
-        border-color: rgba(39,40,34,0.3);
+        border-color: rgba(39,40,34,0.1);
 }
 .menu-perfil-2{
     margin-bottom: 5px;
@@ -190,4 +66,32 @@
 .menu-p:hover{
     zoom:110%;
     background-color: rgba(39,40,34,0.5);
+}
+#black{	
+	border: 3px solid;
+	border-color: rgb(140,196,116);
+	background-color: white;
+}
+#yo{	
+	border: 3px solid;
+	border-color: rgb(77,191,217);
+	background-color: white;
+}
+#informacion-basica{	
+	border: 3px solid;
+	border-color: yellow;
+	background-color: white;
+}
+#experiencia{	
+	border: 3px solid;
+	border-color: rgb(188,86,121);
+	background-color: white;
+}
+#contacto{	
+	border: 3px solid;
+	border-color: rgb(140,196,116);
+	background-color: white;
+}
+#parte-conf-2{
+    margin-top: 15px;
 }
