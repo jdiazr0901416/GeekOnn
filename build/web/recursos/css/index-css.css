@@ -13,7 +13,7 @@ body {
 }
 /*termina NAV BAR----------------------*/
 .tituloGeekOnn{
-    margin-top: 100px;
+    margin-bottom: 20
 }
 /*primer bloque a la derecha*/
 #bloque-derecho{
@@ -44,5 +44,23 @@ body {
 	-moz-border-radius:5px 5px 5px 5px;
 	-webkit-border-radius:5px 5px 5px 5px;
 	background-color: white;
+}
+#onOff{
+    z-index: 1;
+}
+.divG{
+  z-index:100;
+}
+#geekonn{
+    z-index: 100;
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.8);
+    -ms-transform:rotate(8deg);
+    -webkit-transform:rotate(8deg);
+    -o-transform:rotate(8deg);
+    -moz-transform:rotate(8deg); -moz-transform:skewx(25deg) translatex(150px);
+    position: absolute;
+}
+.top-titulo{
+    margin-top: 100px;
 }
 /* / bloque izquierdo*/

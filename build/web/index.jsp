@@ -27,6 +27,8 @@
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/index-css.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -104,13 +106,20 @@
     <!-- Termina Modal-->
     <div class="container-fluid" id="contenedor-principal">
               <div class="row-fluid tituloGeekOnn">
-                  <div class="span12">
-                      <center><img src="recursos/imagenes/index/tituloGeekOnn.png" alt=""></center>
+                  <center><img src="recursos/imagenes/index/on-off.png" alt="" id="onOff"></center>
+                  <div class="span4 offset4">
+                      <img src="recursos/imagenes/index/tituloGeekOnn.png" alt="" id="geekonn">
                   </div>
               </div>
-              <div class="row-fluid"></div>
-              <div class="row-fluid"></div>
-      </div>
+              <div class="row-fluid top-titulo">
+                  <hr>
+                  <div class="span6">
+                      
+                  </div>
+                  <div class="span6">
+                      
+                  </div>
+              </div>
 
    <!-- navbar bootom -->
    <div class="navbar navbar-inverse navbar-fixed-bottom">
@@ -138,14 +147,12 @@
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-alert.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-modal.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-dropdown.js"></script>
-    <script src="recursos/bootstrap/docs/assets/js/bootstrap-scrollspy.js"></script>
-    <script src="recursos/bootstrap/docs/assets/js/bootstrap-tab.js"></script>
-    <script src="recursos/bootstrap/docs/assets/js/bootstrap-tooltip.js"></script>
-    <script src="recursos/bootstrap/docs/assets/js/bootstrap-popover.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-button.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
-    <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
+    <script type='text/javascript' src='recursos/js/jquery.easing.1.2.js'></script>
+    <script type='text/javascript' src='recursos/js/jquery.circulate.js'></script>
+    <script type='text/javascript' src='recursos/js/example.js'></script>
 
   </body>
 </html>
