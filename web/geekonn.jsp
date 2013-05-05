@@ -119,11 +119,11 @@ System.out.println(idUsuario);
                                     <div class="row-fluid">
                                         <div class="span8 offset2">
                                             <!-- beta publicacion -->
-                                            <div class="row-fluid">
+                                            <div class="row-fluid publicacion">
                                                 <div class="span3">
                                                     <i class="icon-comments icon-4x"></i>
                                                 </div>
-                                                <div class="span9" value="idPublicacion">
+                                                <div class="span9 " value="idPublicacion">
                                                     <div class="row-fluid">
                                                         <h3>Este es el titulo de mi publicacion</h3>
                                                         <hr>
@@ -143,7 +143,7 @@ System.out.println(idUsuario);
                 </div>
             </div>
         </div>
-        <div class="span2" id="mini-news-feed">
+        <div class="span2" id="contenedorMiniNewsFeed">
         </div>
       </div>  
 

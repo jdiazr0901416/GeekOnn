@@ -99,4 +99,34 @@ body {
     max-height: 700px;
     min-height: 700px;
 }
+#contenedorMiniNewsFeed{
+    max-height: 750px;
+    min-height: 750px;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius:15px 15px 15px 15px;
+    -webkit-border-radius:15px 15px 15px 15px;
+    background-color: rgba(39,40,34,0.1);
+    border: 3px solid;
+    border-color: rgba(39,40,34,0.3);
+    margin-top: 30px;
+    position: static;
+    overflow-y: scroll;
+}
+.publicacion{
+    border:1px solid;
+    border-color: black;
+     border-radius: 5px 5px 5px 5px;
+    -moz-border-radius:5px 5px 5px 5px;
+    -webkit-border-radius:5px 5px 5px 5px;
+}
+.publicacion:hover{
+    border:1px solid;
+    border-color: rgb(0,140,241);
+     border-radius: 5px 5px 5px 5px;
+    -moz-border-radius:5px 5px 5px 5px;
+    -webkit-border-radius:5px 5px 5px 5px;
+    -moz-box-shadow: 0 0 2px 2px #888;
+    -webkit-box-shadow: 0 0 2px 2px #888;
+    box-shadow: 0 0 2px 2px #888;
+}
 /* / mini-news-feed*/
