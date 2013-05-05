@@ -1,9 +1,8 @@
 <%-- 
-    Document   : ajaxPerfil
-    Created on : 03-may-2013, 22:37:55
+    Document   : ajaxAmigos
+    Created on : 04-may-2013, 19:34:34
     Author     : Julio
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>
@@ -41,26 +40,52 @@
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
     <body>
-            <div class="row-fluid">
-                <div class="span12" id="respuestaPerfil">
-                    <div class="row-fluid">
-                        <div class="span2 top" id="foto-perfil">
-                            <img alt='' src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png"  class="img-rounded span12 foto-perfil-2">
+        <div class="row-fluid">
+            <div class="span8 offset2" id="separador">
+                <div class="row-fluid" id="contenedor-amigos-recuperados">
+                    <%
+                    int userId=idUsuario;
+                    String nombre = "";
+                    SentenciasSQL cerrar0 = new SentenciasSQL();
+                    SentenciasSQL sentenciasLista0 = new SentenciasSQL();
+                    ResultSet resultSetLista0 =null;
+                    SentenciasSQL sentenciasID0 = new SentenciasSQL();;
+                    ResultSet resultSetID0 =null;
+                    resultSetLista0 =  sentenciasLista0.obtenerIdAmigos(userId);
+
+                     while(resultSetLista0.next()){
+                           int userIdTable = resultSetLista0.getInt("idAmigo");
+                           System.out.println(userIdTable);
+                           resultSetID0= sentenciasID0.obtenerInfoUsuario(userIdTable);
+                                while(resultSetID0.next()){
+
+                                    if(resultSetID0.first()){
+                                    nombre = resultSetID0.getString("nombreUsuario");
+                                }
+                                out.println("<div class='span2 amigo-recuperado' >");
+                                    out.println("<div class='span12' id='visitarAmigo' value='nombreUsuario' onclick='visitarAmigo(this.value)'>");
+                                        out.println("<p class='text-center'>"+resultSetID0.getString("nombreUsuario")+"</p>");
+                                        out.println("<center><img src='recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png' alt='' class='img-rounded' id='imagen-del-usuario'></center>");
+                                    out.println("</div>");
+                                out.println("</div>");
+                                }
+                     }
+                     cerrar0.closeConnection();
+                    %>
+                    <!-- este es un amigo 
+                    <div class="span2" id="amigo">
+                        <div class="span12" id="visitarAmigo" value="nombreUsuario" onclick="visitarAmigo(this.value)">
+                            <center><img src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png" class="img-rounded" id="imagen-del-usuario"></center>
                         </div>
-                        <div class="span10 top" id="biografia-perfil">
-                            <div class="hero-unit biografia-perfil">
-
-                            </div>
-
+                        <div class="span12">
+                            <button type="button" class="btn btn-inverse pull-left botones-bloqueo"><i class="icon-ban-circle icon-white icon-1x"></i></button>
+                            <button type="button" class="btn btn-danger pull-right botones-bloqueo"><i class="icon-minus icon-white icon-1x " ></i></button>
                         </div>
                     </div>
-                    <div class="row-fluid">
-                        <div class="span8 offset2" id="separador">
-
-                        </div>
-                    </div>
-                 </div>
+                    <!-- /este es un amigo -->
+                </div> 
             </div>
+        </div>
          <!-- Le javascript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->

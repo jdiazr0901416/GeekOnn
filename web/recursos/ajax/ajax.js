@@ -14,7 +14,7 @@ function respuestaNewsFeed(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("principal").innerHTML=conexion.responseText;
+        document.getElementById("contenedor-principal-geekoonn").innerHTML=conexion.responseText;
         }
       }
     conexion.open("GET","recursos/ajax/menu/respuestaNewsFeed.jsp",true);
@@ -35,9 +35,9 @@ function respuestaPerfil(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("principal").innerHTML=conexion.responseText;
+        document.getElementById("contenedor-principal-geekoonn").innerHTML=conexion.responseText;
         document.getElementById("informacion-perfil").addEventListener("click", informacionPerfil , false);
-        document.getElementById("amigos-perfil").addEventListener("click", amigos , false);
+        document.getElementById("amigos-perfil").addEventListener("click", amigosPerfil , false);
         document.getElementById("ultimas-opiniones-perfil").addEventListener("click", ultimasOpiniones , false);
         document.getElementById("favoritos-perfil").addEventListener("click", favoritos , false);
         }
@@ -60,7 +60,7 @@ function respuestaMensajes(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("principal").innerHTML=conexion.responseText;
+        document.getElementById("contenedor-principal-geekoonn").innerHTML=conexion.responseText;
         }
       }
     conexion.open("GET","recursos/ajax/menu/mensajes.jsp",true);
@@ -80,7 +80,7 @@ function respuestaAmigos(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("principal").innerHTML=conexion.responseText;
+        document.getElementById("contenedor-principal-geekoonn").innerHTML=conexion.responseText;
         
         }
       }
@@ -101,7 +101,7 @@ function respuestaOpiniones(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("principal").innerHTML=conexion.responseText;
+        document.getElementById("contenedor-principal-geekoonn").innerHTML=conexion.responseText;
         }
       }
     conexion.open("GET","recursos/ajax/menu/opinion.jsp",true);

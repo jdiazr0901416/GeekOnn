@@ -1,4 +1,7 @@
-/* Large desktop */
+
+body {
+    background-color: rgb(243,243,243);
+}/* Large desktop */
 @media (min-width: 1200px) {
     #imagen-del-usuario{
         width: 100%;

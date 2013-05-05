@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(246,247,246);
+    background-color: rgb(243,243,243);
 }
 /*NAV BAR------------------------------*/
 #nav-imgUsuario-Nombre{
@@ -15,7 +15,7 @@ body {
 	background-color: rgb(39,40,34);
         height:100%;
         position: absolute;
-        min-height: 750px;
+        min-height: 700px;
 }
 /* / menu --------------------*/
 /* mini-news-feed*/
@@ -76,5 +76,16 @@ body {
 }
 .titulo{
     font-size: 58px;
+}
+#contenedor-principal-geekoonn{
+    max-height: 700px;
+    min-height: 700px;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius:15px 15px 15px 15px;
+    -webkit-border-radius:15px 15px 15px 15px;
+    background-color: rgba(39,40,34,0.2);
+    border: 3px solid;
+    border-color: rgba(39,40,34,0.3);
+    margin-top: 20px;
 }
 /* / mini-news-feed*/

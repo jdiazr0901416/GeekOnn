@@ -107,13 +107,8 @@ System.out.println(idUsuario);
           </div>
         </div>
         <div class="span9" id="principal">
-            <div class="container-fluid" id="">
-                <div class="row-fluid">
-                    <!-- popover --------------------------------------- -->
-                    <div class="span4">
-
-                    </div>
-                    <!-- popover --------------------------------------- -->
+                <div class="container-fluid" id="contenedor-principal-geekoonn">
+                    <h1>hola mundo</h1>
                 </div>
             </div>
         </div>
