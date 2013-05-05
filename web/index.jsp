@@ -53,7 +53,7 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="index.jsp">
-            <img src="recursos/imagenes/logo/geekonn.png" height="60" width="140">
+            <img src="recursos/imagenes/logo/geekonn.png" height="60" width="140" alt="">
           </a>
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
@@ -103,116 +103,31 @@
     </div>
     <!-- Termina Modal-->
     <div class="container-fluid" id="contenedor-principal">
-      <div class="row-fluid">
-        <div class="span6" id="bloque-derecho">
-            <center><h1>Unetenos!</h1></center>
-            <br><br>
-            <div class="span8 offset2">
-              <p class="text-center" id="descripcion">Geekon es una red social enfocada a la gente que le gusta estar al dia acerca de la tecnologia y de sus grandes avances.</p>
-            </div>
-            <br><br><br>
-            <hr>
-            <div class="row-fluid">
-              <div class="span3 offset1" id="imagen-on-off">
-                <img src="recursos/imagenes/logo/on-off.png">
-              </div>
-              <div class="span7" id="descripcion-2">
-                <p align ="justify"><br><br>Atrevete a entrar a un mundo donde puedes enseñarle al mundo todo lo que sabes acerca de los nuevos avances tecnologicos asi como ver lo que los demas tienen para ti. Descubre y explora un mundo de opinion donde estamos seguors la pasaras genial!.</p>
-              </div>
-            </div>
-            <br>
-            <p></p>
-        </div>
-        <div class="span6" id="bloque-izquierdo">
-          <div class="row-fluid">
-            <div class="span12" id="bloque-izquierdo-uno">
-              <h1>Ponte en estado On!</h1>
-              <br><br>
-              <center><img src="recursos/imagenes/thumbnails/Estado-on.jpg"><center>
-                <br>
-            </div>
-          </div>
-          <div class="row-fluid">
-            <div class="span12" id="bloque-izquierdo-dos">
-              <center><h4>Ya quieres formar parte de nosotros? danos un poco de información</h4></center>
-              <!-- -------------------------------------------- ------------------ -->
-            <div class="row-fluid">
-              <div class="span5 offset1" id="text-aling-right">
-                <h4>Nombre:</h4>
-            </div>
-            <div class="span6">
-              <div class="control-group" id="div-control-space">
-                <div class="controls" style="margin-left:0;">
-                  <div class="input-prepend">
-                    <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" id="username" name="username" tabindex="1">
-                 </div>
-                </div>
-              </div>
-            </div>
-            </div>
-            <!-- -------------------------------------------- ------------------ -->
-            <div class="row-fluid">
-              <div class="span5 offset1" id="text-aling-right">
-                <h4>Correo electronico:</h4>
-              </div>
-              <div class="span6">
-                <div class="control-group" id="div-control-space">
-                  <div class="controls" style="margin-left:0;">
-                    <div class="input-prepend">
-                      <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1" id="form-input-space">
-                  </div>
-                  </div>
-               </div>
-              </div>
-            </div>
-            <!-- -------------------------------------------- ------------------ -->
-            <!-- -------------------------------------------- ------------------ -->
-            <div class="row-fluid">
-              <div class="span5 offset1" id="text-aling-right">
-                <h4>Contraseña:</h4>
-              </div>
-              <div class="span6">
-                <div class="control-group" id="div-control-space">
-                    <div class="controls" style="margin-left:0;">
-                      <div class="input-prepend">
-                        <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1">
-                     </div>
-                    </div>
+              <div class="row-fluid tituloGeekOnn">
+                  <div class="span12">
+                      <center><img src="recursos/imagenes/index/tituloGeekOnn.png" alt=""></center>
                   </div>
               </div>
-            </div>
-            <!-- -------------------------------------------- ------------------ -->
-            <center><button type="button" class="btn btn-success">Registrarme</button></center>
-            <br>
-            </div>
-          </div>
-        </div>
+              <div class="row-fluid"></div>
+              <div class="row-fluid"></div>
       </div>
-      </div><!-- /row-->
-          <!-- navbar bootom ------------------------------------------------------------------------------- -->
+
+   <!-- navbar bootom -->
    <div class="navbar navbar-inverse navbar-fixed-bottom">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <div class="row-fluid">
-            <div class="span7 offset4">
           <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="#">Preguntas Frecuentes</a></li>
-              <li><a href="#about">Terminos y condiciones</a></li>
-              <li><a href="#contact">------------</a></li>
+            <ul class="nav pull-left">
+              <li><img src="recursos/imagenes/index/ipn.png" alt=""></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li><img src="recursos/imagenes/index/cecyt9.png" alt=""></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
-        </div>
-      </div>
     </div>
-    <!-- Termina navbar ---------------------------------------------------------------------------- -->
+    <!-- Termina navbar  -->
     </div><!--/.fluid-container-->
 
     <!-- Le javascript
