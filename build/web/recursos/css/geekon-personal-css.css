@@ -15,7 +15,7 @@ body {
 	background-color: rgb(39,40,34);
         height:100%;
         position: absolute;
-        min-height: 700px;
+        min-height: 750px;
 }
 /* / menu --------------------*/
 /* mini-news-feed*/
@@ -78,14 +78,25 @@ body {
     font-size: 58px;
 }
 #contenedor-principal-geekoonn{
-    max-height: 700px;
-    min-height: 700px;
+    max-height: 750px;
+    min-height: 750px;
     border-radius: 15px 15px 15px 15px;
     -moz-border-radius:15px 15px 15px 15px;
     -webkit-border-radius:15px 15px 15px 15px;
-    background-color: rgba(39,40,34,0.2);
+    background-color: rgba(39,40,34,0.1);
     border: 3px solid;
     border-color: rgba(39,40,34,0.3);
-    margin-top: 20px;
+    margin-top: 30px;
+    position: static;
+}
+#contenedorOpiniones{
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius:15px 15px 15px 15px;
+    -webkit-border-radius:15px 15px 15px 15px;
+    margin-top: 25px;
+    overflow-y:scroll;
+    max-height: 700px;
+    min-height: 700px;
 }
 /* / mini-news-feed*/

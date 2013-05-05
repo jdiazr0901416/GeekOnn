@@ -17,7 +17,7 @@ function respuestaNewsFeed(){
         document.getElementById("contenedor-principal-geekoonn").innerHTML=conexion.responseText;
         }
       }
-    conexion.open("GET","recursos/ajax/menu/respuestaNewsFeed.jsp",true);
+    conexion.open("GET","recursos/ajax/menu/newsFeed.jsp",true);
     conexion.send();
 }
 

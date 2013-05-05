@@ -108,7 +108,38 @@ System.out.println(idUsuario);
         </div>
         <div class="span9" id="principal">
                 <div class="container-fluid" id="contenedor-principal-geekoonn">
-                    <h1>hola mundo</h1>
+                    <div class="row-fluid">
+                        <div class="span8 offset2" id="contenedorOpiniones">
+                            <div class="row-fluid">
+                                <center><h2>Lo que los geeks tienen para ti:</h2></center>
+                                <hr>
+                            </div>
+                            <div class="row-fluid" id="recuperarOpiniones">
+                                <div id="span12">
+                                    <div class="row-fluid">
+                                        <div class="span8 offset2">
+                                            <!-- beta publicacion -->
+                                            <div class="row-fluid">
+                                                <div class="span3">
+                                                    <i class="icon-comments icon-4x"></i>
+                                                </div>
+                                                <div class="span9" value="idPublicacion">
+                                                    <div class="row-fluid">
+                                                        <h3>Este es el titulo de mi publicacion</h3>
+                                                        <hr>
+                                                    </div>
+                                                    <div class="row-fluid">
+                                                        <p class="justify">Esta es la breve descripcion de lo que trata mi publicacion</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- beta publicacion -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fdiv>
                 </div>
             </div>
         </div>
