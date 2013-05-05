@@ -110,17 +110,179 @@
                   <div class="span4 offset4">
                       <img src="recursos/imagenes/index/tituloGeekOnn.png" alt="" id="geekonn">
                   </div>
+                  <div class="span2 offset1">
+                      tus datos no estan correctos intentalo de nuevo
+                  </div>
               </div>
               <div class="row-fluid top-titulo">
-                  <hr>
-                  <div class="span6">
-                      
+                  <div class="span6 bloque-izquierdo-uno contenddor-contorno">
+                      <div class="row-fluid meta-black">
+                          <div class="span12">
+                              <center><h2>GeekOnn es:</h2></center>
+                          </div>
+                      </div>
+                      <div class="row-fluid">
+                          <div class="span12">
+                              <br>
+                              <br>
+                              <p class="text-center" id="descripcion"><strog>Geekon es una red social enfocada a la gente que le gusta estar al dia 
+                              acerca de la tecnologia y de sus grandes avances.</strog></p><hr>
+                          </div>
+                      </div>
+                      <div class="row-fluid">
+                          <div class="span8 offset2" id="contenedor5noticias">
+                              <!-- beta publicacion -->
+                            <div class="row-fluid publicacion">
+                                <div class="span3">
+                                    <i class="icon-comments icon-4x"></i>
+                                </div>
+                                <div class="span9 " value="idPublicacion">
+                                    <div class="row-fluid">
+                                        <h3>Este es el titulo de mi publicacion</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="row-fluid">
+                                        <p class="justify">Esta es la breve descripcion de lo que trata mi publicacion</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- beta publicacion -->
+                            <!-- beta publicacion -->
+                            <div class="row-fluid publicacion">
+                                <div class="span3">
+                                    <i class="icon-comments icon-4x"></i>
+                                </div>
+                                <div class="span9 " value="idPublicacion">
+                                    <div class="row-fluid">
+                                        <h3>Este es el titulo de mi publicacion</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="row-fluid">
+                                        <p class="justify">Esta es la breve descripcion de lo que trata mi publicacion</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- beta publicacion -->
+                            <!-- beta publicacion -->
+                            <div class="row-fluid publicacion">
+                                <div class="span3">
+                                    <i class="icon-comments icon-4x"></i>
+                                </div>
+                                <div class="span9 " value="idPublicacion">
+                                    <div class="row-fluid">
+                                        <h3>Este es el titulo de mi publicacion</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="row-fluid">
+                                        <p class="justify">Esta es la breve descripcion de lo que trata mi publicacion</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- beta publicacion -->
+                            <!-- beta publicacion -->
+                            <div class="row-fluid publicacion">
+                                <div class="span3">
+                                    <i class="icon-comments icon-4x"></i>
+                                </div>
+                                <div class="span9 " value="idPublicacion">
+                                    <div class="row-fluid">
+                                        <h3>Este es el titulo de mi publicacion</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="row-fluid">
+                                        <p class="justify">Esta es la breve descripcion de lo que trata mi publicacion</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- beta publicacion -->
+                            <!-- beta publicacion -->
+                            <div class="row-fluid publicacion">
+                                <div class="span3">
+                                    <i class="icon-comments icon-4x"></i>
+                                </div>
+                                <div class="span9 " value="idPublicacion">
+                                    <div class="row-fluid">
+                                        <h3>Este es el titulo de mi publicacion</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="row-fluid">
+                                        <p class="justify">Esta es la breve descripcion de lo que trata mi publicacion</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- beta publicacion -->
+                          </div>
+                      </div>
                   </div>
-                  <div class="span6">
-                      
+                  <div class="span6 bloque-izquierdo-dos">
+                      <div class="row-fluid meta-black">
+                          <div class="span12">
+                              <center><h2>Registrate!&nbsp;</h2></center>
+                          </div>
+                      </div>
+                      <div class="row-fluid">
+                          <div class="span12">
+                              <br>
+                              <br>
+                              <p class="text-center" id="descripcion"><strog>Geekon es una red social enfocada a la gente que le gusta estar al dia 
+                              acerca de la tecnologia y de sus grandes avances.</strog></p><hr>
+                          </div>
+                      </div>
+                      <div class="row-fluid">  
+                          <div class="span12">
+                          <!-- -------------------------------------------- ------------------ -->
+                         <div class="row-fluid">
+                           <div class="span5 offset2" id="text-aling-right">
+                             <h4>Nombre:</h4>
+                         </div>
+                         <div class="span5">
+                           <div class="control-group" id="div-control-space">
+                             <div class="controls" style="margin-left:0;">
+                               <div class="input-prepend">
+                                 <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" id="username" name="username" tabindex="1">
+                              </div>
+                             </div>
+                           </div>
+                         </div>
+                         </div>
+                         <!-- -------------------------------------------- ------------------ -->
+                         <div class="row-fluid">
+                           <div class="span5 offset2" id="text-aling-right">
+                             <h4>Correo electronico:</h4>
+                           </div>
+                           <div class="span5">
+                             <div class="control-group" id="div-control-space">
+                               <div class="controls" style="margin-left:0;">
+                                 <div class="input-prepend">
+                                   <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1" id="form-input-space">
+                               </div>
+                               </div>
+                            </div>
+                           </div>
+                         </div>
+                         <!-- -------------------------------------------- ------------------ -->
+                         <!-- -------------------------------------------- ------------------ -->
+                         <div class="row-fluid">
+                           <div class="span5 offset2" id="text-aling-right">
+                             <h4>Contraseña:</h4>
+                           </div>
+                           <div class="span5">
+                             <div class="control-group" id="div-control-space">
+                                 <div class="controls" style="margin-left:0;">
+                                   <div class="input-prepend">
+                                     <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1">
+                                  </div>
+                                 </div>
+                               </div>
+                           </div>
+                         </div>
+                         <!-- -------------------------------------------- ------------------ -->
+                         <center><button type="button" class="btn btn-success">Registrarme</button></center>
+                         <br>
+                     </div> 
+                    </div>
                   </div>
               </div>
-
    <!-- navbar bootom -->
    <div class="navbar navbar-inverse navbar-fixed-bottom">
       <div class="navbar-inner">

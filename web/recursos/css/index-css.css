@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(240,240,240);
+    background-color: rgb(243,243,243);
     padding-top: 60px;
     margin-bottom: 40px;
 }
@@ -11,39 +11,36 @@ body {
 #a-iniciar-sesion:hover{
  color: rgb(0,134,228);
 }
-/*termina NAV BAR----------------------*/
+
 .tituloGeekOnn{
-    margin-bottom: 20
+    margin-bottom: 20px;
+    background-color: white;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    border-color: rgb(39,40,34);
+    padding-bottom: 135px;
 }
-/*primer bloque a la derecha*/
-#bloque-derecho{
-	margin-top: 150px;
-	border-radius: 5px 5px 5px 5px;
-	-moz-border-radius:5px 5px 5px 5px;
-	-webkit-border-radius:5px 5px 5px 5px;
+.bloque-izquierdo-uno{
+	border-radius: 15px 15px 15px 15px;
+	-moz-border-radius:15px 15px 15px 15px;
+	-webkit-border-radius:15px 15px 15px 15px;
 	background-color: white;
+        min-height: 600px;
+        max-height: 600px;
+        height: 600px;
+        margin-top: 15px;
 }
-#descripcion{
-	font-size: 25px;
-}
-#descripcion-2{
-	font-size: 20px;
-}
-/* /bloque a la derecha */
-/*bloque izquierdo*/
-#bloque-izquierdo-uno{
-	margin-top: 25px;
-	border-radius: 5px 5px 5px 5px;
-	-moz-border-radius:5px 5px 5px 5px;
-	-webkit-border-radius:5px 5px 5px 5px;
+.bloque-izquierdo-dos{
+        border: 2px solid;
+        border-color: black;
+	border-radius: 15px 15px 15px 15px;
+	-moz-border-radius:15px 15px 15px 15px;
+	-webkit-border-radius:15px 15px 15px 15px;
+        -o-border-radius:15px 15px 15px 15px;
 	background-color: white;
-}
-#bloque-izquierdo-dos{
-	margin-top: 40px;
-	border-radius: 5px 5px 5px 5px;
-	-moz-border-radius:5px 5px 5px 5px;
-	-webkit-border-radius:5px 5px 5px 5px;
-	background-color: white;
+        min-height: 600px;
+        height: 600px;
+        margin-top: 15px;
 }
 #onOff{
     z-index: 1;
@@ -60,7 +57,47 @@ body {
     -moz-transform:rotate(8deg); -moz-transform:skewx(25deg) translatex(150px);
     position: absolute;
 }
-.top-titulo{
-    margin-top: 100px;
+.meta-black{
+	background-color: rgb(39,40,34);
+	border-radius: 10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	color: white;
+	padding-right: 2px;
+}
+.contenddor-contorno{
+        border: 2px solid;
+	border-color: rgb(39,40,34);
+        background-color:white;
+}
+#descripcion{
+	font-size: 25px;
+}
+#descripcion-2{
+	font-size: 20px;
+}
+.publicacion{
+    margin-top: 10px;
+    border:1px solid;
+    border-color: black;
+     border-radius: 5px 5px 5px 5px;
+    -moz-border-radius:5px 5px 5px 5px;
+    -webkit-border-radius:5px 5px 5px 5px;
+}
+.publicacion:hover{
+    margin-top: 10px;
+    border:1px solid;
+    border-color: rgb(0,140,241);
+     border-radius: 5px 5px 5px 5px;
+    -moz-border-radius:5px 5px 5px 5px;
+    -webkit-border-radius:5px 5px 5px 5px;
+    -moz-box-shadow: 0 0 2px 2px #888;
+    -webkit-box-shadow: 0 0 2px 2px #888;
+    box-shadow: 0 0 2px 2px #888;
+}
+#contenedor5noticias{
+    overflow-y: scroll;
+    max-height: 365px;
+    padding-left: 5px;
 }
 /* / bloque izquierdo*/
