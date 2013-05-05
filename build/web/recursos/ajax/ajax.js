@@ -104,7 +104,7 @@ function respuestaOpiniones(){
         document.getElementById("contenedor-principal-geekoonn").innerHTML=conexion.responseText;
         }
       }
-    conexion.open("GET","recursos/ajax/menu/opinion.jsp",true);
+    conexion.open("GET","recursos/ajax/menu/opiniones.jsp",true);
     conexion.send();
 }
 $(document).on('ready', inicio());
