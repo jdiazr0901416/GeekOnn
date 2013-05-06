@@ -50,8 +50,12 @@ body {
 	color: black;
 }
 .meta-black{
-	border-bottom: 2px solid;
-	color: black;
+	background-color: rgb(39,40,34);
+	border-radius: 10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	color: white;
+	padding-right: 6px;
 }
 .informacion{	
 	border-radius: 0px 0px 10px 10px;
@@ -91,6 +95,11 @@ body {
 	border-color: rgb(188,86,121);
 	background-color: white;
 }
+#filosofia{	
+	border: 3px solid;
+	border-color: rgb(228,111,97);
+	background-color: white;
+}
 #contacto{	
 	border: 3px solid;
 	border-color: rgb(140,196,116);
@@ -104,8 +113,6 @@ body {
     -moz-border-radius:5px 5px 5px 5px;
     -webkit-border-radius:5px 5px 5px 5px;
     background-color: white;
-    border: 2px solid;
-    border-color: rgba(39,40,34,0.2);
     margin-bottom: 15px;
 }
 .tituloNF{

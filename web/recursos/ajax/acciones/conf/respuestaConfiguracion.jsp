@@ -42,6 +42,10 @@
             <center><h2>Configuración</h2></center>
             <hr>
         </div>
+      <div class="row-fluid">
+         <div class="span10 offset1 contenedor-configuracion">
+             <div class="row-fluid">
+         <div class="span10 offset1 contenedor-c">
             <div class="row-fluid">
                 <div class="span12">
                     <div class="row-fluid">
@@ -113,6 +117,7 @@
                                             </div>
                                         </div>
                                 </div>
+                                <center><button type="button" class="btn btn-info"><i class="icon-refresh icon-white"></i>&nbsp;Actualizar</button></center>
                             </div>
                         </div>
                     </div>
@@ -274,8 +279,27 @@
                             </div>    
                         </div>
                     </div>
+                    <div class="row-fluid top">
+                            <div class="row-fluid meta-black">
+                                <div class="span12">
+                                    <p class="text-center"><b>Manera de ser y de pensar:</b></p>
+                                </div>
+                            </div>
+                            <div class="row-fluid" id="filosofia">
+                                <div class="span12">
+                                    <br>
+                                    <center><textarea rows="3" class="span10"></textarea></center>
+                                    <br>
+                                    <center><button type="button" class="btn btn-info"><i class="icon-refresh icon-white"></i>&nbsp;Actualizar</button></center>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
+        </div>
+                 </div>
+         </div>
+        </div>
          </div>
         </div>
     </div>

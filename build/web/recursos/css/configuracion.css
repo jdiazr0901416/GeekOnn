@@ -29,6 +29,11 @@ body {
 	border-color: rgb(140,196,116);
 	background-color: white;
 }
+#filosofia{	
+	border: 3px solid;
+	border-color: rgb(228,111,97);
+	background-color: white;
+}
 #parte-conf-2{
     margin-top: 15px;
 }
@@ -64,4 +69,12 @@ body {
 }
 .top{
     margin-top: 10px;
+}
+.contenedor-configuracion{
+    max-height: 600px;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
+.contenedor-c{
+    background-color: white;
 }

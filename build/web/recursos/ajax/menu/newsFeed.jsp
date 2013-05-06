@@ -41,36 +41,35 @@
   </head>
     <body>
         <div class="row-fluid">
-            <div class="span8 offset2" id="contenedorOpiniones">
-                <div class="row-fluid">
-                    <center><h2>Lo que los geeks tienen para ti:</h2></center>
-                    <hr>
-                </div>
-                <div class="row-fluid" id="recuperarOpiniones">
-                    <div id="span12">
-                        <div class="row-fluid">
-                            <div class="span8 offset2">
-                                <!-- beta publicacion -->
-                                <div class="row-fluid publicacion">
-                                    <div class="span3">
-                                        <i class="icon-comments icon-4x"></i>
-                                    </div>
-                                    <div class="span9 " value="idPublicacion">
-                                        <div class="row-fluid">
-                                            <h3>Este es el titulo de mi publicacion</h3>
-                                            <hr>
+            <div class="span10 offset1" id="contenedorOpiniones">
+                    <div class="row-fluid border-bottom">
+                        <center><h2>Lo que los geeks tienen para ti:</h2></center>
+                    </div>
+                    <div class="row-fluid" >
+                        <div id="span12">
+                            <div class="row-fluid">
+                                <div class="span8 offset2" id="recuperarOpiniones">
+                                    <!-- beta publicacion -->
+                                    <div class="row-fluid publicacion">
+                                        <div class="span3">
+                                            <i class="icon-comments icon-4x"></i>
                                         </div>
-                                        <div class="row-fluid">
-                                            <p class="justify">Esta es la breve descripcion de lo que trata mi publicacion</p>
+                                        <div class="span9 " value="idPublicacion">
+                                            <div class="row-fluid">
+                                                <h3>Este es el titulo de mi publicacion</h3>
+                                                <hr>
+                                            </div>
+                                            <div class="row-fluid">
+                                                <p class="justify">Esta es la breve descripcion de lo que trata mi publicacion</p>
+                                            </div>
                                         </div>
                                     </div>
+                                    <!-- beta publicacion -->
                                 </div>
-                                <!-- beta publicacion -->
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
          <!-- Le javascript
         ================================================== -->
