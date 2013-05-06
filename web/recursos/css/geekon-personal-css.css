@@ -81,12 +81,10 @@ body {
 #contenedor-principal-geekoonn{
     max-height: 750px;
     min-height: 750px;
-    border-radius: 15px 15px 15px 15px;
-    -moz-border-radius:15px 15px 15px 15px;
-    -webkit-border-radius:15px 15px 15px 15px;
-    background-color: rgba(39,40,34,0.1);
-    border: 3px solid;
-    border-color: rgba(39,40,34,0.3);
+    -moz-box-shadow: 0 0 4px 4px #888;
+    -webkit-box-shadow: 0 0 4px 4px #888;
+    -o-shadow: 0 0 4px 4px #888;
+    box-shadow: 0 0 4px 4px #888;
     margin-top: 30px;
     position: static;
 }
@@ -103,12 +101,11 @@ body {
 #contenedorMiniNewsFeed{
     max-height: 750px;
     min-height: 750px;
-    border-radius: 15px 15px 15px 15px;
-    -moz-border-radius:15px 15px 15px 15px;
-    -webkit-border-radius:15px 15px 15px 15px;
+    -moz-box-shadow: 0 0 4px 4px #888;
+    -webkit-box-shadow: 0 0 4px 4px #888;
+    -o-shadow: 0 0 4px 4px #888;
+    box-shadow: 0 0 4px 4px #888;
     background-color: rgba(39,40,34,0.1);
-    border: 3px solid;
-    border-color: rgba(39,40,34,0.3);
     margin-top: 30px;
     position: static;
     overflow-y: scroll;
@@ -129,5 +126,33 @@ body {
     -moz-box-shadow: 0 0 2px 2px #888;
     -webkit-box-shadow: 0 0 2px 2px #888;
     box-shadow: 0 0 2px 2px #888;
+}
+.mpublicacion{
+     border-radius: 5px 5px 5px 5px;
+    -moz-border-radius:5px 5px 5px 5px;
+    -webkit-border-radius:5px 5px 5px 5px;
+    background-color: white;
+    padding-right:10px;
+    margin-left: 1px;
+}
+.mpublicacion:hover{
+    border:1px solid;
+    border-color: rgb(0,140,241);
+     border-radius: 5px 5px 5px 5px;
+    -moz-border-radius:5px 5px 5px 5px;
+    -webkit-border-radius:5px 5px 5px 5px;
+    -moz-box-shadow: 0 0 2px 2px #888;
+    -webkit-box-shadow: 0 0 2px 2px #888;
+    box-shadow: 0 0 2px 2px #888;
+    background-color: white;
+    padding-right:10px;
+    margin-left: 1px;
+}
+.border-bottom{
+    border-bottom: 2px solid;
+    border-bottom-color: #888;
+}
+#recuperarOpiniones{
+    margin-top: 15px;
 }
 /* / mini-news-feed*/

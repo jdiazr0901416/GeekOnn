@@ -110,14 +110,13 @@ System.out.println(idUsuario);
                 <div class="container-fluid" id="contenedor-principal-geekoonn">
                     <div class="row-fluid">
                         <div class="span8 offset2" id="contenedorOpiniones">
-                            <div class="row-fluid">
+                            <div class="row-fluid border-bottom">
                                 <center><h2>Lo que los geeks tienen para ti:</h2></center>
-                                <hr>
                             </div>
-                            <div class="row-fluid" id="recuperarOpiniones">
+                            <div class="row-fluid" >
                                 <div id="span12">
                                     <div class="row-fluid">
-                                        <div class="span8 offset2">
+                                        <div class="span8 offset2" id="recuperarOpiniones">
                                             <!-- beta publicacion -->
                                             <div class="row-fluid publicacion">
                                                 <div class="span3">
@@ -143,6 +142,25 @@ System.out.println(idUsuario);
             </div>
         </div>
         <div class="span2" id="contenedorMiniNewsFeed">
+            <!-- beta minipublicacion -->
+            <div class="row-fluid ">
+                <div class="span11 mpublicacion" value="idPublicacion">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <center><h6>Este es el titulo de mi publicacion</h6></center><hr>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <i class="icon-comments icon-4x"></i>
+                        </div>
+                        <div class="span9">
+                         <p class="justify">Esta es la breve descripcion de lo que trata mi publicacion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- beta publicacion -->
         </div>
       </div>  
 
