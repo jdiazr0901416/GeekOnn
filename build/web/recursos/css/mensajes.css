@@ -48,16 +48,19 @@ body {
 	-webkit-border-radius:15px;
 	background-color: white;
 	margin-bottom: 10px;
+        max-height: 600px;
+        margin-top: 10px;
+        overflow-y: scroll;
 }
 #contenedor-ultimos-mensajes{
-    border: 1px solid;
+    border-right: 1px solid;
     border-color: black;
     border-radius: 10px;
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
-    margin-top:10px; 
-    max-height: 850px;
-    overflow-y: auto;
+    max-height: 600px;
+    margin-top: 10px;
+    overflow-y: scroll;
 }
 .top{
     margin-top: 15px;
@@ -91,5 +94,15 @@ body {
     background-color: rgb(188,86,121);
     font-size: 16px;
     font-weight: bold;
+}
+.top{
+    margin-top: 10px;
+}
+.mensajes-separador{
+    background-color: white;
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius:15px 15px 15px 15px;
+    -webkit-border-radius:15px 15px 15px 15px;
 }
 /*mensajes--------------------------------------------*/

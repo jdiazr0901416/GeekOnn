@@ -139,3 +139,9 @@ body {
 .amigo-recuperado{
     margin-top: 15px;
 }
+.amigos-separador{
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius:15px 15px 15px 15px;
+    -webkit-border-radius:15px 15px 15px 15px;
+}

@@ -42,8 +42,9 @@
   </head>
   <body>
 <!-- amigos!------------------------------------------------------------------------------------------------------------------------------------ -->
-    <div class="container-fluid">
         <div class="row-fluid">
+            <div class="span10 offset1 top">
+                <div class="row-fluid amigos-separador">
             <div class="span9" id="contenedor-amigos">
                 <div class="row-fluid" id="contenedor-amigos-recuperados">
                     <%
@@ -294,7 +295,9 @@
                 </div>
             </div>
         </div>
-    </div>
+       </div
+       </div>
+     </div>
      <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
