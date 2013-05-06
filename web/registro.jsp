@@ -95,9 +95,10 @@
     </div>
     <!-- Termina Modal-->
 
-    <div class="container-fluid">
         <div class="row-fluid">
-            <h2><center>Comencemos con tu registro</center></h2>
+            <div class="row-fluid">
+               <h2><center>Comencemos con tu registro</center></h2> 
+            </div>
             <div class="span5 offset1">
             <div class="row-fluid">
                 <h3><center>Proporcionanos tus datos</center></h3>
@@ -183,7 +184,7 @@
           <center><button type="submit" class="btn btn-success">Registrarme</button></center>
             </form>
         </div>
-        <div class="span5">
+        <div class="span4">
             <div class="row-fluid">
                 <h3><center>Verifica tus datos</center></h3>
             </div>
@@ -208,7 +209,6 @@
 
               </div>
         </div>
-    </div><!--/.fluid-container-->
 
     <!-- Le javascript
     ================================================== -->

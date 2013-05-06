@@ -28,6 +28,25 @@
     <link href="recursos/css/index-css.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script type="text/javascript">
+    window.___gcfg = {lang: 'es-419'};
+
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+    </script>
+    <link rel="canonical" href="http://localhost:8080/GeekOnn/index.jsp">
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//connect.facebook.net/en_US/all.js"></script>
     
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -97,14 +116,13 @@
           </div>
           <div class="span12 pull-left"><h6>¿No estas registrado?<a href="registro.jsp">Registrate</a></h6></div>
           <div class="modal-footer">
-            <button class="btn btn-primary" type="submit">Iniciar sesión</button>
+              <button class="btn btn-primary" type="submit"><strong>Iniciar sesión</strong></button>
                </form>
           </div>
         </div>
       </div>
     </div>
     <!-- Termina Modal-->
-    <div class="container-fluid" id="contenedor-principal">
               <div class="row-fluid tituloGeekOnn">
                   <center><img src="recursos/imagenes/index/on-off.png" alt="" id="onOff"></center>
                   <div class="span4 offset4">
@@ -115,7 +133,7 @@
                   </div>
               </div>
               <div class="row-fluid top-titulo">
-                  <div class="span6 bloque-izquierdo-uno contenddor-contorno">
+                  <div class="span6 bloque-izquierdo-uno contenddor-contorno1">
                       <div class="row-fluid meta-black">
                           <div class="span12">
                               <center><h2>GeekOnn es:</h2></center>
@@ -214,7 +232,7 @@
                           </div>
                       </div>
                   </div>
-                  <div class="span6 bloque-izquierdo-dos">
+                  <div class="span6 bloque-izquierdo-dos contenddor-contorno2">
                       <div class="row-fluid meta-black">
                           <div class="span12">
                               <center><h2>Registrate!&nbsp;</h2></center>
@@ -281,6 +299,18 @@
                          <br>
                      </div> 
                     </div>
+                      <div class="row-fluid" id="facebook">
+                        <div class="span4 facebook">
+                            <div class="fb-like-box" data-href="http://www.facebook.com/Geekonn" data-width="292" data-height="200" data-show-faces="true" data-stream="false" data-header="false"></div>
+                        </div>
+                        <div class="span4 google">
+                            <div class="g-plusone" data-size="tall" data-annotation="inline" data-width="200"></div>
+                        </div>
+                        <div class="span4 twitter">
+                            <a href="https://twitter.com/RedGeekOnn" class="twitter-follow-button" data-show-count="false" data-lang="es" data-size="large">Seguir a @RedGeekOnn</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </div>
+                      </div>
                   </div>
               </div>
    <!-- navbar bootom -->
@@ -299,7 +329,6 @@
       </div>
     </div>
     <!-- Termina navbar  -->
-    </div><!--/.fluid-container-->
 
     <!-- Le javascript
     ================================================== -->

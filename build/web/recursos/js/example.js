@@ -5,6 +5,7 @@ $(window).load(function() {
             height: 120,
             width: 575,
             loop: true,
+            
         });
     } 
     startBallOne();

@@ -1,7 +1,7 @@
 body {
-    background-color: rgb(243,243,243);
-    padding-top: 60px;
-    margin-bottom: 40px;
+    background-color: rgb(240,240,240);
+    padding-top: 50px;
+    margin-bottom: 60px;
 }
 /*NAV BAR------------------------------*/
 #a-iniciar-sesion{
@@ -16,9 +16,8 @@ body {
     margin-bottom: 20px;
     background-color: white;
     border-bottom: 2px solid;
-    border-top: 2px solid;
-    border-color: rgb(39,40,34);
-    padding-bottom: 135px;
+    border-color: black;
+    padding-bottom: 90px;
 }
 .bloque-izquierdo-uno{
 	border-radius: 15px 15px 15px 15px;
@@ -28,11 +27,9 @@ body {
         min-height: 600px;
         max-height: 600px;
         height: 600px;
-        margin-top: 15px;
+        margin-top: 8px;
 }
 .bloque-izquierdo-dos{
-        border: 2px solid;
-        border-color: black;
 	border-radius: 15px 15px 15px 15px;
 	-moz-border-radius:15px 15px 15px 15px;
 	-webkit-border-radius:15px 15px 15px 15px;
@@ -40,7 +37,7 @@ body {
 	background-color: white;
         min-height: 600px;
         height: 600px;
-        margin-top: 15px;
+        margin-top: 8px;
 }
 #onOff{
     z-index: 1;
@@ -65,9 +62,16 @@ body {
 	color: white;
 	padding-right: 2px;
 }
-.contenddor-contorno{
-        border: 2px solid;
-	border-color: rgb(39,40,34);
+.contenddor-contorno1{
+        border-right: 2px solid;
+        border-bottom: 2px solid;
+	border-color: rgb(0,140,241);
+        background-color:white;
+}
+.contenddor-contorno2{
+        border-bottom: 2px solid;
+        border-left: 2px solid;
+	border-color: rgb(81,163,81);
         background-color:white;
 }
 #descripcion{
@@ -99,5 +103,16 @@ body {
     overflow-y: scroll;
     max-height: 365px;
     padding-left: 5px;
+}
+.fb-like-box{
+    margin-left: 15px;
+}
+.google{
+    padding-left: 75px;
+    margin-left: 60px;
+    margin-top: 80px;
+}
+.twitter{
+    margin-top: 80px;
 }
 /* / bloque izquierdo*/
