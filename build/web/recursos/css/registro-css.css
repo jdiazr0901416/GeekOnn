@@ -28,9 +28,25 @@ body {
     margin-top: 10px;
     height: 40px;
 }
-.tituloGeekOnn{
+.tituloRegistro{
     margin-bottom: 20px;
     background-color: white;
     border-bottom: 2px solid;
     border-color: black;
+}
+.datosRegistro{
+    background-color: white;
+    -moz-box-shadow: 0 0 5px 5px #888;
+    -webkit-box-shadow: 0 0 5px 5px #888;
+    -o-shadow: 0 0 5px 5px #888;
+    box-shadow: 0 0 5px 5px #888;
+}
+.datosVerificacion{
+    background-color: white;
+    -moz-box-shadow: 0 0 5px 5px #888;
+    -webkit-box-shadow: 0 0 5px 5px #888;
+    -o-shadow: 0 0 5px 5px #888;
+    box-shadow: 0 0 5px 5px #888;
+    min-height: 447px;
+    height: 447px;
 }

@@ -96,12 +96,12 @@
     <!-- Termina Modal-->
 
         <div class="row-fluid">
-            <div class="row-fluid">
+            <div class="row-fluid tituloRegistro">
                <h2><center>Comencemos con tu registro</center></h2> 
             </div>
-            <div class="span5 offset1">
+            <div class="span5 offset1 datosRegistro">
             <div class="row-fluid">
-                <h3><center>Proporcionanos tus datos</center></h3>
+                <h3><center>Proporcionanos tus datos</center></h3><hr>
             </div>
             <form method="POST" action="Registro">
             <!--------nombreCompleto----------->
@@ -184,9 +184,9 @@
           <center><button type="submit" class="btn btn-success">Registrarme</button></center>
             </form>
         </div>
-        <div class="span4">
+        <div class="span4 datosVerificacion">
             <div class="row-fluid">
-                <h3><center>Verifica tus datos</center></h3>
+                <h3><center>Verifica tus datos</center></h3><hr>
             </div>
             <!--------nombreCompleto----------->
           <div class="row-fluid inputsv" id="input-nombre">
@@ -197,8 +197,8 @@
 
               </div>
              <!--------nombreUsuario----------->
-              <div class="row-fluid inputsv" id="input-nombre-usuario">
-                
+              <div class="row-fluid inputsv">
+                  <div class="span10 offset1" id="input-nombre-usuario"></div>
               </div>
               <!-- --------------------------------password------------ ------------------ -->
               <div class="row-fluid inputsv">

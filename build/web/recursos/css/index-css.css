@@ -15,25 +15,26 @@ body {
 .tituloGeekOnn{
     margin-bottom: 20px;
     background-color: white;
-    border-bottom: 2px solid;
-    border-color: black;
+    border-bottom: 3px solid;
+    border-color: #0089ed;
     padding-bottom: 90px;
 }
 .bloque-izquierdo-uno{
-	border-radius: 15px 15px 15px 15px;
-	-moz-border-radius:15px 15px 15px 15px;
-	-webkit-border-radius:15px 15px 15px 15px;
 	background-color: white;
         min-height: 600px;
         max-height: 600px;
         height: 600px;
         margin-top: 8px;
+        -moz-box-shadow: 0 0 4px 4px #0089ed;
+        -webkit-box-shadow: 0 0 4px 4px #0089ed;
+        -o-shadow: 0 0 4px 4px #0089ed;
+        box-shadow: 0 0 4px 4px #0089ed;
 }
 .bloque-izquierdo-dos{
-	border-radius: 15px 15px 15px 15px;
-	-moz-border-radius:15px 15px 15px 15px;
-	-webkit-border-radius:15px 15px 15px 15px;
-        -o-border-radius:15px 15px 15px 15px;
+        -moz-box-shadow: 0 0 4px 4px #0089ed;
+        -webkit-box-shadow: 0 0 4px 4px #0089ed;
+        -o-shadow: 0 0 4px 4px #0089ed;
+        box-shadow: 0 0 4px 4px #0089ed;
 	background-color: white;
         min-height: 600px;
         height: 600px;
@@ -55,12 +56,8 @@ body {
     position: absolute;
 }
 .meta-black{
-	background-color: rgb(39,40,34);
-	border-radius: 10px 10px 0px 0px;
-	-moz-border-radius:10px 10px 0px 0px;
-	-webkit-border-radius:10px 10px 0px 0px;
-	color: white;
-	padding-right: 2px;
+	color: black;
+
 }
 .contenddor-contorno1{
         border-right: 2px solid;

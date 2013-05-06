@@ -133,18 +133,18 @@
                   </div>
               </div>
               <div class="row-fluid top-titulo">
-                  <div class="span6 bloque-izquierdo-uno contenddor-contorno1">
+                  <div class="span5 offset1 bloque-izquierdo-uno">
                       <div class="row-fluid meta-black">
                           <div class="span12">
-                              <center><h2>GeekOnn es:</h2></center>
+                              <center><h2>GeekOnn es:</h2></center><hr>
                           </div>
                       </div>
                       <div class="row-fluid">
                           <div class="span12">
                               <br>
                               <br>
-                              <p class="text-center" id="descripcion"><strog>Geekon es una red social enfocada a la gente que le gusta estar al dia 
-                              acerca de la tecnologia y de sus grandes avances.</strog></p><hr>
+                              <p class="text-center" id="descripcion"><strog>Una red social enfocada a la gente que le gusta estar al dia 
+                              acerca de la tecnologia y de sus grandes avances.</strog></p>
                           </div>
                       </div>
                       <div class="row-fluid">
@@ -232,18 +232,18 @@
                           </div>
                       </div>
                   </div>
-                  <div class="span6 bloque-izquierdo-dos contenddor-contorno2">
+                  <div class="span5 bloque-izquierdo-dos">
                       <div class="row-fluid meta-black">
                           <div class="span12">
-                              <center><h2>Registrate!&nbsp;</h2></center>
+                              <center><h2>Registrate!&nbsp;</h2></center><hr>
                           </div>
                       </div>
                       <div class="row-fluid">
                           <div class="span12">
                               <br>
                               <br>
-                              <p class="text-center" id="descripcion"><strog>Geekon es una red social enfocada a la gente que le gusta estar al dia 
-                              acerca de la tecnologia y de sus grandes avances.</strog></p><hr>
+                              <p class="text-center" id="descripcion"><strog>Una red social enfocada a la gente que le gusta estar al dia 
+                              acerca de la tecnologia y de sus grandes avances.</strog></p>
                           </div>
                       </div>
                       <div class="row-fluid">  
