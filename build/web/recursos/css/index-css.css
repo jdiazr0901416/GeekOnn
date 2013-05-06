@@ -25,16 +25,16 @@ body {
         max-height: 600px;
         height: 600px;
         margin-top: 8px;
-        -moz-box-shadow: 0 0 4px 4px #0089ed;
-        -webkit-box-shadow: 0 0 4px 4px #0089ed;
-        -o-shadow: 0 0 4px 4px #0089ed;
-        box-shadow: 0 0 4px 4px #0089ed;
+        -moz-box-shadow: 0 0 3px 3px #0089ed;
+        -webkit-box-shadow: 0 0 3px 3px #0089ed;
+        -o-shadow: 0 0 3px 3px #0089ed;
+        box-shadow: 0 0 3px 3px #0089ed;
 }
 .bloque-izquierdo-dos{
-        -moz-box-shadow: 0 0 4px 4px #0089ed;
-        -webkit-box-shadow: 0 0 4px 4px #0089ed;
-        -o-shadow: 0 0 4px 4px #0089ed;
-        box-shadow: 0 0 4px 4px #0089ed;
+        -moz-box-shadow: 0 0 3px 3px #0089ed;
+        -webkit-box-shadow: 0 0 3px 3px #0089ed;
+        -o-shadow: 0 0 3px 3px #0089ed;
+        box-shadow: 0 0 3px 3px
 	background-color: white;
         min-height: 600px;
         height: 600px;

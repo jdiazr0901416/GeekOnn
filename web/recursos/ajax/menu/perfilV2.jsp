@@ -41,48 +41,44 @@
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
     <body>
-        <div class="container-fluid">
             <div class="row-fluid">
-                <div class="span12">
                     <div class="row-fluid">
-                        <div class="span12" id="contenedor-perfil"> 
+                        <div class="span10 offset1" id="contenedor-perfil"> 
                             <div class="row-fluid meta-black-T">
                                 <div class="span12">
-                                    <div class="row-fluid">
+                                    <div class="row-fluid border-bottom">
                                     <center><h3><%=(String)session.getAttribute("sessionNombre")%></h3></center>
-                                    <hr>
                                     </div>
                                     <div class="row-fluid menu-perfil-2">
                                         <div class="span2 offset2 menu-p" id="informacion-perfil" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="prueba prueba">
-                                            <center><p><i class="icon-user icon-white"></i>&nbsp;<strong>Mi información</strong></p></center>
+                                            <center><h4><i class="icon-user icon-white"></i>&nbsp;Acerca de mi</h4></center>
                                         </div>
                                         <div class="span2 menu-p" id="amigos-perfil">
-                                            <center><p><i class="icon-group icon-white"></i>&nbsp;<strong>Mis Amigos</strong></p></center>
+                                            <center><h4><i class="icon-group icon-white"></i>&nbsp;Mis Amigos</h4></center>
                                         </div>
                                         <div class="span2 menu-p" id="ultimas-opiniones-perfil">
-                                            <center><p><i class="icon-comment icon-white"></i>&nbsp;<strong>Mis ultimas opiniones</strong></p></center>
+                                            <center><h4><i class="icon-comments icon-white"></i>&nbsp;Mis ultimas publicaciones</h4></center>
                                         </div>
                                         <div class="span2 menu-p" id="favoritos-perfil">
-                                            <center><p><i class="icon-user icon-white"></i>&nbsp;<strong>Mis Favoritos</strong></p></center>
+                                            <center><h4><i class=" icon-star"></i>&nbsp;Mis Favoritos</h4></center>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row-fluid" id="contenedor">
-                                <div class="span12" id="respuestaPerfil">
+                                <div class="span10 offset1" id="respuestaPerfil">
                                     <div class="row-fluid">
-                                        <div class="span2 top" id="foto-perfil">
+                                        <div class="span3 top" id="foto-perfil">
                                             <img alt='' src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png"  class="img-rounded span12 foto-perfil-2">
                                         </div>
-                                        <div class="span10 top" id="biografia-perfil">
+                                        <div class="span9 top" id="biografia-perfil">
                                             <div class="hero-unit biografia-perfil">
 
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="row-fluid">
-                                        <div class="span8 offset2" id="separador">
+                                        <div class="span12" id="separador">
                                  
                                         </div>
                                     </div>
@@ -91,8 +87,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-         </div>
          <!-- Le javascript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->

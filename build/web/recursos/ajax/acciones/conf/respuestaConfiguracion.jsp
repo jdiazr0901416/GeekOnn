@@ -43,7 +43,7 @@
             <hr>
         </div>
             <div class="row-fluid">
-                <div class="span5">
+                <div class="span12">
                     <div class="row-fluid">
                         <div class="row-fluid meta-black">
                             <div class="span12">
@@ -60,7 +60,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="span5">
+            </div>
+            <div class="row-fluid top" >
+                <div class="span6 top">
                     <div class="row-fluid">
                         <div class="row-fluid meta-black">
                             <div class="span12">
@@ -114,97 +116,94 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        <div class="row-fluid" id="parte-conf-2">
-            <div class="span5">
-                    <div class="row-fluid">
-                        <div class="row-fluid meta-black">
-                            <div class="span12">
-                                <p class="text-center"><b>Mi experiencia:</b></p>
-                            </div>
+                
+                <div class="row-fluid top">
+                    <div class="row-fluid meta-black">
+                        <div class="span12">
+                            <p class="text-center"><b>Mi experiencia:</b></p>
                         </div>
-                        <div class="row-fluid" id="experiencia">
-                            <div class="row-fluid">
-                                <div class="span12">
-                                    <div class="row-fluid">
-                                        <div class="span5">
-                                            <p><b>Maximo grado de estudios</b></p>
-                                        </div>
-                                        <div class="span7">
-                                            <div class="control-group" id="div-control-space">
-                                                <div class="controls" style="margin-left:0;">
-                                                  <div class="input-prepend">
-                                                    <span class="add-on"><i class="icon-trophy"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
-                                                  </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                    </div>
+                    <div class="row-fluid" id="experiencia">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <div class="row-fluid">
+                                    <div class="span5">
+                                        <p><b>Maximo grado de estudios</b></p>
                                     </div>
-                                    <div class="row-fluid">
-                                        <div class="span5">
-                                            <p><b>Escuela:</b></p>
-                                        </div>
-                                        <div class="span7">
-                                            <div class="control-group" id="div-control-space">
-                                                <div class="controls" style="margin-left:0;">
-                                                  <div class="input-prepend">
-                                                    <span class="add-on"><i class="icon-book"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
-                                                  </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row-fluid">
-                                        <div class="span5">
-                                            <p><b>Especialidad</b></p>
-                                        </div>
-                                        <div class="span7">
-                                            <div class="control-group" id="div-control-space">
-                                                <div class="controls" style="margin-left:0;">
-                                                  <div class="input-prepend">
-                                                    <span class="add-on"><i class="icon-user"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
-                                                  </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row-fluid">
-                                        <div class="span5">
-                                            <p><b>Profesión</b></p>
-                                        </div>
-                                        <div class="span7">
-                                            <div class="control-group" id="div-control-space">
-                                                <div class="controls" style="margin-left:0;">
-                                                  <div class="input-prepend">
-                                                    <span class="add-on"><i class="icon-user-md"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
-                                                  </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row-fluid">
-                                        <div class="span5">
-                                            <p><b>Puesto:</b></p>
-                                        </div>
-                                        <div class="span7">
-                                            <div class="control-group" id="div-control-space">
-                                                <div class="controls" style="margin-left:0;">
-                                                  <div class="input-prepend">
-                                                    <span class="add-on"><i class="icon-sitemap"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
-                                                  </div>
-                                                </div>
+                                    <div class="span7">
+                                        <div class="control-group" id="div-control-space">
+                                            <div class="controls" style="margin-left:0;">
+                                              <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-trophy"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
+                                              </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <center><button type="button" class="btn btn-info"><i class="icon-refresh icon-white"></i>&nbsp;Actualizar</button></center>
-                            </div>    
-                        </div>
+                                <div class="row-fluid">
+                                    <div class="span5">
+                                        <p><b>Escuela:</b></p>
+                                    </div>
+                                    <div class="span7">
+                                        <div class="control-group" id="div-control-space">
+                                            <div class="controls" style="margin-left:0;">
+                                              <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-book"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span5">
+                                        <p><b>Especialidad</b></p>
+                                    </div>
+                                    <div class="span7">
+                                        <div class="control-group" id="div-control-space">
+                                            <div class="controls" style="margin-left:0;">
+                                              <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-user"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-fluid">
+                                    <div class="span5">
+                                        <p><b>Profesión</b></p>
+                                    </div>
+                                    <div class="span7">
+                                        <div class="control-group" id="div-control-space">
+                                            <div class="controls" style="margin-left:0;">
+                                              <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-user-md"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span5">
+                                        <p><b>Puesto:</b></p>
+                                    </div>
+                                    <div class="span7">
+                                        <div class="control-group" id="div-control-space">
+                                            <div class="controls" style="margin-left:0;">
+                                              <div class="input-prepend">
+                                                <span class="add-on"><i class="icon-sitemap"></i></span><input class="span9" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <center><button type="button" class="btn btn-info"><i class="icon-refresh icon-white"></i>&nbsp;Actualizar</button></center>
+                        </div>  
+                     </div>
                     </div>
                 </div>
-            <div class="span5">
+            <div class="span6 top">
                     <div class="row-fluid">
                         <div class="row-fluid meta-black">
                             <div class="span12">
@@ -256,7 +255,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row-fluid">
                                         <div class="span5">
                                             <p><b>Lugar de residencia:</b></p>

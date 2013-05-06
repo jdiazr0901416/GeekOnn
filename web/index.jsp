@@ -149,6 +149,7 @@
                       </div>
                       <div class="row-fluid">
                           <div class="span8 offset2" id="contenedor5noticias">
+                              <div class="span11">
                               <!-- beta publicacion -->
                             <div class="row-fluid publicacion">
                                 <div class="span3">
@@ -230,6 +231,7 @@
                             </div>
                             <!-- beta publicacion -->
                           </div>
+                        </div>
                       </div>
                   </div>
                   <div class="span5 bloque-izquierdo-dos">
