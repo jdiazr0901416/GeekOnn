@@ -63,8 +63,10 @@ public class InicioSesion extends HttpServlet {
                     //OBTENGO EL NOMBRE DEL USUARIO Y LO GUARDO EN UNA SESION
                     int idUsuario = sentenciasSQL.devolverIDUsuario(correoOUsuario);
                     String Username = sentenciasSQL.ObtenerUsernameSabiendoId(idUsuario);
+                    String nombreUsuario = sentenciasSQL.ObtenerNombreSabiendoId(idUsuario);
                     respuesta.setAttribute("sessionUsername", Username);
                     respuesta.setAttribute("sessionIdUsuario", idUsuario);
+                    respuesta.setAttribute("sessionIdNombreUsuario", nombreUsuario);
                     if(sentenciasSQL.comprobarSiEstaOnline(Username)){
                         String Username2 = "TEN CUIDADO ALGUIEN MAS YA ESTABA ONLINE CON TU USERNAME ANTES QUE TU";
                         respuesta.setAttribute("sessionUsername", Username2);

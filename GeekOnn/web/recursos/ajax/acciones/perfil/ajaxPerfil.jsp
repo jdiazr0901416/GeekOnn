@@ -46,6 +46,194 @@ if(userName == null){
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
   <body>
+      <div class="row-fluid fondo-info">
+                    <div class="row-fluid titulo-acerca-mi">
+                        <center><h2><%=(String)session.getAttribute("sessionIdNombreUsuario")%></h2></center><hr>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span3 top" id="foto-perfil">
+                            <img alt='' src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png"  class="img-rounded span12 foto-perfil-2">
+                        </div>
+                        <div class="span9 top" id="biografia-perfil">
+                            <div class="hero-unit biografia-perfil">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid separador-info">
+                        <div class="span12">
+                            <div class="row-fluid">
+                                <div class="row-fluid">
+                                    <div class="span12" id="yo">
+                                        <p class="text-center"><b>Acerca de mi:</b></p>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span10 offset1">
+                                        <br>
+                                        <center><p align="justify"><strong>bla bla bla de mi</strong></p></center>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid top" >
+                        <div class="span6 top">
+                            <div class="row-fluid separador-info">
+                                <div class="row-fluid">
+                                    <div class="span12" id="informacion-basica">
+                                        <p class="text-center"><b>Información Basica:</b></p>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span10 offset1">
+                                        <div class="row-fluid">
+                                                <div class="span5">
+                                                    <p><b>Cumpleaños:</b></p>
+                                                </div>
+                                                <div class="span7">
+                                                    <p><strong> bla bla bla</strong></p>
+                                                </div>
+                                        </div>
+                                        <div class="row-fluid">
+                                                <div class="span5">
+                                                    <p><b>Sexo</b></p>
+                                                </div>
+                                                <div class="span7">
+                                                    <p><strong> bla bla bla</strong></p>
+                                                </div>
+                                        </div>
+                                        <div class="row-fluid">
+                                                <div class="span5">
+                                                    <p><b>Situación sentimental:</b></p>
+                                                </div>
+                                                <div class="span7">
+                                                    <p><strong> bla bla bla</strong></p>
+                                                </div>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+
+                        <div class="row-fluid top separador-info">
+                            <div class="row-fluid meta-titulo">
+                                <div class="span12" id="experiencia">
+                                    <p class="text-center"><b>Mi experiencia:</b></p>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="row-fluid">
+                                    <div class="span10 offset1">
+                                        <div class="row-fluid">
+                                            <div class="span5">
+                                                <p><b>Maximo grado de estudios</b></p>
+                                            </div>
+                                            <div class="span7">
+                                               <p><strong> bla bla bla</strong></p>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid">
+                                            <div class="span5">
+                                                <p><b>Escuela:</b></p>
+                                            </div>
+                                            <div class="span7">
+                                               <p><strong> bla bla bla</strong></p>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid">
+                                            <div class="span5">
+                                                <p><b>Especialidad</b></p>
+                                            </div>
+                                            <div class="span7">
+                                               <p><strong> bla bla bla</strong></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row-fluid">
+                                            <div class="span5">
+                                                <p><b>Profesión</b></p>
+                                            </div>
+                                            <div class="span7">
+                                               <p><strong> bla bla bla</strong></p>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid">
+                                            <div class="span5">
+                                                <p><b>Puesto:</b></p>
+                                            </div>
+                                            <div class="span7">
+                                               <p><strong> bla bla bla</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>  
+                             </div>
+                            </div>
+                        </div>
+                    <div class="span6 top">
+                            <div class="row-fluid separador-info">
+                                <div class="row-fluid meta-titulo">
+                                    <div class="span12" id="contacto">
+                                        <p class="text-center"><b>Contacto:</b></p>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="row-fluid">
+                                        <div class="span10 offset1">
+                                            <div class="row-fluid">
+                                                <div class="span5">
+                                                    <p><b>Correo Electronico:</b></p>
+                                                </div>
+                                                <div class="span7">
+                                               <p><strong> bla bla bla</strong></p>
+                                            </div>
+                                            </div>
+                                            <div class="row-fluid">
+                                                <div class="span5">
+                                                    <p><b>Telefono movil:</b></p>
+                                                </div>
+                                                <div class="span7">
+                                               <p><strong> bla bla bla</strong></p>
+                                            </div>
+                                            </div>
+                                            <div class="row-fluid">
+                                                <div class="span5">
+                                                    <p><b>Telefono de casa o trabajo:</b></p>
+                                                </div>
+                                                <div class="span7">
+                                               <p><strong> bla bla bla</strong></p>
+                                            </div>
+                                            </div>
+                                            <div class="row-fluid">
+                                                <div class="span5">
+                                                    <p><b>Lugar de residencia:</b></p>
+                                                </div>
+                                                <div class="span7">
+                                               <p><strong> bla bla bla</strong></p>
+                                            </div>
+                                            </div>
+                                        </div>
+                                     </div>    
+                                </div>
+                            </div>
+                            <div class="row-fluid top separador-info">
+                                    <div class="row-fluid">
+                                        <div class="span12" id="filosofia">
+                                            <p class="text-center"><b>Manera de ser y de pensar:</b></p>
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid" >
+                                        <div class="span10 offset1">
+                                            <br>
+                                            <center><p align="justify"><strong>bla bla bla de mi</strong></p></center>
+                                            <br>
+                                        </div>
+                                    </div>
+                           </div>
+                </div>
+            </div>
+        </div>
       <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

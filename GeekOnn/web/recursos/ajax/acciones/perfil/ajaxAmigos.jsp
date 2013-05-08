@@ -40,7 +40,7 @@
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
     <body>
-        <div class="row-fluid">
+        <div class="row-fluid fondo-info">
             <div class="span10 offset1" id="separador">
                 <div class="row-fluid" id="contenedor-amigos-recuperados">
                     <%
