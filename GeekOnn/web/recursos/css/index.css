@@ -1,7 +1,7 @@
-body{
-	background-color: rgb(157,38,29);
-	padding-top: 50px;
-	padding-bottom: 60px;
+body {
+   background-color: rgb(243,243,243);
+    padding-top: 50px;
+    padding-bottom: 60px;
 }
 @media (max-width: 980px) {
         /* Enable use of floated navbar text */
@@ -43,7 +43,7 @@ src: url('../fuentes/spincycle.ttf'),url('../fuentes/spincycle.eot'); /* IE9 */
 	overflow: hidden;
 }
 .separador{
-	background-color: rgb(240,240,240);
+	background-color: rgb(230,230,230);
 	height: 50px;
 }
 .contenedor-3-noticias{
@@ -64,7 +64,7 @@ src: url('../fuentes/spincycle.ttf'),url('../fuentes/spincycle.eot'); /* IE9 */
     font-size: 80px;
 }
 .publicacion-index{
-	background-color: rgb(245,245,245);
+	background-color: white;
 	border-bottom: 2px solid;
 	border-color: rgb(220,220,220);
 }

@@ -61,7 +61,7 @@
                           <%int usuarioReceptor = Integer.parseInt(request.getParameter("idUsuario"));
                             
                             ResultSet resultsetMensajes = sentenciasSQL.obtenerMensajes(idUsuario, usuarioReceptor);%>
-			  <div class="row-fluid" id="contenedor-ultimos-mensajes-conversacion">
+			  <div class="row-fluid" >
                               <div class="span10 offset1" id="contenedor-ultimos-mensajes">
                             <%for(int i=1;resultsetMensajes.next() && i<=15; i++){%>
                                  <%  int emisor = resultsetMensajes.getInt("idEmisor");

@@ -43,9 +43,9 @@
   <body>
 <!-- amigos!------------------------------------------------------------------------------------------------------------------------------------ -->
         <div class="row-fluid">
-            <div class="span10 offset1 top">
+            <div class="span12 top">
                 <div class="row-fluid amigos-separador">
-            <div class="span9" id="contenedor-amigos">
+            <div class="span8" id="contenedor-amigos">
                 <div class="row-fluid" id="contenedor-amigos-recuperados">
                     <%
                     int userId=idUsuario;

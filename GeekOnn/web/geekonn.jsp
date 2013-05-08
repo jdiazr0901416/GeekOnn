@@ -22,9 +22,9 @@ if(userName == null){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le styles -->
-    <link href="recursos/css/geekonn.css" rel="stylesheet">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="recursos/css/geekonn.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
      <!--<script src="recursos/ajax/toltip/ajaxToltip.js"></script>-->
@@ -167,6 +167,8 @@ if(userName == null){
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
     <script src="recursos/ajax/popOvers/popOvers.js"></script>
+    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
+    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
      <!--<script src="recursos/ajax/toltip/ajaxToltip.js"></script>-->
 </html>
 <%}%>

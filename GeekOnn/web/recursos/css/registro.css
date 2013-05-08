@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(157,38,29);
+    background-color: rgb(243,243,243);
     padding-top: 50px;
     padding-bottom: 60px;
 }
@@ -30,7 +30,7 @@ body{
     padding-bottom: 15px;
 }
 .separador{
-	background-color: rgb(240,240,240);
+	background-color: rgb(230,230,230);
 	height: 15px;
 }
 .contenedor-principal-registro{

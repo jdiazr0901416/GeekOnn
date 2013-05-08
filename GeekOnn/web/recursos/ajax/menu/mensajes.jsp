@@ -23,6 +23,7 @@
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/mensajes.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
+    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -40,7 +41,7 @@
   </head>
   <body>
         <div class="row-fluid">
-            <div class="span10 offset1 top">
+            <div class="span12 top">
                 <div class="row-fluid mensajes-separador">
                     <div class="span4" id="contenedor-ultimas-conversacion">
                 <br>

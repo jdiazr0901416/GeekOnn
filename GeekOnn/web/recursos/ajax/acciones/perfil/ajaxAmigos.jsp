@@ -41,7 +41,7 @@
   </head>
     <body>
         <div class="row-fluid fondo-info">
-            <div class="span10 offset1" id="separador">
+            <div class="span12" id="separador">
                 <div class="row-fluid" id="contenedor-amigos-recuperados">
                     <%
                     int userId=idUsuario;
