@@ -25,8 +25,7 @@ if(userName == null){
     
     <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="recursos/css/geekonn.css" rel="stylesheet">
-    <link href="recursos/css/perfil.css" rel="stylesheet">
+    <link href="recursos/css/publicaciones.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
      <!--<script src="recursos/ajax/toltip/ajaxToltip.js"></script>-->
@@ -48,6 +47,62 @@ if(userName == null){
   </head>
   <body>
       <div class="row-fluid fondo-info">
+          <div class="span5">
+              <div class="row-fluid">
+                  <center><h2>Tus ultimas publicaciones</h2></center><hr>
+              </div>
+              <div class="row-fluid">
+                  <!-- beta publicacion -->
+                  <div class="span12">
+                      <div class="row-fluid publicacion">
+                          <div class="span3">
+                              <center><i class="icon-picture imagen-publicacion-nula"></i></center>
+                          </div>
+                          <div class="span9">
+                              <center><h3>Titulo de la publicación</h3></center><hr>
+                              <div class="span8 offset2">
+                                <p align="justify">este es el contido de mi publicacion, apoco no esta biuen bonito</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- beta publicacion -->
+              </div>
+              </div>
+          <div class="span7" id="contenedor-recibidor-publicacion-sesion">
+              <!-- beta publicacion abierta -->
+              <div class="row-fluid">
+                  <div class="row-fluid"><center><h2>Titulo de la publicacion</h2></center><hr></div>
+                  <div class="row-fluid">
+                      <div class="span3">
+                          <center><i class="icon-picture imagen-publicacion-nula"></i></center>
+                      </div>
+                      <div class="span9">
+                          <div class="span10 offset1" id="contenedor-descripcion-publicacion">
+                              <p align="justify">
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet leo quis velit scelerisque 
+                                  euismod at a risus. In at ante est. Etiam eget ultricies nisl. Proin vehicula viverra ipsum sit amet 
+                                  cursus. Quisque ac sapien urna, sed fermentum est. Vestibulum condimentum, nisi quis condimentum suscipit, 
+                                  velit sapien malesuada risus, in consequat turpis quam sit amet ligula. Nullam non tortor eget quam rutrum 
+                                  luctus vitae non ipsum. Ut vitae tellus vitae lacus commodo vehicula ac vel mauris. Proin ante nulla, 
+                                  fermentum id fermentum in, gravida eu quam. Proin sit amet mi quam. Nulla facilisi. Morbi vitae leo leo. 
+                                  Nam enim turpis, tincidunt congue condimentum ac, elementum vel enim. Cras diam odio, 
+                                  sollicitudin id sodales pharetra, dignissim ac elit.
+                              </p>
+                          </div>
+                      </div>  
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span10 offset1" id="contenedor-comentarios">
+                          <div class="row-fluid">
+                              <center><h3>Comentarios</h3><hr>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row-fluid"></div>
+              </div>
+              <!-- beta -->
+          </div>
       </div>
               <!-- Le javascript
     ================================================== -->
