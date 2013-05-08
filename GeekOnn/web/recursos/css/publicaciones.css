@@ -39,3 +39,10 @@ body {
     max-height: 210px;
     background-color: rgb(252,252,252);
 }
+@font-face{
+    font-family: 'spincycle';
+    src: url('../fuentes/spincycle.ttf'),url('../fuentes/spincycle.eot'); /* IE9 */
+}
+.fuente{
+    font-family: 'spincycle';
+}

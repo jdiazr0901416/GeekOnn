@@ -76,7 +76,7 @@ if(userName == null){
                   <div class="row-fluid"><center><h2>Titulo de la publicacion</h2></center><hr></div>
                   <div class="row-fluid">
                       <div class="span3">
-                          <center><i class="icon-picture imagen-publicacion-nula"></i></center>
+                          <center><i class="icon-picture"></i></center>
                       </div>
                       <div class="span9">
                           <div class="span10 offset1" id="contenedor-descripcion-publicacion">
@@ -125,34 +125,33 @@ if(userName == null){
     <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <center><h3 id="myModalLabel">Inicia sesión</h3></center>
+        <center><h3 id="myModalLabel">Nueva publicación</h3></center>
       </div>
       <form action='InicioSesion' METHOD='POST' class='form-horizontal'>
       <div class="modal-body">
         <div class="row-fluid">
-          <div class="span6 offset3"> 
-            <br>
-            <div class="control-group">
-              <div class="controls" style="margin-left:0;">
-                <div class="input-prepend">
-                  <span class="add-on"><i class="icon-user"></i></span><input placeholder="Nombre de usuario o correo" type="text" size="25" id="username" name="nombreUsuario" tabindex="1">
-               </div>
-              </div>
+            <div class="span3">
+                 <center><i class="icon-picture imagen-publicacion-nula-modal"></i></center>
             </div>
-            <div class="control-group">
-              <div class="controls" style="margin-left:0;">
-                <div class="input-prepend">
-                  <span class="add-on"><i class="icon-lock"></i></span><input placeholder="Contraseña" type="password" value="" size="25" name="password" tabindex="2">
+            <div class="span9">
+                <div class="row-fluid">
+                    <div class="span12"><strong>Titulo de la publicacion:</strong><input type="text"><hr></div>
+                </div>    
+                <div class="row-fluid">
+                    <center><strong>Contenido de la publicacion:</strong></center><br>
+                    <textarea rows="4" class="span12"></textarea>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
       </div>
       <div class="modal-footer">
-          <div class="span6"><h6 class="pull-left">¿No estas registrado?<a href="registro.jsp">Registrate</a></h6></div>
-          <button class="btn btn-danger" type="submit"><strong>Iniciar sesión</strong></button>
-      </form>
+          <div class="row-fluid">
+              <div class="span6">
+                  <div class="pull-left fuente"><input type="checkbox" name="vehicle" value="Bike">&nbsp;Twittear&nbsp;<i class="icon-twitter"></i></div>
+              </div>
+              <div class="span6"><button class="btn btn-danger" type="submit"><strong>Publicar</strong></button></div>
+          </div>
+        </form>
       </div>
     </div>
 <!-- Modal -->      
