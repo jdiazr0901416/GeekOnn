@@ -52,6 +52,7 @@ if(userName == null){
                   <center><h2>Tus ultimas publicaciones</h2></center><hr>
               </div>
               <div class="row-fluid">
+                  <center><a href="#myModal" data-toggle="modal" data-target="#myModal" id="a-iniciar-sesion"><button type="button" class="btn btn-success">Has una nueva publicación</button></a></p></center>
                   <!-- beta publicacion -->
                   <div class="span12">
                       <div class="row-fluid publicacion">
@@ -97,13 +98,64 @@ if(userName == null){
                           <div class="row-fluid">
                               <center><h3>Comentarios</h3><hr>
                           </div>
+                          <div class="row-fluid">
+                              <div class="span10 offset1"> 
+                                  <p align="justify">
+                                      Hola? me ves mira soy un comentario ^_^/
+                                  </p>
+                              </div>
+                         </div>
                       </div>
                   </div>
-                  <div class="row-fluid"></div>
+                  <div class="row-fluid">
+                      <div class="span10 offset1" id="contenedor-nuevo-comentario">
+                          <div class="row-fluid">
+                              <hr>
+                              <center><textarea rows="3" class="span10"></textarea></center>
+                              <br>
+                              <center><button type="button" class="btn btn-info"><i class="icon-refresh icon-white"></i>&nbsp;Actualizar</button></center>
+                          </div>
+                      </div>
+                  </div>
               </div>
               <!-- beta -->
           </div>
       </div>
+      <!-- Modal publicacion-->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <center><h3 id="myModalLabel">Inicia sesión</h3></center>
+      </div>
+      <form action='InicioSesion' METHOD='POST' class='form-horizontal'>
+      <div class="modal-body">
+        <div class="row-fluid">
+          <div class="span6 offset3"> 
+            <br>
+            <div class="control-group">
+              <div class="controls" style="margin-left:0;">
+                <div class="input-prepend">
+                  <span class="add-on"><i class="icon-user"></i></span><input placeholder="Nombre de usuario o correo" type="text" size="25" id="username" name="nombreUsuario" tabindex="1">
+               </div>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls" style="margin-left:0;">
+                <div class="input-prepend">
+                  <span class="add-on"><i class="icon-lock"></i></span><input placeholder="Contraseña" type="password" value="" size="25" name="password" tabindex="2">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+          <div class="span6"><h6 class="pull-left">¿No estas registrado?<a href="registro.jsp">Registrate</a></h6></div>
+          <button class="btn btn-danger" type="submit"><strong>Iniciar sesión</strong></button>
+      </form>
+      </div>
+    </div>
+<!-- Modal -->      
               <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
