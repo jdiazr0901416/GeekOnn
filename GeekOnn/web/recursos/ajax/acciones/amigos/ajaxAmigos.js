@@ -51,7 +51,7 @@ function bloquearUsuario(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("principal").innerHTML=conexion.responseText;
+        document.getElementById("recibidor-ajax-geekonn").innerHTML=conexion.responseText;
         
         }
       }
@@ -74,7 +74,7 @@ function desbloquearUsuario(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("principal").innerHTML=conexion.responseText;
+        document.getElementById("recibidor-ajax-geekonn").innerHTML=conexion.responseText;
         }
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/desbloquearAmigo.jsp?nombre="+nombre,true);

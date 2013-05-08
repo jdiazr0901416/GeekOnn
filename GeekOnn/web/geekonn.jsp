@@ -63,7 +63,6 @@ if(userName == null){
               <div class="btn-group">
                 <button  data-toggle="dropdown"><img alt='' src="recursos/imagenes/imagenesUsuario/navbar/icon-user.png"></button>
                 <ul class="dropdown-menu pull-right">
-                  <li><a onclick="respuestaConfiguracion()">Opciones</a></li>
                   <li class="divider"></li>
                   <li><a href="LogOut">Cerrar Sesión</a></li>
                 </ul>
@@ -140,7 +139,7 @@ if(userName == null){
                     <div class="span2" id="M-opiniones"  rel="popover" data-content="comparte algo nuevo al mundo geek, que nadie se quede sin saberlo" data-original-title="Opiniones">
                         <center><i class="icon-comments iconos-menu"></i></center>
                     </div>
-                    <div class="span2" id="M-opciones"  rel="popover" data-content="Cambia la configuracion de tu cuenta" data-original-title="Opciones">
+                    <div class="span2" id="M-opciones"  rel="popover" data-content="Cambia la configuracion de tu cuenta" data-original-title="Publicaciones">
                         <center><i class="icon-edit iconos-menu"></i></center>
                     </div>
                   </div>

@@ -52,15 +52,17 @@ if(userName == null){
                         <center><h2><%=(String)session.getAttribute("sessionIdNombreUsuario")%></h2></center><hr>
                     </div>
                     <div class="row-fluid">
-                        <div class="span3 top" id="foto-perfil">
+                        <div class="span2 offset1 top" id="foto-perfil">
                             <img alt='' src="recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png"  class="img-rounded span12 foto-perfil-2">
                         </div>
-                        <div class="span9 top" id="biografia-perfil">
+                        <div class="span8 top" id="biografia-perfil">
                             <div class="hero-unit biografia-perfil">
 
                             </div>
                         </div>
                     </div>
+                    <div class="row-fluid">
+                    <div class="span10 offset1">
                     <div class="row-fluid separador-info">
                         <div class="span12">
                             <div class="row-fluid">
@@ -231,7 +233,7 @@ if(userName == null){
                                             <br>
                                         </div>
                                     </div>
-                           </div>
+                           </div></div></div>
                 </div>
             </div>
         </div>

@@ -113,7 +113,7 @@ function respuestaOpiniones(){
         document.getElementById("recibidor-ajax-geekonn").innerHTML=conexion.responseText;
         }
       }
-    conexion.open("GET","recursos/ajax/menu/opiniones.jsp",true);
+    conexion.open("GET","recursos/ajax/menu/publicaciones.jsp",true);
     conexion.send();
     imprimirTitulo(str);
 }
@@ -135,7 +135,7 @@ function respuestaOpciones(){
         document.getElementById("recibidor-ajax-geekonn").innerHTML=conexion.responseText;
         }
       }
-    conexion.open("GET","recursos/ajax/menu/opciones.jsp",true);
+    conexion.open("GET","recursos/ajax/acciones/conf/respuestaConfiguracion.jsp",true);
     conexion.send();
     imprimirTitulo(str);
 }

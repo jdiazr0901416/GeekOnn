@@ -35,26 +35,21 @@
      <script src="recursos/ajax/acciones/conf/ajaxConfiguracion.js"></script>
   </head>
   <body>
-    <div class="container-fluid" id="contenedor-configuracion-usuario">
     <div class="row-fluid">
         <div class="span12">
-        <div class="row-fluid">
-            <center><h2>Configuración</h2></center>
-            <hr>
-        </div>
       <div class="row-fluid">
-         <div class="span10 offset1 contenedor-configuracion">
+         <div class="span12 contenedor-configuracion">
              <div class="row-fluid">
          <div class="span10 offset1 contenedor-c">
             <div class="row-fluid">
-                <div class="span12">
+                <div class="span10 offset1">
                     <div class="row-fluid">
-                        <div class="row-fluid meta-black">
+                        <div class="row-fluid" id="yo">
                             <div class="span12">
                                 <p class="text-center"><b>Acerca de mi:</b></p>
                             </div>
                         </div>
-                        <div class="row-fluid" id="yo">
+                        <div class="row-fluid" >
                             <div class="span12">
                                 <br>
                                 <center><textarea rows="3" class="span10"></textarea></center>
@@ -66,14 +61,14 @@
                 </div>
             </div>
             <div class="row-fluid top" >
-                <div class="span6 top">
+                <div class="span5 offset1 top">
                     <div class="row-fluid">
-                        <div class="row-fluid meta-black">
+                        <div class="row-fluid "id="informacion-basica">
                             <div class="span12">
                                 <p class="text-center"><b>Información Basica:</b></p>
                             </div>
                         </div>
-                        <div class="row-fluid" id="informacion-basica">
+                        <div class="row-fluid" >
                             <div class="span12">
                                 <div class="row-fluid">
                                         <div class="span5">
@@ -123,12 +118,12 @@
                     </div>
                 
                 <div class="row-fluid top">
-                    <div class="row-fluid meta-black">
+                    <div class="row-fluid" id="experiencia">
                         <div class="span12">
                             <p class="text-center"><b>Mi experiencia:</b></p>
                         </div>
                     </div>
-                    <div class="row-fluid" id="experiencia">
+                    <div class="row-fluid" >
                         <div class="row-fluid">
                             <div class="span12">
                                 <div class="row-fluid">
@@ -208,14 +203,14 @@
                      </div>
                     </div>
                 </div>
-            <div class="span6 top">
+            <div class="span5 top">
                     <div class="row-fluid">
-                        <div class="row-fluid meta-black">
+                        <div class="row-fluid" id="contacto">
                             <div class="span12">
                                 <p class="text-center"><b>Contacto:</b></p>
                             </div>
                         </div>
-                        <div class="row-fluid" id="contacto">
+                        <div class="row-fluid" >
                             <div class="row-fluid">
                                 <div class="span12">
                                     <div class="row-fluid">
@@ -280,12 +275,12 @@
                         </div>
                     </div>
                     <div class="row-fluid top">
-                            <div class="row-fluid meta-black">
+                            <div class="row-fluid" id="filosofia">
                                 <div class="span12">
                                     <p class="text-center"><b>Manera de ser y de pensar:</b></p>
                                 </div>
                             </div>
-                            <div class="row-fluid" id="filosofia">
+                            <div class="row-fluid" >
                                 <div class="span12">
                                     <br>
                                     <center><textarea rows="3" class="span10"></textarea></center>
@@ -302,7 +297,6 @@
         </div>
          </div>
         </div>
-    </div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
