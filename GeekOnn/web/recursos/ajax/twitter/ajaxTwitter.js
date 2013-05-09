@@ -43,7 +43,7 @@ function llamarTwitter(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("").innerHTML=conexion.responseText;
+        document.getElementById("recibidor-ajax-geekonn").innerHTML=conexion.responseText;
         }
       }
     conexion.open("GET","recursos/ajax/twitter/AjaxTwitter.jsp",true);

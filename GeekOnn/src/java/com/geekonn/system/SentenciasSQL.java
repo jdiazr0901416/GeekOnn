@@ -475,4 +475,13 @@ public void ponerOffline(String Username){
 			System.out.println("SQLError en ponerOffline SentenciasSQL");
 		}
 }
+public void insertarK1K2(int userId,String k1,String k2){
+           try{
+                 statement.executeUpdate("UPDATE usuariosgeekonn SET k1 ="+k1 + 
+                            ", k2="+k2+" WHERE idusuario = " + userId);
+
+            }catch(SQLException e){
+                    System.out.println("SQLError on registrar k1k2");
+            }
+    }
 }
