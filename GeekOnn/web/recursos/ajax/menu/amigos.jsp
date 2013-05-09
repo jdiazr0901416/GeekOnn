@@ -220,9 +220,9 @@
                             <!-- Termina Modal ---------------------------------------------------------------------------------->
                             <div class="span12">
                                   <div class="row-fluid">
-                                      <div class="row-fluid meta-black">
+                                      <div class="row-fluid titulo">
                                           <div class="span12">
-                                              <p class="text-center"><b>Configuración</b></p>
+                                              <center><h3>Configuración</h3></center>
                                           </div>
                                       </div>
                                       <div class="row-fluid" id="bloqueo">
@@ -267,12 +267,12 @@
                           <div class="row-fluid busqueda-amigo">
                                 <div class="span12">
                                       <div class="row-fluid">
-                                          <div class="row-fluid meta-black">
+                                          <div class="row-fluid titulo">
                                               <div class="span12">
-                                                  <p class="text-center"><b>Buscar un amigo</b></p>
+                                                  <center><h3>Buscar un amigo</h3></center>
                                               </div>
                                           </div>
-                                          <div class="row-fluid" id="busqueda">
+                                          <div class="row-fluid top" id="busqueda">
                                               <div class="span12 busqueda-amigo" >
                                                   <center><div class="control-group" id="div-control-space">
                                                       <div class="controls" style="margin-left:0;">
@@ -288,7 +288,7 @@
                           </div>
                       </div>
                     <div class="span12">                                      
-                        <div class="row-fluid" id="encontrado">
+                        <div class="row-fluid" id="respuesta-buscar-amigo">
 
                         </div>
                     </div>

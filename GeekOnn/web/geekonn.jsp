@@ -136,10 +136,10 @@ if(userName == null){
                     <div class="span2" id="M-amigos"  rel="popover" data-content="Aqui estan los enlaces a lois muros de tus amigos, hay varias opciones de control aqui" data-original-title="Amigos">
                         <center><i class="icon-group iconos-menu"></i></center>
                     </div>
-                    <div class="span2" id="M-opiniones"  rel="popover" data-content="comparte algo nuevo al mundo geek, que nadie se quede sin saberlo" data-original-title="Opiniones">
+                    <div class="span2" id="M-opiniones"  rel="popover" data-content="comparte algo nuevo al mundo geek, que nadie se quede sin saberlo" data-original-title="Publicaciones">
                         <center><i class="icon-comments iconos-menu"></i></center>
                     </div>
-                    <div class="span2" id="M-opciones"  rel="popover" data-content="Cambia la configuracion de tu cuenta" data-original-title="Publicaciones">
+                    <div class="span2" id="M-opciones"  rel="popover" data-content="Cambia la configuracion de tu cuenta" data-original-title="Configuracion">
                         <center><i class="icon-edit iconos-menu"></i></center>
                     </div>
                   </div>

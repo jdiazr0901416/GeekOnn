@@ -98,7 +98,7 @@ function buscarAmigo(str){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("").innerHTML=conexion.responseText;
+        document.getElementById("respuesta-buscar-amigo").innerHTML=conexion.responseText;
         }
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/buscarAmigo.jsp?nombre="+nombre,true);
