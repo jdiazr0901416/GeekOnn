@@ -8,10 +8,6 @@ body {
     margin-top: 80px;
     zoom:110%
 }
-.iconos-menu-perfil:hover{
-    border-bottom: 3px solid;
-    border-color: rgb(215,215,215);
-}
 #recibidor-ajax-perfil{
     margin-bottom: 50px;
 }

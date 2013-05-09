@@ -55,6 +55,13 @@ if(userName == null){
   <body>
         <div class="row-fluid">
             <div class="row-fluid fondo-info">
+                <div class="span1">
+                <div class="row-fluid menu-perfil"><center><i class="icon-user icon-4x" id="acerca-perfil-visitado" onclick="informacionPerfilVisitado()"></i></center></div>
+                <div class="row-fluid menu-perfil"><center><i class="icon-group icon-4x menu-perfil" id="amigos-perfil-visitado" onclick="amigosPerfilVisitado()"></i></center></div>
+                <div class="row-fluid menu-perfil"><center><i class="icon-comments icon-4x menu-perfil"></i></center></div>
+                <div class="row-fluid menu-perfil"><center><i class="icon-star icon-4x menu-perfil"></i></center></div>
+                </div>
+                <div class="span11" id="recibidor-ajax-visitado">
                     <div class="row-fluid titulo-acerca-mi">
                         <center><h2><%=nombreVisitado%></h2></center><hr>
                     </div>
@@ -243,6 +250,7 @@ if(userName == null){
                            </div></div></div>
                 </div>
             </div>
+          </div>
         </div>
         </div>
       <!-- Le javascript
