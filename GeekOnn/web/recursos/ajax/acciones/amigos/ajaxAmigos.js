@@ -128,3 +128,27 @@ function visitarAmigo(str){
     conexion.open("POST","recursos/ajax/acciones/amigos/visitarAmigo.jsp?idUsuarioVIsitado="+idUsuarioVIsitado,true);
     conexion.send();
 }
+function informacionPerfilVisitado(str){
+    console.log("entre a visitar amigo visitado");
+    var conexion;
+    var idUsuarioVIsitado;
+    idUsuarioVIsitado= str;
+    console.log("este es buscar amigo " + idUsuarioVIsitado);
+    if (window.XMLHttpRequest)
+      {
+      conexion=new XMLHttpRequest();
+      }
+    else
+      {
+      conexion=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    conexion.onreadystatechange=function()
+      {
+      if (conexion.readyState===4 && conexion.status===200)
+        {
+        document.getElementById("recibidor-ajax-visitado").innerHTML=conexion.responseText;
+        }
+      }
+    conexion.open("POST","recursos/ajax/acciones/amigos/ajaxPerfilVisitado.jsp?idUsuarioVIsitado="+idUsuarioVIsitado,true);
+    conexion.send();
+}

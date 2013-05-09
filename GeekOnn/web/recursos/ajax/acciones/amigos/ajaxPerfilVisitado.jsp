@@ -1,6 +1,6 @@
 <%-- 
-    Document   : visitarAmigo
-    Created on : 08-may-2013, 22:01:34
+    Document   : ajaxPerfilVisitado
+    Created on : 09-may-2013, 0:17:09
     Author     : Julio
 --%>
 <% 
@@ -36,7 +36,7 @@ if(userName == null){
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/perfil.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
-    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
+    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -54,15 +54,8 @@ if(userName == null){
   </head>
   <body>
         <div class="row-fluid">
-            <div class="row-fluid fondo-info">
-                <div class="span1">
-                <div class="row-fluid menu-perfil"><center><i class="icon-user icon-4x" id="acerca-perfil-visitado" title="<%=idUsuarioVisitado%>" onclick="informacionPerfilVisitado(this.title)"></i></center></div>
-                <div class="row-fluid menu-perfil"><center><i class="icon-group icon-4x menu-perfil" id="amigos-perfil-visitado" onclick="amigosPerfilVisitado()"></i></center></div>
-                <div class="row-fluid menu-perfil"><center><i class="icon-comments icon-4x menu-perfil"></i></center></div>
-                <div class="row-fluid menu-perfil"><center><i class="icon-star icon-4x menu-perfil"></i></center></div>
-                </div>
-                <div class="span11" id="recibidor-ajax-visitado">
-                    <div class="row-fluid titulo-acerca-mi">
+
+  <div class="row-fluid titulo-acerca-mi">
                         <center><h2><%=nombreVisitado%></h2></center><hr>
                     </div>
                     <div class="row-fluid">
@@ -250,10 +243,7 @@ if(userName == null){
                            </div></div></div>
                 </div>
             </div>
-          </div>
-        </div>
-        </div>
-      <!-- Le javascript
+                       <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="recursos/bootstrap/docs/assets/js/jquery.js"></script>
@@ -270,7 +260,7 @@ if(userName == null){
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
-    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
+    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
 
   </body>
 </html>
