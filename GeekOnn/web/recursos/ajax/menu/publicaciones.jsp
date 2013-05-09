@@ -127,7 +127,7 @@ if(userName == null){
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <center><h3 id="myModalLabel">Nueva publicación</h3></center>
       </div>
-      <form action='InicioSesion' METHOD='POST' class='form-horizontal'>
+      <form action='' METHOD='POST' class='form-horizontal'>
       <div class="modal-body">
         <div class="row-fluid">
             <div class="span3">
@@ -149,7 +149,7 @@ if(userName == null){
               <div class="span6">
                   <div class="pull-left fuente"><input type="checkbox" onclick="checkboxOn()">&nbsp;Twittear&nbsp;<i class="icon-twitter"></i></div>
               </div>
-              <div class="span6"><button class="btn btn-danger" type="submit"><strong>Publicar</strong></button></div>
+              <div class="span6"><button class="btn btn-danger" onclick="publicar()"><strong>Publicar</strong></button></div>
           </div>
         </form>
       </div>

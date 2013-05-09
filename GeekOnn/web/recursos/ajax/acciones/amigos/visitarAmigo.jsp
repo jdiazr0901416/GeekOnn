@@ -63,7 +63,15 @@ if(userName == null){
                 </div>
                 <div class="span11" id="recibidor-ajax-visitado">
                     <div class="row-fluid titulo-acerca-mi">
-                        <center><h2><%=nombreVisitado%></h2></center><i class="icon-plus icon-4x pull-right zoom" title="<%=idUsuarioVisitado%>" onclick="agregarAmigo(this.title)"></i><hr>
+                        <%
+                        SentenciasSQL yason = new SentenciasSQL();
+                        if(yason.revisarAmistad(idUsuario, idUsuarioVisitado)==false){
+                            out.println("<center><h2>"+nombreVisitado+"</h2></center><i class='icon-plus icon-4x pull-right zoom' title='"+idUsuarioVisitado+"' onclick='agregarAmigo(this.title)'></i><hr>");
+                        }else{
+                            out.println("<center><h2>"+nombreVisitado+"</h2></center>");
+                        }
+                        %>
+                        
                     </div>
                     <div class="row-fluid">
                         <div class="span2 offset1 top" id="foto-perfil">

@@ -214,6 +214,22 @@ public class SentenciasSQL {
             System.out.println("Error en agregarAmigos " + e);
         }
     }
+    /*******************(false si no son amigos, true si lo son)*******************Revisar si ya son amigos********************/
+    public Boolean revisarAmistad(int usuario, int amigoParaRevisar){
+        Boolean respuesta = true;
+        String revisarAmistad = "SELECT * FROM tabla_amigos_".concat(String.valueOf(usuario)).concat(
+                                " WHERE idAmigo=")+amigoParaRevisar;
+        try{
+            statement = conexion.createStatement();
+            resultset = statement.executeQuery(revisarAmistad);
+            if(!resultset.next()){
+                respuesta = false;
+            }
+        }catch(SQLException e){
+            System.out.println("Error en revisarAmistad " + e);
+        }
+        return respuesta;
+    }
     public void crearTablaAmigos(int idUsuario){
         String nombreTabla = "tabla_amigos_".concat(String.valueOf(idUsuario));
         String sentenciaSQL = "CREATE TABLE " + nombreTabla + 

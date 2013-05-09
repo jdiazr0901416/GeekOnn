@@ -56,7 +56,7 @@ if(userName == null){
         <div class="row-fluid">
 
   <div class="row-fluid titulo-acerca-mi">
-                        <center><h2><%=nombreVisitado%></h2></center><hr>
+                        <center><h2><%=nombreVisitado%></h2></center><i class="icon-plus icon-4x pull-right zoom" title="<%=idUsuarioVisitado%>" onclick="agregarAmigo(this.title)"></i><hr>
                     </div>
                     <div class="row-fluid">
                         <div class="span2 offset1 top" id="foto-perfil">
