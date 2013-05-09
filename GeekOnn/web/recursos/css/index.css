@@ -77,3 +77,31 @@ src: url('../fuentes/spincycle.ttf'),url('../fuentes/spincycle.eot'); /* IE9 */
 .top{
     margin-top:85px;
 }
+.titulo-header-p{
+        margin-top: 120px;
+	margin-bottom: 100px;
+	font-family: 'spincycle';
+	color: white;
+	font-size: 150px;
+}
+.integrantes{
+    font-size: 30px;
+}
+.top-1{
+    margin-top: 15px;
+}
+.que-es{
+    margin-top: 40px;
+    font-size: 25px;
+}
+.fucion{
+    
+    margin-top:75px;
+    font-size: 150px;
+}
+.left{
+    margin-left: 10px;
+}
+.extencion{
+    margin-top:100px;
+}
