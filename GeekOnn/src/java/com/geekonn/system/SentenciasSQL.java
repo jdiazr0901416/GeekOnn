@@ -477,11 +477,29 @@ public void ponerOffline(String Username){
 }
 public void insertarK1K2(int userId,String k1,String k2){
            try{
-                 statement.executeUpdate("UPDATE usuariosgeekonn SET k1 ="+k1 + 
-                            ", k2="+k2+" WHERE idusuario = " + userId);
+                 statement.executeUpdate("UPDATE usuariosgeekonn SET k1='"+k1+"', k2='"+k2+"' WHERE idusuario = " + userId);
 
             }catch(SQLException e){
                     System.out.println("SQLError on registrar k1k2");
             }
+    }
+
+public ResultSet obtenerk1(int userId){
+        ResultSet resultSet = null;
+        try{
+        resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE k1 = " + userId);
+        }catch(SQLException e){
+        System.out.println("SQLError on getUserInfo");
+        }
+        return resultSet;
+    }
+public ResultSet obtenerk2(int userId){
+        ResultSet resultSet = null;
+        try{
+        resultSet = statement.executeQuery("SELECT * FROM usuariosgeekonn WHERE k2 = " + userId);
+        }catch(SQLException e){
+        System.out.println("SQLError on getUserInfo");
+        }
+        return resultSet;
     }
 }

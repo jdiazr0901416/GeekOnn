@@ -3,6 +3,7 @@ checko =0;
 var titutloPublicacion;
 var ContendidoPublicacion;
 var pin;
+var token;
 function recuperaTitulo(str){
     this.titutloPublicacion=str;
     console.log(str);
@@ -11,8 +12,9 @@ function recuperaContenido(str){
     this.ContendidoPublicacion=str;
     console.log(str);
 }
-function enviarpin(str){
+function enviarpin(str,token){
     this.pin=str;
+    this.token=token;
     console.log(str);
 }
 function checkboxOn(){
@@ -54,8 +56,11 @@ function llamarTwitter(){
     conexion.open("GET","recursos/ajax/twitter/AjaxTwitter.jsp",true);
     conexion.send();
 }
-function ingresar(){
-    var pini;
+function insertarkeys(){
+    var pini
+    pini=this.pin;
+    var tok=this.token;
+    console.log(pini);
     var k1;
     var conexion;
     console.log("entre a llamarTwitter");
@@ -74,6 +79,6 @@ function ingresar(){
         document.getElementById("recibidor-ajax-geekonn").innerHTML=conexion.responseText;
         }
       }
-    conexion.open("GET","recursos/ajax/twitter/insertarkeys.jsp?=pin"+pini,true);
+    conexion.open("GET","recursos/ajax/twitter/insertarkeys.jsp?pin="+pini+"&token="+token ,true);
     conexion.send();
 }

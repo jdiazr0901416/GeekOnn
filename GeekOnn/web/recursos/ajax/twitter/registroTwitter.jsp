@@ -7,7 +7,9 @@ if(userName == null){
     response.sendRedirect("index.jsp");
 }else{%>
 <%--DECLARO LA VARIABLE idUsuario--%>
+<%@ page import = "twitter4j.auth.RequestToken"%>
 <%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
+<%RequestToken token =  (RequestToken)session.getAttribute("requestToken");%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,7 +45,7 @@ if(userName == null){
   <body>
       <div class="row-fluid fondo-info">
           <center><h3>Ingresa el pin que obtuviste desde twitter</h3><hr></center>
-          <center><input  class="input-xxlarge" type="text" id="pin" onkeypress='enviarpin(this.value)'><br>
+          <center><input  class="input-xxlarge" type="text" id="pin" onkeyup='enviarpin(this.value,<%=token%>)'><br>
           <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="insertarkeys()">Ingresar</button></center>
       </div>
                     <!-- Le javascript

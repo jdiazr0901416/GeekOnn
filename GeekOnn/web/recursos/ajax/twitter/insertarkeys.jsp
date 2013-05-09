@@ -18,30 +18,39 @@ if(userName == null){
 <%@ page import = "twitter4j.conf.ConfigurationBuilder"%>
 <%@ page import = "twitter4j.Twitter"%>
 <%@ page import = "twitter4j.*"%>
-<%@ page import = "com.geekonn.twitter.*" %>
 <%@ page import = "java.sql.ResultSet" %>
+<%@ page import = "com.geekonn.twitter.*" %>
 <%@ page import = "javax.servlet.http.HttpServletResponse" %>
 <% 
-    String pin= request.getParameter("pini");
+    String pin= request.getParameter("pin");
     System.out.println(pin);
-    String k1="n24USls7lh8W2E2IjZRYAw";
-    String k2="iKhcvByzUbb1b6SOeqaDaxgqY1JyXIhyfEdN2yrA";
-    AccessToken accessToken = null;
-    ConfigurationBuilder cb = new ConfigurationBuilder();
+        SentenciasSQL sk1=new SentenciasSQL();
+        ResultSet rk1= null;
+        SentenciasSQL sk2=new SentenciasSQL();
+        ResultSet rk2= null;
+        rk1=sk1.obtenerk1(idUsuario);
+        String k1= rk1.getString("'k1'");
+        rk2=sk2.obtenerk1(idUsuario);
+        String k2= rk2.getString("'k2'");
+        System.out.println(k1);
+        System.out.println(k2);
+        Object token =request.getParameter("token");
+        RequestToken requestToken = (RequestToken)token;
+        ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
-            .setOAuthConsumerKey("n24USls7lh8W2E2IjZRYAw")
-            .setOAuthConsumerSecret("iKhcvByzUbb1b6SOeqaDaxgqY1JyXIhyfEdN2yrA");
-    Twitter twitter = new TwitterFactory(cb.build()).getInstance();
-    RequestToken requestToken = twitter.getOAuthRequestToken();
-    if (pin.length() > 0){
-                accessToken = twitter.getOAuthAccessToken(requestToken, pin);
-    }else{
-                // Si eres una aplicación de confianza (una multinacional por
-                // ejemplo) no necesitas PIN, por eso aparece esta línea
-                accessToken = twitter.getOAuthAccessToken(requestToken);
-        }
+            .setOAuthConsumerKey(k1)
+            .setOAuthConsumerSecret(k2);
+        Twitter twitter = new TwitterFactory(cb.build()).getInstance();
+        System.out.println("Obtenido request token.");
+        System.out.println("Request token: " + requestToken.getToken());
+        System.out.println("Request token secret: " + requestToken.getTokenSecret());
+        AccessToken accessToken = null;
+        accessToken = twitter.getOAuthAccessToken(requestToken, pin);
         System.out.println("Obtenido el access token.");
         System.out.println("Access token: " + accessToken.getToken());
         System.out.println("Access token secret: " + accessToken.getTokenSecret());
+        System.out.println(requestToken);
+        
+        
 %>    
 <%}%>

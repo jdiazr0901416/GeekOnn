@@ -13,6 +13,9 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
+import com.geekonn.system.SentenciasSQL;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
  
 /**
  * @author Antonio Suárez Cortés
@@ -26,13 +29,13 @@ public class TwitterJ
      */
  public TwitterJ() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
     }
-    public void damek1 ()throws IOException, TwitterException{
+    public void damek1 (int userId)throws IOException, TwitterException, SQLException,ClassNotFoundException, IllegalAccessException,InstantiationException{
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
             .setOAuthConsumerKey("n24USls7lh8W2E2IjZRYAw")
-            .setOAuthConsumerSecret("iKhcvByzUbb1b6SOeqaDaxgqY1JyXIhyfEdN2yrAr");
+            .setOAuthConsumerSecret("iKhcvByzUbb1b6SOeqaDaxgqY1JyXIhyfEdN2yrA");
         Twitter twitter = new TwitterFactory(cb.build()).getInstance();
- 
+        
         // Si están seteados el Token y el TokenSecret la siguiente
         // linea lanzará IllegalStateException
         RequestToken requestToken = twitter.getOAuthRequestToken();
@@ -40,7 +43,9 @@ public class TwitterJ
         System.out.println("Request token: " + requestToken.getToken());
         System.out.println("Request token secret: " + requestToken.getTokenSecret());
         AccessToken accessToken = null;
- 
+        SentenciasSQL a1=new SentenciasSQL();
+        System.out.println("mi user id t"+userId);
+        a1.insertarK1K2(userId, requestToken.getToken(),requestToken.getTokenSecret());
             String osName = System.getProperty("os.name");
             String url = requestToken.getAuthorizationURL();
             System.out.println("La siguiente URL será abierta en su navegador:");
@@ -64,6 +69,10 @@ public class TwitterJ
                         Runtime.getRuntime().exec(new String[]
                         { "sh", "-c", cmd.toString() });
                     }
+             HttpServletRequest request =null;
+             HttpSession respuesta = request.getSession(true);
+             respuesta.setAttribute("requestToken", requestToken);
+             
             System.out.print("Introduce el PIN y pulsa enter.\n[PIN]: ");
  
             /*if (pin.length() > 0)
