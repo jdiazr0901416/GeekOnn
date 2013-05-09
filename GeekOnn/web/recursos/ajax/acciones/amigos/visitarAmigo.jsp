@@ -36,7 +36,7 @@ if(userName == null){
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="recursos/css/perfil.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
-    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
+    <script src="recursos/ajax/acciones/mensajes/ajaxAmigos.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -63,7 +63,7 @@ if(userName == null){
                 </div>
                 <div class="span11" id="recibidor-ajax-visitado">
                     <div class="row-fluid titulo-acerca-mi">
-                        <center><h2><%=nombreVisitado%></h2></center><hr>
+                        <center><h2><%=nombreVisitado%></h2></center><i class="icon-plus icon-4x pull-right zoom" title="<%=idUsuarioVisitado%>" onclick="agregarAmigo(this.title)"></i><hr>
                     </div>
                     <div class="row-fluid">
                         <div class="span2 offset1 top" id="foto-perfil">
@@ -270,7 +270,7 @@ if(userName == null){
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
-    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
+    <script src="recursos/ajax/acciones/mensajes/ajaxAmigos.js"></script>
 
   </body>
 </html>
