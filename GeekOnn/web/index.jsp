@@ -25,6 +25,8 @@ if(userName == null){
     <link href="recursos/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <script src="recursos/ajax/index.js"></script>
+    <script src="recursos/ajax/validar.js"></script>
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -81,7 +83,7 @@ if(userName == null){
       </div>
     </div>
     <!-- Termina navbar  -->
-      <div class="row-fluid">
+      <div class="row-fluid" id="recibidor">
           <div class="row-fluid header">
             <div class="span4 offset2 titulo-header">
               <center><p>GeekOnn</p></center>
@@ -137,7 +139,7 @@ if(userName == null){
                    <div class="control-group" id="div-control-space">
                      <div class="controls" style="margin-left:0;">
                        <div class="input-prepend">
-                         <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" id="username" name="username" tabindex="1">
+                         <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" id="username" name="username" tabindex="1" onkeyup='nombre(this.value)'>
                       </div>
                      </div>
                    </div>
@@ -152,7 +154,7 @@ if(userName == null){
                      <div class="control-group" id="div-control-space">
                        <div class="controls" style="margin-left:0;">
                          <div class="input-prepend">
-                           <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1" id="form-input-space">
+                           <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1" id="form-input-space" onkeyup='correo(this.value)'>
                        </div>
                        </div>
                     </div>
@@ -168,14 +170,14 @@ if(userName == null){
                      <div class="control-group" id="div-control-space">
                          <div class="controls" style="margin-left:0;">
                            <div class="input-prepend">
-                             <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1">
+                             <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1" onkeyup='contrasenia(this.value)'>
                           </div>
                          </div>
                        </div>
                    </div>
                  </div>
                  <!-- -------------------------------------------- ------------------ -->
-                 <center><button type="button" class="btn btn-success">Registrarme</button></center>
+                 <center><button type="button" class="btn btn-success" onclick='registrar()'>Registrarme</button></center>
                  <br>
                  </div> 
                 </div>
@@ -263,6 +265,7 @@ if(userName == null){
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
+     <script src="recursos/ajax/validar.js"></script>
 
   </body>
 </html>

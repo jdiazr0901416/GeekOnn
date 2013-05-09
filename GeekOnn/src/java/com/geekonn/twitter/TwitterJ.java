@@ -43,9 +43,10 @@ public class TwitterJ
         System.out.println("Request token: " + requestToken.getToken());
         System.out.println("Request token secret: " + requestToken.getTokenSecret());
         AccessToken accessToken = null;
-        SentenciasSQL a1=new SentenciasSQL();
-        System.out.println("mi user id t"+userId);
-        a1.insertarK1K2(userId, requestToken.getToken(),requestToken.getTokenSecret());
+ 
+        /*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        while (null == accessToken)
+        {*/
             String osName = System.getProperty("os.name");
             String url = requestToken.getAuthorizationURL();
             System.out.println("La siguiente URL será abierta en su navegador:");
@@ -69,26 +70,19 @@ public class TwitterJ
                         Runtime.getRuntime().exec(new String[]
                         { "sh", "-c", cmd.toString() });
                     }
-             HttpServletRequest request =null;
-             HttpSession respuesta = request.getSession(true);
-             respuesta.setAttribute("requestToken", requestToken);
-             
-            System.out.print("Introduce el PIN y pulsa enter.\n[PIN]: ");
+            /*System.out.print("Introduce el PIN y pulsa enter.\n[PIN]: ");
+            String pin = br.readLine();
  
-            /*if (pin.length() > 0)
+            if (pin.length() > 0)
                 accessToken = twitter.getOAuthAccessToken(requestToken, pin);
             else
                 // Si eres una aplicación de confianza (una multinacional por
                 // ejemplo) no necesitas PIN, por eso aparece esta línea
                 accessToken = twitter.getOAuthAccessToken(requestToken);
-        }
+        }*/
         System.out.println("Obtenido el access token.");
         System.out.println("Access token: " + accessToken.getToken());
         System.out.println("Access token secret: " + accessToken.getTokenSecret());
- 
-        String a1 =accessToken.getToken();
-        String a2 =accessToken.getTokenSecret();
-        return a1;*/
     }
 
 }

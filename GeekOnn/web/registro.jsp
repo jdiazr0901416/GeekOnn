@@ -3,11 +3,16 @@
     Created on : 07-may-2013, 1:36:18
     Author     : Julio
 --%>
-<%@taglib prefix="t" uri="http://java.sun.com/jsp/jstl/core" %>
-<%-- EXAMINA SESIONES ABIERTAS Y HACE VALIDACION--%>
-<t:if test="${sessionScope['sessionUsername']!=null}">
-    <% response.sendRedirect("geekonn.jsp");%>
-</t:if>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    String nombreU= request.getParameter("nombre");
+    String correoU= request.getParameter("correo");
+    String contraseniaU= request.getParameter("contrasenia");
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,6 +29,7 @@
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <script src="recursos/ajax/acciones/registro/ajaxRegistro.js"></script>
+    <script src="recursos/ajax/validar.js"></script>
     
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -74,7 +80,6 @@
                     <h3><center>Proporcionanos un poco de tu información</center></h3> <hr>
                  </div>
                  <div class="row-fluid">
-                 <form method="POST" action="Registro">
                   <!--------nombreCompleto----------->
                       <div class="row-fluid inputs">
                         <div class="span5 offset1" id="text-aling-right">
@@ -84,7 +89,7 @@
                         <div class="control-group" id="div-control-space">
                           <div class="controls" style="margin-left:0;">
                             <div class="input-prepend">
-                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" id="username" name="nombreCompleto" tabindex="1">
+                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" value="<%=nombreU%>" id="username" name="nombreCompleto" tabindex="1" onkeyup="recuperarNombre(this.value)">
                            </div>
                           </div>
                         </div>
@@ -99,7 +104,7 @@
                           <div class="control-group" id="div-control-space">
                             <div class="controls" style="margin-left:0;">
                               <div class="input-prepend">
-                                <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text" id="username" name="correoElectronico" tabindex="1" id="form-input-space">
+                                <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text" value="<%=correoU%>" id="username" name="correoElectronico" tabindex="1" id="form-input-space" onkeyup="recuperarEmail(this.value)">
                             </div>
                             </div>
                          </div>
@@ -114,7 +119,7 @@
                         <div class="control-group" id="div-control-space">
                           <div class="controls" style="margin-left:0;">
                             <div class="input-prepend">
-                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" id="username" name="nombreUsuario" tabindex="1" onkeyup="existe(this.value)">
+                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text"  value="" id="username" name="nombreUsuario" tabindex="1" onkeyup="recuperarUser(this.value)">
                            </div>
                           </div>
                         </div>
@@ -129,7 +134,7 @@
                           <div class="control-group" id="div-control-space">
                               <div class="controls" style="margin-left:0;">
                                 <div class="input-prepend">
-                              <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="password" id="contrasenia" name="password" tabindex="1">
+                              <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="password" value="<%=contraseniaU%>" id="contrasenia" name="password" tabindex="1" onkeyup="recuperarContra1(this.value)">
                                </div>
                               </div>
                             </div>
@@ -144,7 +149,7 @@
                           <div class="control-group" id="div-control-space">
                               <div class="controls" style="margin-left:0;">
                                 <div class="input-prepend">
-                                  <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="password" id="username" name="passwordRepetido" tabindex="1">
+                                  <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="password" id="username" name="passwordRepetido" tabindex="1" onkeyup="recuperarContra2(this.value)">
                                </div>
                               </div>
                             </div>
@@ -152,7 +157,7 @@
                       </div>
                       <!-- -------------------------------------------- ------------------ -->
                   <br>
-                  <center><button type="submit" class="btn btn-success">Registrarme</button></center>
+                  <center><button  class="btn btn-success" onclick="final()">Registrarme</button></center>
                 </form>
                 </div>
               </div>
@@ -243,6 +248,11 @@
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
+     <script src="recursos/ajax/validar.js"></script>
 
   </body>
 </html>
+<%} else{
+    response.sendRedirect("geekonn.jsp");
+}
+%>

@@ -21,7 +21,6 @@ function respuestaNewsFeed(){
     conexion.open("GET","recursos/ajax/menu/newsFeed.jsp",true);
     conexion.send();
     imprimirTitulo(str);
-    
 }
 
 function respuestaPerfil(){
