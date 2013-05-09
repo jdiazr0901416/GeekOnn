@@ -16,6 +16,7 @@ function recuperarEmail(valor){
 }
 function recuperarUser(valorUser){
 	this.user=valorUser;
+        existe(this.user);
 }
 function recuperarContra1(contra1){
 	this.p1=contra1;
@@ -44,6 +45,7 @@ if(this.nombre==""){
 						 					console.log("User tiene solo letras");
 						 						if(this.user.length>4 & this.user.length<15){
 						 							console.log("Buen User");
+                                                                                                        existe(this.user);
 						 								if(this.p1==""){
 						 									alert("No ingreso contraseña");
 						 								}else{
@@ -121,6 +123,7 @@ if (espacios) {
 }
 }
 function registrar(){
+    console.log("entre a registrar");
     var nombreI=this.nombre;
     var correo=this.mail;
     var nombreUsuario=this.user;
@@ -143,5 +146,26 @@ function registrar(){
         }
       }
     conexion.open("POST","recursos/ajax/menu/registrar.jsp?nombre="+nombreI+"&correo="+correo+"&nombreUsuario="+nombreUsuario+"&pass="+pass,true);
+    conexion.send();
+}
+function existe(str){
+    console.log("entre a existe"+str);
+    var conexion;
+    if (window.XMLHttpRequest)
+      {
+      conexion=new XMLHttpRequest();
+      }
+    else
+      {
+      conexion=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    conexion.onreadystatechange=function()
+      {
+      if (conexion.readyState===4 && conexion.status===200)
+        {
+        document.getElementById("input-nombre-usuario").innerHTML=conexion.responseText;
+        }
+      }
+    conexion.open("GET","recursos/ajax/acciones/registro/respuestaExiste.jsp?nU="+str,true);
     conexion.send();
 }

@@ -1,6 +1,4 @@
 function existe(str){
-    limpiar();
-    vacio(str);
     var conexion;
     if (window.XMLHttpRequest)
       {
