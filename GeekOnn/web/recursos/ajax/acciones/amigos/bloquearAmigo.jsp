@@ -3,6 +3,14 @@
     Created on : 26-abr-2013, 0:13:06
     Author     : Julio
 --%>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    response.sendRedirect("index.jsp");
+}else{%>
 <%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
@@ -17,3 +25,4 @@
     bloquearAmigo.blockAFriend(idUsuario, idUsuario2);
     response.sendRedirect("http://localhost:8080/GeekOnn/recursos/ajax/menu/amigos.jsp");
 %>    
+<%}%>

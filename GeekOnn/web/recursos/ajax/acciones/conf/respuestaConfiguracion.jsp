@@ -3,6 +3,14 @@
     Created on : 23/04/2013, 12:11:55 AM
     Author     : jdiazr0901416
 --%>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    response.sendRedirect("index.jsp");
+}else{%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -317,3 +325,4 @@
     
   </body>
 </html>
+<%}%>

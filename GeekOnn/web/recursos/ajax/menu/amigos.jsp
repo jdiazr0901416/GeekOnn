@@ -3,7 +3,14 @@
     Created on : 15-abr-2013, 10:22:41
     Author     : Julio
 --%>
-
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    response.sendRedirect("index.jsp");
+}else{%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>
@@ -50,6 +57,7 @@
                     <%
                     int userId=idUsuario;
                     String nombre = "";
+                    int idUsuario2 = 0;
                     SentenciasSQL cerrar0 = new SentenciasSQL();
                     SentenciasSQL sentenciasLista0 = new SentenciasSQL();
                     ResultSet resultSetLista0 =null;
@@ -65,11 +73,12 @@
 
                                     if(resultSetID0.first()){
                                     nombre = resultSetID0.getString("nombreUsuario");
+                                    idUsuario2 = resultSetID0.getInt("idusuario");
                                 }
                                 out.println("<div class='span2 amigo-recuperado' >");
-                                    out.println("<div class='span12' id='visitarAmigo' value='nombreUsuario' onclick='visitarAmigo(this.value)'>");
+                                    out.println("<div class='span12' id='visitarAmigo'>");
                                         out.println("<p class='text-center'>"+resultSetID0.getString("nombreUsuario")+"</p>");
-                                        out.println("<center><img src='recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png' alt='' class='img-rounded' id='imagen-del-usuario'></center>");
+                                        out.println("<center><img src='recursos/imagenes/imagenesUsuario/portada/imagen-usuario-nulo.png' class='img-rounded' alt='"+idUsuario2+"' id='imagen-del-usuario' onclick='visitarAmigo(this.alt)'></center>");
                                     out.println("</div>");
                                 out.println("</div>");
                                 }
@@ -318,3 +327,4 @@
     
     </body>
 </html>
+<%}%>

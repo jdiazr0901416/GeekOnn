@@ -1,6 +1,6 @@
 <%-- 
-    Document   : buscarAmigo
-    Created on : 01-may-2013, 21:47:51
+    Document   : visitarAmigo
+    Created on : 08-may-2013, 22:01:34
     Author     : Julio
 --%>
 <% 
@@ -11,14 +11,15 @@ String userName = (String)session.getAttribute("sessionUsername");
 if(userName == null){
     response.sendRedirect("index.jsp");
 }else{%>
+<%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>
 <%@ page import = "javax.servlet.http.HttpServletResponse" %>
-<%
-    int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));
-    //String nombreUsuario= (String)session.getAttribute("sessionIdNombreUsuario");
+<% int idUsuarioVisitado= Integer.parseInt(request.getParameter("idUsuarioVIsitado")); 
+    System.out.println(idUsuarioVisitado);
 %>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -29,12 +30,11 @@ if(userName == null){
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <!-- Le styles -->
     <link href="recursos/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="recursos/css/amigos.css" rel="stylesheet">
+    <link href="recursos/css/mensajes.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
-    <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
+    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -50,32 +50,11 @@ if(userName == null){
                     <link rel="apple-touch-icon-precomposed" href="recursos/bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
-  <body>   
-<div class="row-fluid">
-    <div class="row-fluid" id="amigo-encontrado"><center><h3>El amigo mas parecido es</h3></center></div>
-    <div class="row-fluid" id="contenedor-amigos-buscados">
-        <% 
-        String nombreAmigo;
-        String nombreUsuario= request.getParameter("nombre");
-        SentenciasSQL sentencias = new SentenciasSQL();
-        SentenciasSQL sentenciasclose = new SentenciasSQL();
-        ResultSet resultSet =null;
-        resultSet = sentencias.buscarUsuarioGeekonn(nombreUsuario);
-        while(resultSet.next()){
+  <body>
+        <div class="row-fluid">
             
-            System.out.println(resultSet.getString("nombreUsuario")+"soy amigo encontrado");
-            out.println("<div class='row-fluid'>");
-            out.println("<div class='span3' id='foto-amigo-recuperado'></div>");
-            out.println("<div class='span9' id='nombre-amigo-recuperado'><center><h4>"+ resultSet.getString("nombreUsuario") +"</h4></center></div>");
-            out.println("</div>");
-        }
-        resultSet.close();
-        sentenciasclose.closeConnection();
-        %> 
-        
-    </div>
-</div>
- <!-- Le javascript
+        </div>
+      <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="recursos/bootstrap/docs/assets/js/jquery.js"></script>
@@ -92,7 +71,8 @@ if(userName == null){
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
-    
-    </body>
+    <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
+
+  </body>
 </html>
 <%}%>

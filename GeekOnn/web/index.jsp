@@ -3,11 +3,14 @@
     Created on : 07-may-2013, 0:38:57
     Author     : Julio
 --%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%-- EXAMINA SESIONES ABIERTAS Y HACE VALIDACION--%>
-<c:if test="${sessionScope['sessionUsername']!=null}">
-    <% response.sendRedirect("geekonn.jsp");%>
-</c:if>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -263,3 +266,7 @@
 
   </body>
 </html>
+<%} else{
+    response.sendRedirect("geekonn.jsp");
+}
+%>

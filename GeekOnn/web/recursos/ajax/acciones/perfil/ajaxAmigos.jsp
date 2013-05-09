@@ -3,6 +3,14 @@
     Created on : 04-may-2013, 19:34:34
     Author     : Julio
 --%>
+<% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    response.sendRedirect("index.jsp");
+}else{%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>
@@ -106,3 +114,4 @@
     
     </body>
 </html>
+<%}%>

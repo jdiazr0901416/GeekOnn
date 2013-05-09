@@ -103,5 +103,28 @@ function buscarAmigo(str){
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/buscarAmigo.jsp?nombre="+nombre,true);
     conexion.send();
-    
+}
+function visitarAmigo(str){
+    console.log("entre a visitar amigo");
+    var conexion;
+    var idUsuarioVIsitado;
+    idUsuarioVIsitado= str;
+    console.log("este es buscar amigo " + idUsuarioVIsitado);
+    if (window.XMLHttpRequest)
+      {
+      conexion=new XMLHttpRequest();
+      }
+    else
+      {
+      conexion=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    conexion.onreadystatechange=function()
+      {
+      if (conexion.readyState===4 && conexion.status===200)
+        {
+        document.getElementById("recibidor-ajax-geekonn").innerHTML=conexion.responseText;
+        }
+      }
+    conexion.open("POST","recursos/ajax/acciones/amigos/visitarAmigo.jsp?idUsuarioVIsitado="+idUsuarioVIsitado,true);
+    conexion.send();
 }

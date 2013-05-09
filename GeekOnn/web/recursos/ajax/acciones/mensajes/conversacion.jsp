@@ -4,6 +4,14 @@
     Created on : 15-abr-2013, 10:22:41
     Author     : Julio
 	--%>
+        <% 
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+String userName = (String)session.getAttribute("sessionUsername");
+if(userName == null){
+    response.sendRedirect("index.jsp");
+}else{%>
 <%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.geekonn.system.SentenciasSQL"%>
@@ -79,8 +87,8 @@
                                      out.println("</div>");
                                      out.println("<div class='span10'>");
                                      out.println("<p align='justify'><strong>");
-                                     out.println(nombreUsuario + ": " + mensaje);
-                                     out.println("</strong></p>");
+                                     out.println(nombreUsuario + "</strong>: " + mensaje);
+                                     out.println("</p>");
                                      out.println("</div>");
                                      out.println("</div>");
                                      
@@ -119,3 +127,4 @@
     <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
   </body>
 </html>
+<%}%>
