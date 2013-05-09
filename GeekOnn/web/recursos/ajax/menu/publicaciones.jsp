@@ -28,7 +28,7 @@ if(userName == null){
     <link href="recursos/css/publicaciones.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-     <!--<script src="recursos/ajax/toltip/ajaxToltip.js"></script>-->
+    <script src="recursos/ajax/twitter/ajaxTwitter.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -147,7 +147,7 @@ if(userName == null){
       <div class="modal-footer">
           <div class="row-fluid">
               <div class="span6">
-                  <div class="pull-left fuente"><input type="checkbox" name="vehicle" value="Bike">&nbsp;Twittear&nbsp;<i class="icon-twitter"></i></div>
+                  <div class="pull-left fuente"><input type="checkbox" onclick="checkboxOn()">&nbsp;Twittear&nbsp;<i class="icon-twitter"></i></div>
               </div>
               <div class="span6"><button class="btn btn-danger" type="submit"><strong>Publicar</strong></button></div>
           </div>
@@ -173,7 +173,7 @@ if(userName == null){
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
     <script src="recursos/ajax/popOvers/popOvers.js"></script>
-     <!--<script src="recursos/ajax/toltip/ajaxToltip.js"></script>-->
+    <script src="recursos/ajax/twitter/ajaxTwitter.js"></script>
   </body>
 </html>
 <%}%>

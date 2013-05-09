@@ -64,8 +64,9 @@ if(userName == null){
         while(resultSet.next()){
             
             System.out.println(resultSet.getString("nombreUsuario")+"soy amigo encontrado");
+            System.out.println(resultSet.getString("idusuario")+"soy amigo encontrado id");
             out.println("<div class='row-fluid'>");
-            out.println("<div class='span3' id='foto-amigo-recuperado'></div>");
+            out.println("<div class='span3' id='foto-amigo-recuperado' title='"+resultSet.getString("idusuario")+"' onclick='visitarAmigo(this.title)'></div>");
             out.println("<div class='span9' id='nombre-amigo-recuperado'><center><h4>"+ resultSet.getString("nombreUsuario") +"</h4></center></div>");
             out.println("</div>");
         }

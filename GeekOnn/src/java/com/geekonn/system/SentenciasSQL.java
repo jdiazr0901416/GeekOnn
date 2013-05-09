@@ -198,7 +198,22 @@ public class SentenciasSQL {
 /***********************************************************************************************/
     
 /***********************************************************************************************/
-/*********************************Amigos**********************************************/    
+/*********************************Amigos**********************************************/  
+    /************************************Agregar un Amigo*****************************************/    
+    public void agregarAmigos(int usuario, int nuevoAmigo){
+        String agregarPrimero =  "INSERT INTO tabla_amigos_".concat(String.valueOf(usuario)).concat(
+                                 " VALUES(")+nuevoAmigo+", 0)";
+        String agregarInversamente = "INSERT INTO tabla_amigos_".concat(String.valueOf(nuevoAmigo)).concat(
+                                 " VALUES(")+usuario+", 0)";
+        try{
+            statement = conexion.createStatement();
+            statement.execute(agregarPrimero);
+            statement.execute(agregarInversamente);
+        
+        }catch(SQLException e){
+            System.out.println("Error en agregarAmigos " + e);
+        }
+    }
     public void crearTablaAmigos(int idUsuario){
         String nombreTabla = "tabla_amigos_".concat(String.valueOf(idUsuario));
         String sentenciaSQL = "CREATE TABLE " + nombreTabla + 

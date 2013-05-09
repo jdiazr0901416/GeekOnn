@@ -12,7 +12,6 @@ if(userName == null){
     response.sendRedirect("index.jsp");
 }else{%>
 <%int idUsuario = Integer.valueOf("" + session.getAttribute("sessionIdUsuario"));%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
 <%@ page import = "java.sql.ResultSet" %>
 <%@ page import = "javax.servlet.http.HttpServletResponse" %>

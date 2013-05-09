@@ -176,7 +176,7 @@ function AmigosVisitado(str){
     conexion.open("POST","recursos/ajax/acciones/amigos/ajaxAmigosVisitado.jsp?idUsuarioVIsitado="+idUsuarioVIsitado,true);
     conexion.send();
 }
-function agregarAmigo(){
+function agregarAmigo(str){
     console.log("entre a agregar amigo");
     var conexion;
     var idUsuarioVIsitado;
@@ -194,7 +194,7 @@ function agregarAmigo(){
       {
       if (conexion.readyState===4 && conexion.status===200)
         {
-        document.getElementById("recibidor-ajax-visitado").innerHTML=conexion.responseText;
+        document.getElementById("recibidor-ajax-geekonn").innerHTML=conexion.responseText;
         }
       }
     conexion.open("POST","recursos/ajax/acciones/amigos/ajaxAgregarAmigo.jsp?idUsuarioVIsitado="+idUsuarioVIsitado,true);

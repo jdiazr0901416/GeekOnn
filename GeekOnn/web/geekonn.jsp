@@ -168,6 +168,7 @@ if(userName == null){
     <script src="recursos/ajax/popOvers/popOvers.js"></script>
     <script src="recursos/ajax/acciones/mensajes/ajaxMensajes.js"></script>
     <script src="recursos/ajax/acciones/amigos/ajaxAmigos.js"></script>
+    <script src="recursos/ajax/twitter/ajaxTwitter.js"></script>
      <!--<script src="recursos/ajax/toltip/ajaxToltip.js"></script>-->
 </html>
 <%}%>
