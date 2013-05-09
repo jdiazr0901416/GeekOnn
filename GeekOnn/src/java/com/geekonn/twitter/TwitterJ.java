@@ -26,11 +26,11 @@ public class TwitterJ
      */
  public TwitterJ() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
     }
-    public String damek1 ()throws IOException, TwitterException{
+    public void damek1 ()throws IOException, TwitterException{
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
             .setOAuthConsumerKey("n24USls7lh8W2E2IjZRYAw")
-            .setOAuthConsumerSecret("iKhcvByzUbb1b6SOeqaDaxgqY1JyXIhyfEdN2yrA");
+            .setOAuthConsumerSecret("iKhcvByzUbb1b6SOeqaDaxgqY1JyXIhyfEdN2yrAr");
         Twitter twitter = new TwitterFactory(cb.build()).getInstance();
  
         // Si están seteados el Token y el TokenSecret la siguiente
@@ -80,66 +80,6 @@ public class TwitterJ
         String a1 =accessToken.getToken();
         String a2 =accessToken.getTokenSecret();
         return a1;*/
-            String a1 =accessToken.getToken();
-            return a1;
     }
-    public String damek2 ()throws IOException, TwitterException{
-        ConfigurationBuilder cb = new ConfigurationBuilder();
-        cb.setDebugEnabled(true)
-            .setOAuthConsumerKey("n24USls7lh8W2E2IjZRYAw")
-            .setOAuthConsumerSecret("iKhcvByzUbb1b6SOeqaDaxgqY1JyXIhyfEdN2yrA");
-        Twitter twitter = new TwitterFactory(cb.build()).getInstance();
- 
-        // Si están seteados el Token y el TokenSecret la siguiente
-        // linea lanzará IllegalStateException
-        RequestToken requestToken = twitter.getOAuthRequestToken();
-        System.out.println("Obtenido request token.");
-        System.out.println("Request token: " + requestToken.getToken());
-        System.out.println("Request token secret: " + requestToken.getTokenSecret());
-        AccessToken accessToken = null;
- 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        while (null == accessToken)
-        {
-            String osName = System.getProperty("os.name");
-            String url = requestToken.getAuthorizationURL();
-            System.out.println("La siguiente URL será abierta en su navegador:");
-            System.out.println(requestToken.getAuthorizationURL());
-            if (osName.contains("Windows"))
-                Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
-            else
-                if (osName.contains("Mac OS"))
-                    Runtime.getRuntime().exec("open " + url);
-                else
-                    if (osName.indexOf("nix") >= 0 || osName.indexOf("nux") >= 0)
-                    {
- 
-                        String[] browsers =
-                        { "epiphany", "firefox", "mozilla", "konqueror", "netscape", "opera", "links", "lynx" };
- 
-                        StringBuffer cmd = new StringBuffer();
-                        for (int i = 0; i < browsers.length; i++)
-                            cmd.append((i == 0 ? "" : " || ") + browsers[i] + " \"" + url + "\" ");
- 
-                        Runtime.getRuntime().exec(new String[]
-                        { "sh", "-c", cmd.toString() });
-                    }
-            System.out.print("Introduce el PIN y pulsa enter.\n[PIN]: ");
-            String pin = br.readLine();
- 
-            if (pin.length() > 0)
-                accessToken = twitter.getOAuthAccessToken(requestToken, pin);
-            else
-                // Si eres una aplicación de confianza (una multinacional por
-                // ejemplo) no necesitas PIN, por eso aparece esta línea
-                accessToken = twitter.getOAuthAccessToken(requestToken);
-        }
-        System.out.println("Obtenido el access token.");
-        System.out.println("Access token: " + accessToken.getToken());
-        System.out.println("Access token secret: " + accessToken.getTokenSecret());
- 
-        String a1 =accessToken.getToken();
-        String a2 =accessToken.getTokenSecret();
-        return a2;
-    }
+
 }

@@ -2,12 +2,17 @@ var checko;
 checko =0;
 var titutloPublicacion;
 var ContendidoPublicacion;
+var pin;
 function recuperaTitulo(str){
     this.titutloPublicacion=str;
     console.log(str);
 }
 function recuperaContenido(str){
     this.ContendidoPublicacion=str;
+    console.log(str);
+}
+function enviarpin(str){
+    this.pin=str;
     console.log(str);
 }
 function checkboxOn(){
@@ -47,5 +52,28 @@ function llamarTwitter(){
         }
       }
     conexion.open("GET","recursos/ajax/twitter/AjaxTwitter.jsp",true);
+    conexion.send();
+}
+function ingresar(){
+    var pini;
+    var k1;
+    var conexion;
+    console.log("entre a llamarTwitter");
+    if (window.XMLHttpRequest)
+      {
+      conexion=new XMLHttpRequest();
+      }
+    else
+      {
+      conexion=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    conexion.onreadystatechange=function()
+      {
+      if (conexion.readyState===4 && conexion.status===200)
+        {
+        document.getElementById("recibidor-ajax-geekonn").innerHTML=conexion.responseText;
+        }
+      }
+    conexion.open("GET","recursos/ajax/twitter/insertarkeys.jsp?=pin"+pini,true);
     conexion.send();
 }

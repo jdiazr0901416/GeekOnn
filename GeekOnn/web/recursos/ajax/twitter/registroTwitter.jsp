@@ -43,6 +43,8 @@ if(userName == null){
   <body>
       <div class="row-fluid fondo-info">
           <center><h3>Ingresa el pin que obtuviste desde twitter</h3><hr></center>
+          <center><input  class="input-xxlarge" type="text" id="pin" onkeypress='enviarpin(this.value)'><br>
+          <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="insertarkeys()">Ingresar</button></center>
       </div>
                     <!-- Le javascript
     ================================================== -->
