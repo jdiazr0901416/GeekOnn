@@ -59,7 +59,7 @@
             System.out.println(resultSet.getString("nombreUsuario")+"soy amigo encontrado");
             out.println("<div class='row-fluid'>");
             out.println("<div class='span3' id='foto-amigo-recuperado'></div>");
-            out.println("<div class='span9' id='nombre-amigo-recuperado'><center><h2>"+ resultSet.getString("nombreUsuario") +"</h2></center></div>");
+            out.println("<div class='span9' id='nombre-amigo-recuperado'><center><h4>"+ resultSet.getString("nombreUsuario") +"</h4></center></div>");
             out.println("</div>");
         }
         resultSet.close();

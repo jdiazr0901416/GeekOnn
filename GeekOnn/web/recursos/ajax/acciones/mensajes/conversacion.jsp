@@ -74,13 +74,13 @@
                                         nombreUsuario =  resultsetUsuario.getString("nombreUsuario");                                                
                                      }
                                      out.println("<div class='row-fluid'>");
-                                     out.println("<div class='span3'>");
+                                     out.println("<div class='span2'>");
                                      out.println("<img src='' alt=''>");
                                      out.println("</div>");
-                                     out.println("<div class='span9'>");
-                                     out.println("<p align='justify'>");
+                                     out.println("<div class='span10'>");
+                                     out.println("<p align='justify'><strong>");
                                      out.println(nombreUsuario + ": " + mensaje);
-                                     out.println("</p>");
+                                     out.println("</strong></p>");
                                      out.println("</div>");
                                      out.println("</div>");
                                      
