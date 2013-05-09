@@ -57,7 +57,7 @@ if(userName == null){
             <div class="row-fluid fondo-info">
                 <div class="span1">
                 <div class="row-fluid menu-perfil"><center><i class="icon-user icon-4x" id="acerca-perfil-visitado" title="<%=idUsuarioVisitado%>" onclick="informacionPerfilVisitado(this.title)"></i></center></div>
-                <div class="row-fluid menu-perfil"><center><i class="icon-group icon-4x menu-perfil" id="amigos-perfil-visitado" onclick="amigosPerfilVisitado()"></i></center></div>
+                <div class="row-fluid menu-perfil"><center><i class="icon-group icon-4x menu-perfil" id="amigos-perfil-visitado" title="<%=idUsuarioVisitado%>" onclick="AmigosVisitado(this.title)"></i></center></div>
                 <div class="row-fluid menu-perfil"><center><i class="icon-comments icon-4x menu-perfil"></i></center></div>
                 <div class="row-fluid menu-perfil"><center><i class="icon-star icon-4x menu-perfil"></i></center></div>
                 </div>
