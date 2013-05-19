@@ -41,8 +41,7 @@ function respuestaPerfil(){
         document.getElementById("recibidor-ajax-geekonn").innerHTML=conexion.responseText;
         document.getElementById("acerca-perfil").addEventListener("click", informacionPerfil , false);
         document.getElementById("amigos-perfil").addEventListener("click", amigosPerfil , false);
-        document.getElementById("ultimas-opiniones-perfil").addEventListener("click", ultimasOpiniones , false);
-        document.getElementById("favoritos-perfil").addEventListener("click", favoritos , false);
+        document.getElementById("publicacionesAmigos").addEventListener("click", PAmigo , false);
         }
       }
     conexion.open("GET","recursos/ajax/menu/perfil.jsp",true);

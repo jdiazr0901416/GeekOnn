@@ -79,6 +79,7 @@ public class InicioSesion extends HttpServlet {
                 }
             
 
+         response.sendRedirect("Sesion.jsp");
             }catch (Exception e) {
                 System.out.println("SQL exception. .-." + e.getMessage());
             }

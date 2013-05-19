@@ -46,8 +46,7 @@ if(userName == null){
             <div class="span1">
                 <div class="row-fluid menu-perfil"><center><i class="icon-user icon-4x" id="acerca-perfil"></i></center></div>
                 <div class="row-fluid menu-perfil"><center><i class="icon-group icon-4x menu-perfil" id="amigos-perfil"></i></center></div>
-                <div class="row-fluid menu-perfil"><center><i class="icon-comments icon-4x menu-perfil"></i></center></div>
-                <div class="row-fluid menu-perfil"><center><i class="icon-star icon-4x menu-perfil"></i></center></div>
+                <div class="row-fluid menu-perfil"><center><i class="icon-comments-alt icon-4x menu-perfil" id="publicacionesAmigos"></i></center></div>
             </div>
             <div class="span11" id="recibidor-ajax-perfil">
                 <div class="row-fluid fondo-info">
