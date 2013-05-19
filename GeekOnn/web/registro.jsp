@@ -9,9 +9,6 @@ response.setHeader("Cache-Control","no-store");
 response.setDateHeader("Expires", 0);
 String userName = (String)session.getAttribute("sessionUsername");
 if(userName == null){
-    String nombreU= request.getParameter("nombre");
-    String correoU= request.getParameter("correo");
-    String contraseniaU= request.getParameter("contrasenia");
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -120,7 +117,7 @@ if(userName == null){
                         <div class="control-group" id="div-control-space">
                           <div class="controls" style="margin-left:0;">
                             <div class="input-prepend">
-                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text"  value="" id="username" name="nombreUsuario" tabindex="1" >
+                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text"  value="" id="username" name="nombreUsuario" tabindex="1" onkeyup="existe(this.value)">
                            </div>
                           </div>
                         </div>
@@ -158,7 +155,7 @@ if(userName == null){
                       </div>
                       <!-- -------------------------------------------- ------------------ -->
                   <br>
-                  <center><button  class="btn btn-success" onclick="final()">Registrarme</button></center>
+                  <center><button  class="btn btn-success" type="submit">Registrarme</button></center>
                 </form>
                 </div>
               </div>
@@ -173,7 +170,7 @@ if(userName == null){
                    <div class="row-fluid inputsv"></div>
                    <!--------nombreUsuario----------->
                    <div class="row-fluid inputsv">
-                   <div class="span10 offset1" id="input-nombre-usuario"></div>
+                       <div class="span10 offset1" id="input-nombre-usuario"></div>
                    </div>
                    <!-- --------------------------------password------------ ------------------ -->
                    <div class="row-fluid inputsv"></div>

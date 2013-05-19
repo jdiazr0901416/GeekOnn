@@ -63,7 +63,7 @@ public class Registro extends HttpServlet {
             /*
              * Falta redireccionar a alguna pagina o servlet apartir de aqui
              */
-            response.sendRedirect("./index.jsp");
+            response.sendRedirect("./registrado.jsp");
             }catch(Exception e){
 			System.out.println("SQL exception. .-." + e.getMessage());
 		}
