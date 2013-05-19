@@ -13,7 +13,7 @@ function contrasenia(str){
     this.contraseniau=str;
     console.log(str);
 }
-function registrar(){
+function enviar(){
     console.log("entre a registrar")
     var nombrei=this.nombreu;
     var correoi=this.correou;

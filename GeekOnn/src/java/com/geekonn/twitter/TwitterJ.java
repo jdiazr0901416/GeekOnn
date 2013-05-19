@@ -14,20 +14,25 @@ import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
 import com.geekonn.system.SentenciasSQL;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
  
 /**
  * @author Antonio Suárez Cortés
  */
-public class TwitterJ
+public class TwitterJ implements Serializable
 {
     /**
      * @param args
      * @throws IOException
      * @throws TwitterException
      */
- public TwitterJ() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
+ public TwitterJ() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
     }
     public void damek1 (int userId)throws IOException, TwitterException, SQLException,ClassNotFoundException, IllegalAccessException,InstantiationException{
         ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -35,6 +40,8 @@ public class TwitterJ
             .setOAuthConsumerKey("n24USls7lh8W2E2IjZRYAw")
             .setOAuthConsumerSecret("iKhcvByzUbb1b6SOeqaDaxgqY1JyXIhyfEdN2yrA");
         Twitter twitter = new TwitterFactory(cb.build()).getInstance();
+        System.out.println("imprimirTwitter"+twitter);
+        /* *************************************************************************** */
         
         // Si están seteados el Token y el TokenSecret la siguiente
         // linea lanzará IllegalStateException
@@ -43,7 +50,17 @@ public class TwitterJ
         System.out.println("Request token: " + requestToken.getToken());
         System.out.println("Request token secret: " + requestToken.getTokenSecret());
         AccessToken accessToken = null;
- 
+        String fichero="hola";
+        
+        /*ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichero));
+        oos.writeObject(twitter);
+        oos.close();
+        
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fichero));
+        Object aux = ois.readObject();
+        System.out.println("debe ser igual"+aux);  // Se escribe en pantalla el objeto
+        aux = ois.readObject();
+        ois.close();*/
         /*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while (null == accessToken)
         {*/

@@ -96,10 +96,10 @@ if(userName == null){
           </div>
           <div class="row-fluid separador"></div>
           <div class="span8 offset2 contenedor-index">
-            <center><h3>GeekOnn es una red social enfocada a la gente que le gusta estar al dia acerca de la tecnologia y de sus grandes avances</h3></center><hr>
+            <center><h3>GeekOnn es una red social enfocada a la gente que le gusta estar al día acerca de la tecnologia y de sus avances</h3></center><hr>
             <div class="row-fluid">
               <div class="span6">
-                <center><h4>Deja al alcanse de todos, los nuevos avances tecnologicos de los que te enteres! muestra el geek que llevas dentro</h4></center><hr>
+                <center><h4>Deja al alcance de todos los avances tecnológicosque se te hagan interesantes.</h4></center><hr>
                 <div class="row-fluid">
                   <div class="span12 contenedor-3-noticias">
                     <!-- beta 3 noticias -->
@@ -109,7 +109,7 @@ if(userName == null){
                       </div>
                       <div class="span9">
                         <center><h4>Titulo publicación</h4></center><hr class="clase-hr">
-                        <p align="justify">esta es la breve descripción de la publicacion que estamos mostrando</p>
+                        <p align="justify">Esta es una breve descripción de la publicacion que se realizo en GeekOnn.</p>
                       </div>
                     </div> 
 
@@ -119,7 +119,7 @@ if(userName == null){
                       </div>
                       <div class="span9">
                         <center><h4>Titulo publicación</h4></center><hr class="clase-hr">
-                        <p align="justify">esta es la breve descripción de la publicacion que estamos mostrando</p>
+                        <p align="justify">Esta es una breve descripción de la publicacion que se realizo en GeekOnn.</p>
                       </div>
                     </div> 
                     <!-- beta 3 noticias -->
@@ -127,60 +127,7 @@ if(userName == null){
                 </div>
               </div>
               <div class="span6">
-                <center><h3>Registrate!</h3></center><hr>
-                <div class="row-fluid">  
-                  <div class="span12">
-                  <!-- -------------------------------------------- ------------------ -->
-                 <div class="row-fluid">
-                   <div class="span5 offset2" id="text-aling-right">
-                     <h4>Nombre:</h4>
-                 </div>
-                 <div class="span5">
-                   <div class="control-group" id="div-control-space">
-                     <div class="controls" style="margin-left:0;">
-                       <div class="input-prepend">
-                         <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" id="username" name="username" tabindex="1" onkeyup='nombre(this.value)'>
-                      </div>
-                     </div>
-                   </div>
-                 </div>
-                 </div>
-                 <!-- -------------------------------------------- ------------------ -->
-                 <div class="row-fluid">
-                   <div class="span5 offset2" id="text-aling-right">
-                     <h4>Correo electronico:</h4>
-                   </div>
-                   <div class="span5">
-                     <div class="control-group" id="div-control-space">
-                       <div class="controls" style="margin-left:0;">
-                         <div class="input-prepend">
-                           <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1" id="form-input-space" onkeyup='correo(this.value)'>
-                       </div>
-                       </div>
-                    </div>
-                   </div>
-                 </div>
-                 <!-- -------------------------------------------- ------------------ -->
-                 <!-- -------------------------------------------- ------------------ -->
-                 <div class="row-fluid">
-                   <div class="span5 offset2" id="text-aling-right">
-                     <h4>Contraseña:</h4>
-                   </div>
-                   <div class="span5">
-                     <div class="control-group" id="div-control-space">
-                         <div class="controls" style="margin-left:0;">
-                           <div class="input-prepend">
-                             <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="text" id="username" name="username" tabindex="1" onkeyup='contrasenia(this.value)'>
-                          </div>
-                         </div>
-                       </div>
-                   </div>
-                 </div>
-                 <!-- -------------------------------------------- ------------------ -->
-                 <center><button type="button" class="btn btn-success" onclick='registrar()'>Registrarme</button></center>
-                 <br>
-                 </div> 
-                </div>
+                  <h1>Forma parte de nosotros!</h1>
               </div>
             </div>
             <div class="row-fluid">
@@ -217,13 +164,13 @@ if(userName == null){
     <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <center><h3 id="myModalLabel">Inicia sesión</h3></center>
+        <center><h3 id="myModalLabel">Inicia Sesión</h3></center>
       </div>
       <form action='InicioSesion' METHOD='POST' class='form-horizontal'>
       <div class="modal-body">
         <div class="row-fluid">
           <div class="span6 offset3"> 
-            <br>
+           <br>
             <div class="control-group">
               <div class="controls" style="margin-left:0;">
                 <div class="input-prepend">
@@ -241,9 +188,9 @@ if(userName == null){
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-          <div class="span6"><h6 class="pull-left">¿No estas registrado?<a href="registro.jsp">Registrate</a></h6></div>
-          <button class="btn btn-danger" type="submit"><strong>Iniciar sesión</strong></button>
+      <div class="modal-footer"> 
+          <div class="span6"><h6 class="pull-left">¿Aún no formas parte de GeekOnn?<a href="registro.jsp">     Registrate</a></h6></div>
+          <button class="btn btn-danger" type="submit"><strong>Iniciar Sesión</strong></button>
       </form>
       </div>
     </div>
@@ -266,6 +213,7 @@ if(userName == null){
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
      <script src="recursos/ajax/validar.js"></script>
+     <script src="recursos/ajax/index.js"></script>
 
   </body>
 </html>

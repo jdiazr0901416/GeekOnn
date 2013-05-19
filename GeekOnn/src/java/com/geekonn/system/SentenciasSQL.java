@@ -12,7 +12,7 @@ public class SentenciasSQL {
     public SentenciasSQL() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
-            conexionLocalJulio();
+            conexionLocalBatiz();
     }
 
     public void connect() throws SQLException {
@@ -61,7 +61,7 @@ public class SentenciasSQL {
     }
 /*******************************************************************************************************************************/    
 /************************Iniciar Sesion de Usuario y registro******************************************************************/ 
-    public void registrarNuevoUsuario(String nombreCompleto, String correoElectronico, String nombreUsuario, String password){
+    public void registrarNuevoUsuario(String correoElectronico, String password, String nombreUsuario, String nombreCompleto){
 		try{
         statement=conexion.createStatement();
 	statement.execute("INSERT INTO usuariosgeekonn " +  
@@ -408,7 +408,7 @@ public class SentenciasSQL {
         try{
             statement = conexion.createStatement();
             statement.execute("INSERT INTO publicaciones" + 
-                    "(idUsuario, NombrePublicacion, Contenido)" + 
+                    "(idUsuario, nombrePublicacion, contenido)" + 
                     "VALUES(" + 
                     idUsuario + ",'" +
                     nombrePublicacion + "','" +
@@ -421,7 +421,7 @@ public class SentenciasSQL {
     public ResultSet todasPublicaciones(){
         try{
             statement = conexion.createStatement();
-            resultset = statement.executeQuery("SELECT * FROM publicaciones ORDER BY IdPublicacion DESC");
+            resultset = statement.executeQuery("SELECT * FROM publicaciones ORDER BY idPublicacion DESC");
         }catch(SQLException e){
             System.out.println("Error en todasPublicaciones");
         }
@@ -431,13 +431,26 @@ public class SentenciasSQL {
     public ResultSet publicacioneaPropias(int IdUsuario){
         try{
             statement = conexion.createStatement();
-            resultset = statement.executeQuery("SELECT * FROM publicaciones WHERE IdUsuario="
-                    + IdUsuario + "ORDER BY IdPublicaciones DESC");
+            resultset = statement.executeQuery("SELECT * FROM publicaciones WHERE idUsuario="
+                    + IdUsuario + " ORDER BY idPublicacion DESC");
         }catch(SQLException e){
-            System.out.println("Error en publicacionesPropias");
+            System.out.println("Error en publicacionesPropias" +e);
         }
         return resultset;
-    }  
+    }
+/*******************************Una sola Pub***********************************/
+    public ResultSet unaPublicacion(int publicacion){
+    resultset = null;
+    String sentenciaSQL = "SELECT * FROM publicaciones WHERE idPublicacion="+publicacion;
+    try{
+        statement = conexion.createStatement();
+        resultset = statement.executeQuery(sentenciaSQL);
+    }catch(SQLException e){
+        System.out.println("Error en unaPublicacion "+e);
+    }
+    
+    return resultset;
+    }
 /**********************************************************************************************/
 /****************************publicaciones*********************************/
     /*********************************INSERTAR A TABLA DE USUARIOS ONLINE**************************************************/    

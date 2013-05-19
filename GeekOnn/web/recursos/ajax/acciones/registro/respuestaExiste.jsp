@@ -25,15 +25,6 @@
         out.println("<button type='button' class='close' data-dismiss='alert'>×</button>");
         out.println("<strong>El nombre de usuario esta disponible &nbsp; <i class='icon-thumbs-up'></i></strong>");
         out.println("</div>");
-        if(validar.revisarSoloCaracteres(nombreUsuario)==0){
-            System.out.println("introdujeron numeros");
-            out.println("<div class='alert alert-error'>");
-        out.println("<button type='button' class='close' data-dismiss='alert'>×</button>");
-        out.println("<strong>No puedes poner numeros &nbsp; <i class='icon-thumbs-down'></i></strong>");
-        out.println("</div>");
-        }else{
-            
-        }
     }
 %>
                        

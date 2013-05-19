@@ -31,7 +31,7 @@ if(this.nombre==""){
 	alert("nombre esta vacio");
 }else{
 	console.log("No estaba vacio");
-		if(isAlphabetic(this.nombre)==true){
+		//if(isAlphabetic(this.nombre)==true){
 			console.log("Paso solo letras, Pasamos al siguiente nivel");
 				if(this.nombre.length>=5 & this.nombre.length<30){
 					console.log("Buen nombre");
@@ -41,7 +41,7 @@ if(this.nombre==""){
 						 			alert("No ingreso nombre de usuario");
 						 		}else{
 						 			console.log("Metio user");
-						 				if(isAlphabetic(this.user)==true){
+						 				//if(isAlphabetic(this.user)==true){
 						 					console.log("User tiene solo letras");
 						 						if(this.user.length>4 & this.user.length<15){
 						 							console.log("Buen User");
@@ -67,9 +67,9 @@ if(this.nombre==""){
 						 						}else{
 						 							alert("Tu nombre de usuario debe ser mayor a 4 pero menor que 15 caracteres");
 						 						}
-						 				}else{
-						 					alert("Nombre de usuario contiene caracteres invalidos");
-						 				}
+						 				//}else{
+						 					//alert("Nombre de usuario contiene caracteres invalidos");
+						 				//}
 						 		}
 						}else{
 						 	alert("Email incorrecto");
@@ -78,9 +78,9 @@ if(this.nombre==""){
 					alert("Tu nombre debe tener mas de 5 caracteres pero no menos de 30");
 				}
 				
-		}else{
-			alert("nombre debe contener solo letras.");
-		}
+		//}else{
+		//	alert("nombre debe contener solo letras.");
+		//}
 }
 }
 function isAlphabetic(cadena){

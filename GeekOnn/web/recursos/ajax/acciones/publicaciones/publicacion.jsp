@@ -30,7 +30,7 @@ if(userName == null){
     <link href="recursos/css/publicaciones.css" rel="stylesheet">
     <link rel="stylesheet" href="recursos/Font-Awesome-More/docs/assets/css/font-awesome.min.css">
     <link href="recursos/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <script src="recursos/ajax/twitter/ajaxTwitter.js"></script>
+     <!--<script src="recursos/ajax/toltip/ajaxToltip.js"></script>-->
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -48,38 +48,16 @@ if(userName == null){
                                    <link rel="shortcut icon" href="recursos/bootstrap/docs/assets/ico/favicon.png">
   </head>
   <body>
+      <%SentenciasSQL sentenciasSQL = new SentenciasSQL();
+      int idPub = Integer.valueOf(request.getParameter("idPublicacion"));
+      ResultSet resultset = sentenciasSQL.unaPublicacion(idPub);
+      if(resultset.next()){
+      %>
       <div class="row-fluid fondo-info">
-          <div class="span5">
-              <div class="row-fluid">
-                  <center><h2>Tus ultimas publicaciones</h2></center><hr>
-              </div>
-              <div class="row-fluid">
-                  <center><a href="#myModal" data-toggle="modal" data-target="#myModal" id="a-iniciar-sesion"><button type="button" class="btn btn-success">Has una nueva publicación</button></a></p></center>
-                  <div class="span12">
-                      <%SentenciasSQL sentenciasSQL= new SentenciasSQL();
-                        ResultSet resultset = sentenciasSQL.publicacioneaPropias(idUsuario);
-                        while(resultset.next()){
-                      %>
-                      <div class="row-fluid publicacion"  onclick="prueba(<%=resultset.getInt("idPublicacion")%>)">
-                          <div class="span3">
-                              <center><i class="icon-picture imagen-publicacion-nula" ></i></center>
-                          </div>
-                          <div class="span9">
-                              <center><h3><%=resultset.getString("nombrePublicacion")%></h3></center><hr>
-                              <div class="span8 offset2">
-                                <p align="justify"><%=resultset.getString("contenido")%></p>
-                              </div>
-                          </div>
-                      </div>
-                      <%}%>
-                  </div>
-                  <!-- beta publicacion -->
-              </div>
-              </div>
-          <div class="span7" id="contenedor-recibidor-publicacion-sesion">
+          <div class="span12" id="contenedor-recibidor-publicacion-sesion">
               <!-- beta publicacion abierta -->
               <div class="row-fluid">
-                  <div class="row-fluid"><center><h2>Titulo de la publicacion</h2></center><hr></div>
+                  <div class="row-fluid"><center><h2><%=resultset.getString("nombrePublicacion")%></h2></center><hr></div>
                   <div class="row-fluid">
                       <div class="span3">
                           <center><i class="icon-picture"></i></center>
@@ -87,14 +65,7 @@ if(userName == null){
                       <div class="span9">
                           <div class="span10 offset1" id="contenedor-descripcion-publicacion">
                               <p align="justify">
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet leo quis velit scelerisque 
-                                  euismod at a risus. In at ante est. Etiam eget ultricies nisl. Proin vehicula viverra ipsum sit amet 
-                                  cursus. Quisque ac sapien urna, sed fermentum est. Vestibulum condimentum, nisi quis condimentum suscipit, 
-                                  velit sapien malesuada risus, in consequat turpis quam sit amet ligula. Nullam non tortor eget quam rutrum 
-                                  luctus vitae non ipsum. Ut vitae tellus vitae lacus commodo vehicula ac vel mauris. Proin ante nulla, 
-                                  fermentum id fermentum in, gravida eu quam. Proin sit amet mi quam. Nulla facilisi. Morbi vitae leo leo. 
-                                  Nam enim turpis, tincidunt congue condimentum ac, elementum vel enim. Cras diam odio, 
-                                  sollicitudin id sodales pharetra, dignissim ac elit.
+                                <%=resultset.getString("contenido")%>
                               </p>
                           </div>
                       </div>  
@@ -127,38 +98,9 @@ if(userName == null){
               <!-- beta -->
           </div>
       </div>
+                    <%}%>
       <!-- Modal publicacion-->
-    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <center><h3 id="myModalLabel">Nueva publicación</h3></center>
-      </div>
-      <div class="modal-body">
-        <div class="row-fluid">
-            <div class="span3">
-                 <center><i class="icon-picture imagen-publicacion-nula-modal"></i></center>
-            </div>
-            <div class="span9">
-                <div class="row-fluid">
-                    <div class="span12"><strong>Titulo de la publicacion:</strong><input type="text" onkeyup="titulo(this.value)"><hr></div>
-                </div>    
-                <div class="row-fluid">
-                    <center><strong>Contenido de la publicacion:</strong></center><br>
-                    <textarea rows="4" class="span12" onkeyup="contenido(this.value)"></textarea>
-                </div>
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-          <div class="row-fluid">
-              <div class="span6">
-                  <div class="pull-left fuente"><input type="checkbox" onclick="checkboxOn()" >&nbsp;Twittear&nbsp;<i class="icon-twitter"></i></div>
-              </div>
-              <div class="span6"><button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" onclick="crearPublicacion(), publicar()"><strong>Publicar</strong></button></div>
-          </div>
-        </form>
-      </div>
-    </div>
+    
 <!-- Modal -->      
               <!-- Le javascript
     ================================================== -->
@@ -178,7 +120,9 @@ if(userName == null){
     <script src="recursos/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
     <script src="recursos/ajax/ajax.js"></script>
     <script src="recursos/ajax/popOvers/popOvers.js"></script>
-    <script src="recursos/ajax/twitter/ajaxTwitter.js"></script>
+    <script src="recursos/ajax/acciones/publicaciones/publicaciones.js"></script>
+    <script src="recursos/ajax/acciones/publicaciones/publicaciones.js"></script>
+     <!--<script src="recursos/ajax/toltip/ajaxToltip.js"></script>-->
   </body>
 </html>
 <%}%>

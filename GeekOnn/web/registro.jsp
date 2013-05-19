@@ -76,6 +76,7 @@ if(userName == null){
           <div class="row-fluid separador"></div>
           <div class="row-fluid contenedor-principal-registro">
               <div class="span4 offset2">
+                  <form method="POST" action="Registro">
                   <div class="row-fluid tituloRegistro">
                     <h3><center>Proporcionanos un poco de tu información</center></h3> <hr>
                  </div>
@@ -89,7 +90,7 @@ if(userName == null){
                         <div class="control-group" id="div-control-space">
                           <div class="controls" style="margin-left:0;">
                             <div class="input-prepend">
-                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text" value="<%=nombreU%>" id="username" name="nombreCompleto" tabindex="1" onkeyup="recuperarNombre(this.value)">
+                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text"  id="username" name="nombreCompleto" tabindex="1" >
                            </div>
                           </div>
                         </div>
@@ -104,7 +105,7 @@ if(userName == null){
                           <div class="control-group" id="div-control-space">
                             <div class="controls" style="margin-left:0;">
                               <div class="input-prepend">
-                                <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text" value="<%=correoU%>" id="username" name="correoElectronico" tabindex="1" id="form-input-space" onkeyup="recuperarEmail(this.value)">
+                                <span class="add-on"><i class="icon-envelope"></i></span><input class="input-medium" type="text"  id="username" name="correoElectronico" tabindex="1" id="form-input-space" >
                             </div>
                             </div>
                          </div>
@@ -119,7 +120,7 @@ if(userName == null){
                         <div class="control-group" id="div-control-space">
                           <div class="controls" style="margin-left:0;">
                             <div class="input-prepend">
-                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text"  value="" id="username" name="nombreUsuario" tabindex="1" onkeyup="recuperarUser(this.value)">
+                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text"  value="" id="username" name="nombreUsuario" tabindex="1" >
                            </div>
                           </div>
                         </div>
@@ -134,7 +135,7 @@ if(userName == null){
                           <div class="control-group" id="div-control-space">
                               <div class="controls" style="margin-left:0;">
                                 <div class="input-prepend">
-                              <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="password" value="<%=contraseniaU%>" id="contrasenia" name="password" tabindex="1" onkeyup="recuperarContra1(this.value)">
+                              <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="password" id="contrasenia" name="password" tabindex="1" >
                                </div>
                               </div>
                             </div>
@@ -149,7 +150,7 @@ if(userName == null){
                           <div class="control-group" id="div-control-space">
                               <div class="controls" style="margin-left:0;">
                                 <div class="input-prepend">
-                                  <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="password" id="username" name="passwordRepetido" tabindex="1" onkeyup="recuperarContra2(this.value)">
+                                  <span class="add-on"><i class="icon-lock"></i></span><input class="input-medium" type="password" id="username" name="passwordRepetido" tabindex="1" >
                                </div>
                               </div>
                             </div>
@@ -197,39 +198,39 @@ if(userName == null){
       </div>
 
 <!-- Modal inicio sesion-->
-        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <center><h3 id="myModalLabel">Inicia sesión</h3></center>
-          </div>
-          <form action='InicioSesion' METHOD='POST' class='form-horizontal'>
-          <div class="modal-body">
-            <div class="row-fluid">
-              <div class="span6 offset3"> 
-                <br>
-                <div class="control-group">
-                  <div class="controls" style="margin-left:0;">
-                    <div class="input-prepend">
-                      <span class="add-on"><i class="icon-user"></i></span><input placeholder="Nombre de usuario o correo" type="text" size="25" id="username" name="nombreUsuario" tabindex="1">
-                   </div>
-                  </div>
-                </div>
-                <div class="control-group">
-                  <div class="controls" style="margin-left:0;">
-                    <div class="input-prepend">
-                      <span class="add-on"><i class="icon-lock"></i></span><input placeholder="Contraseña" type="password" value="" size="25" name="password" tabindex="2">
-                    </div>
-                  </div>
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <center><h3 id="myModalLabel">Inicia sesión</h3></center>
+      </div>
+      <form action='InicioSesion' METHOD='POST' class='form-horizontal'>
+      <div class="modal-body">
+        <div class="row-fluid">
+          <div class="span6 offset3"> 
+            <br>
+            <div class="control-group">
+              <div class="controls" style="margin-left:0;">
+                <div class="input-prepend">
+                  <span class="add-on"><i class="icon-user"></i></span><input placeholder="Nombre de usuario o correo" type="text" size="25" id="username" name="nombreUsuario" tabindex="1">
+               </div>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls" style="margin-left:0;">
+                <div class="input-prepend">
+                  <span class="add-on"><i class="icon-lock"></i></span><input placeholder="Contraseña" type="password" value="" size="25" name="password" tabindex="2">
                 </div>
               </div>
             </div>
           </div>
-          </form>
-          <div class="modal-footer">
-              <div class="span6"><h6 class="pull-left">¿No estas registrado?<a href="registro.jsp">Registrate</a></h6></div>
-              <button class="btn btn-danger" type="submit"><strong>Iniciar sesión</strong></button>
-          </div>
         </div>
+      </div>
+      <div class="modal-footer">
+          <div class="span6"><h6 class="pull-left">¿No estas registrado?<a href="registro.jsp">Registrate</a></h6></div>
+          <button class="btn btn-danger" type="submit"><strong>Iniciar sesión</strong></button>
+      </form>
+      </div>
+    </div>
 <!-- Modal -->      
     <!-- Termina navbar  -->
     <!-- Le javascript

@@ -98,18 +98,17 @@ if(userName == null){
                       <center><h1>Evotek</h1></center>
                       <ul class="integrantes">
                           <li class="top-1">Díaz Rodríguez Julio</li>
-                          <li class="top-1">Esquivias Ramirez Juan Carlos</li>
-                          <li class="top-1">Juarez Bouchan Jose Leonardo</li>
-                          <li class="top-1">Ponce Martines Manuel Alejandro</li>
-                          <li class="top-1">Rivera Cano Jose Luis</li>
+                          <li class="top-1">Esquivias Ramírez Juan Carlos</li>
+                          <li class="top-1">Juárez Bouchan José Leonardo</li>
+                          <li class="top-1">Ponce Martínez Manuel Alejandro</li>
+                          <li class="top-1">Rivera Cano José Luis</li>
                       </ul>
                   </div>
                   <div class="span6">
-                      <p align="justify" class="que-es">GeekOnn es una red social dedicada a la comunidad geek, a la gente que le interesa
-                          informarse acerca de nuevos avances o descubrimientos tecnologicos. En GeekOnn podran compartir a todos los mienbros 
-                          de la red cualquier noticia geek que encuentren, ademas nuestra red es una aliada de twitter, en geekonn al mismo tiempo
-                          que publicas en tu muro puedes compartir la noticia en twiter y asi lo que le compartiste al mundo se divulgara mas rapido 
-                          de lo que esperas
+                      <p align="justify" class="que-es">GeekOnn es una red social dedicada a la comunidad geek,es decir, las personas que que le interesa
+                          informarse sobre los avances y descubrimientos tecnológicos.Aquí compartir a todos tus amigos 
+                          en cualquier red cualquier noticia geek, además tenemos un plus, en GeekOnn tus publicaciones que realizes pueden ser publicadas
+                          al mismo tiempo en Twitter; y así tu publicación también podra ser visto por más personas. 
                       </p>
                   </div>
               </div>

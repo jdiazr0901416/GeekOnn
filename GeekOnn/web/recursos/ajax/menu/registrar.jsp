@@ -5,6 +5,7 @@
 --%>
 
 <%@ page import = "com.geekonn.system.SentenciasSQL" %>
+<%@ page import = "com.geekonn.security.Cifrar" %>
 <%@ page import = "java.sql.ResultSet" %>
 <%@ page import = "javax.servlet.http.HttpServletResponse" %>
 <% 
@@ -14,5 +15,8 @@
     String pass= request.getParameter("pass");
 
     SentenciasSQL registrar = new SentenciasSQL();
-    registrar.registrarNuevoUsuario(nombre, correo, nombreU, pass);
+    Cifrar cifrado = new Cifrar();
+    String password = cifrado.encriptar(pass);
+    registrar.registrarNuevoUsuario(correo,password , nombre, nombreU);
+    response.sendRedirect("http://localhost:8080/GeekOnn/index.jsp");
 %>    
