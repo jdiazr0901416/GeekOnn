@@ -96,54 +96,34 @@ if(userName == null){
           </div>
           <div class="row-fluid separador"></div>
           <div class="span8 offset2 contenedor-index">
-            <center><h3>GeekOnn es una red social enfocada a la gente que le gusta estar al día acerca de la tecnologia y de sus avances</h3></center><hr>
-            <div class="row-fluid">
-              <div class="span6">
-                <center><h4>Deja al alcance de todos los avances tecnológicosque se te hagan interesantes.</h4></center><hr>
-                <div class="row-fluid">
-                  <div class="span12 contenedor-3-noticias">
-                    <!-- beta 3 noticias -->
-                    <div class="row-fluid publicacion-index">
-                      <div class="span3 img-publicacion-index">
-                        <center><i class="icon-off"></i></center>
+              <center><h1>verifica tus datos, pueden estar mal</h1></center>
+              <div class="row-fluid">
+                  <div class="span6">
+                      <!--------nombreCompleto----------->
+                      <div class="row-fluid inputs">
+                        <div class="span5 offset1" id="text-aling-right">
+                          <h4>Nombre de usuario:</h4>
                       </div>
-                      <div class="span9">
-                        <center><h4>Titulo publicación</h4></center><hr class="clase-hr">
-                        <p align="justify">Esta es una breve descripción de la publicacion que se realizo en GeekOnn.</p>
+                      <div class="span6">
+                        <div class="control-group" id="div-control-space">
+                          <div class="controls" style="margin-left:0;">
+                            <div class="input-prepend">
+                              <span class="add-on"><i class="icon-user"></i></span><input  class="input-medium" type="text"  value="" id="username" name="nombreUsuario" tabindex="1" onkeyup="nUI(this.value)">
+                           </div>
+                          </div>
+                        </div>
                       </div>
-                    </div> 
-
-                    <div class="row-fluid publicacion-index">
-                      <div class="span3 img-publicacion-index">
-                        <center><i class="icon-off"></i></center>
                       </div>
-                      <div class="span9">
-                        <center><h4>Titulo publicación</h4></center><hr class="clase-hr">
-                        <p align="justify">Esta es una breve descripción de la publicacion que se realizo en GeekOnn.</p>
-                      </div>
-                    </div> 
-                    <!-- beta 3 noticias -->
                   </div>
-                </div>
+                  <div class="span6" id="respuesta">
+                    <div class='alert alert-block'>
+                        <button type='button' class='close' data-dismiss='alert'>×</button>
+                        <strong>Escribe tu nombre de usuario</strong>
+                    </div>
+                  </div>
               </div>
-              <div class="span6" id="respuestainicio">
-                  <br><br><br>
-                  <center><h1>Forma parte de nosotros!</h1></center>
-              </div>
-            </div>
-            <div class="row-fluid">
-              <div class="span4 facebook">
-                <div class="fb-like-box" data-href="http://www.facebook.com/Geekonn" data-width="380" data-height="200" data-show-faces="true" data-stream="false" data-header="false"></div>
-              </div>
-              <div class="span4 google top">
-                <div class="g-plusone google" data-size="tall" data-annotation="inline" data-width="380"></div>
-              </div>  
-              <div class="span4 twitter top">
-                <a href="https://twitter.com/RedGeekOnn" class="twitter-follow-button twitter" data-show-count="false" data-lang="es" data-size="large">Seguir a @RedGeekOnn</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-              </div>    
-            </div>
-      </div>
+              <center><button class="btn btn-danger" onclick="inicioSesion()"><strong>Revisar</strong></button></center>
+          </div>
 
     <!-- navbar bootom -->
       <div class="navbar navbar-inverse navbar-fixed-bottom">

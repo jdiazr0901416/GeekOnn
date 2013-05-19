@@ -74,15 +74,14 @@ public class InicioSesion extends HttpServlet {
                         sentenciasSQL.ponerOnline(Username);
                     }          
                 }else{
-                    respuesta.setAttribute("error", "Tus Datos estan mal");
+                    System.out.println("no existe este usuario");
+                    response.sendRedirect("verificar.jsp");
                 }
             
 
             }catch (Exception e) {
                 System.out.println("SQL exception. .-." + e.getMessage());
             }
-
-       response.sendRedirect("Sesion.jsp");
         }
         public void init(ServletConfig config) throws ServletException {
 		super.init(config);
