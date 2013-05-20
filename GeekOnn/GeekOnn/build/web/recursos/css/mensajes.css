@@ -1,0 +1,106 @@
+body {
+   background-color: rgb(243,243,243);
+}
+/*mensajes--------------------------------------------*/
+#imagen-mensaje-usuario{
+	width:130px;
+        min-height: 80px;
+}
+#mensaje{
+	margin-top: 10px;
+	border: 1px;
+	border-color: rgb(0,142,243);
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+#mensaje:hover{
+	margin-top: 10px;
+	border: 1px solid;
+	border-color: rgb(0,142,243);
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}#mensaje-favorito{
+	margin-top: 10px;
+	border: 1px;
+	border-color: rgb(0,142,243);
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+#mensaje:hover{
+	margin-top: 10px;
+	border: 1px solid;
+	border-color: rgb(0,142,243);
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+#contenedor-enviar-mensajes{
+	border-left: 2px solid;
+	border-color: white;
+	min-height: 700px;
+}
+#contenedor-ultimos-mensajes-conversacion{
+	border-radius: 15px;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	background-color: white;
+	margin-bottom: 10px;
+        max-height: 600px;
+        margin-top: 10px;
+        overflow-y: scroll;
+}
+#contenedor-ultimos-mensajes{
+    border-color: black;
+    border-radius: 10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    max-height: 600px;
+    margin-top: 10px;
+}
+.top{
+    margin-top: 15px;
+}
+.tituloNF{
+    background-color: rgb(65,133,245);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloNF{
+    background-color: rgb(65,133,245);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloP{
+    background-color: rgb(140,196,116);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloM{
+    background-color: rgb(251,203,67);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloA{
+    background-color: rgb(228,111,97);
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloO{
+    background-color: rgb(188,86,121);
+    font-size: 16px;
+    font-weight: bold;
+}
+.top{
+    margin-top: 10px;
+}
+.mensajes-separador{
+    background-color: white;
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius:15px 15px 15px 15px;
+    -webkit-border-radius:15px 15px 15px 15px;
+}
+/*mensajes--------------------------------------------*/

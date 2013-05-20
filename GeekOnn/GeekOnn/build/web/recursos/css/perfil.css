@@ -1,0 +1,70 @@
+body {
+   background-color: rgb(243,243,243);
+}
+.menu-perfil{
+    margin-top: 80px;
+}
+.menu-perfil:hover{
+    margin-top: 80px;
+    zoom:110%
+}
+#recibidor-ajax-perfil{
+    margin-bottom: 50px;
+}
+.foto-perfil-2{
+    height: 193px;
+}
+.biografia-perfil{
+    height: 73px;
+}
+.meta-titulo{
+    margin-top: 20px;
+    font-size: 22px;
+    border-bottom: 2px solid;
+    border-color: rgb(215,215,215);
+}
+.fondo-info{
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
+    
+}
+#yo{	
+	margin-top: 20px;
+        font-size: 22px;
+        border-bottom: 4px solid;
+	border-color: rgb(77,191,217);
+}
+#informacion-basica{	
+	margin-top: 20px;
+        font-size: 22px;
+        border-bottom: 4px solid;
+        border-color: yellow;
+}
+#experiencia{	
+	margin-top: 20px;
+        font-size: 22px;
+        border-bottom: 4px solid;
+	border-color: rgb(188,86,121);
+}
+#filosofia{	
+	margin-top: 20px;
+        font-size: 22px;
+        border-bottom: 4px solid;
+	border-color: rgb(228,111,97);
+}
+#contacto{	
+	margin-top: 20px;
+        font-size: 22px;
+        border-bottom: 4px solid;
+	border-color: rgb(140,196,116);
+}
+/*.separador-info{
+    border-bottom: 4px solid;
+    border-color: rgb(230,230,230);
+}*/
+.zoom:hover{
+    zoom:115%
+}
